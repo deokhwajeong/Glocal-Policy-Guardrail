@@ -1,0 +1,229 @@
+# Glocal Policy Guardrail - Country-Specific Compliance Rules
+# 국가별 법규 및 문화적 금기 사항 정책 데이터베이스
+
+Saudi_Arabia:
+  country_name: "사우디아라비아"
+  region: "Middle East"
+  
+  # 금지 키워드 (문화적/종교적 금기)
+  forbidden_keywords:
+    - "gambling"
+    - "casino"
+    - "poker"
+    - "betting"
+    - "pork"
+    - "alcohol"
+    - "beer"
+    - "wine"
+    - "adult_content"
+    - "pornography"
+    - "lgbtq"
+  
+  # 광고 제한사항
+  ad_restrictions:
+    gambling_ads: "completely_forbidden"
+    alcohol_ads: "completely_forbidden"
+    tobacco_ads: "completely_forbidden"
+  
+  # 연령 등급 시스템
+  age_rating_system: "GCAM"  # General Commission for Audiovisual Media
+  
+  # 필수 준수사항
+  mandatory_compliance:
+    - "religious_content_review"
+    - "gender_segregation_compliance"
+    - "islamic_values_alignment"
+  
+  # 위반 시 리스크 레벨
+  violation_severity: "CRITICAL"
+
+Spain:
+  country_name: "스페인"
+  region: "Europe"
+  
+  forbidden_keywords: []  # 비교적 자유로운 콘텐츠 정책
+  
+  # 시간대별 광고 제한
+  ad_restrictions:
+    gambling_ads:
+      restriction_type: "time_based"
+      allowed_time_window: "01:00-05:00"  # 심야 시간대만 허용
+      reason: "Spanish Gambling Act protection for minors"
+    alcohol_ads:
+      restriction_type: "content_warning"
+      required_disclaimer: "Beber con moderación"
+  
+  age_rating_system: "ICAA"  # Instituto de la Cinematografía y de las Artes Audiovisuales
+  
+  mandatory_compliance:
+    - "gdpr_compliance"
+    - "audio_description_for_disabled"  # 장애인 접근성
+  
+  violation_severity: "MEDIUM"
+
+South_Korea:
+  country_name: "대한민국"
+  region: "East Asia"
+  
+  # 법적 금지 콘텐츠
+  forbidden_keywords:
+    - "drugs"
+    - "narcotics"
+    - "prostitution"
+    - "north_korea_propaganda"  # 북한 찬양
+    - "gambling"  # 합법 카지노 외 도박
+  
+  ad_restrictions:
+    gambling_ads: "restricted_to_licensed_entities"  # 강원랜드 등 합법 사업자만
+    alcohol_ads:
+      restriction_type: "time_based"
+      forbidden_time_window: "07:00-22:00"  # 청소년 보호시간대
+    tobacco_ads: "completely_forbidden"
+  
+  age_rating_system: "KMRB"  # Korea Media Rating Board
+  
+  # 필수 기능 요구사항
+  mandatory_features:
+    - "real_name_verification"  # 본인인증 (19세 이상 콘텐츠)
+    - "youth_protection_system"  # 청소년 보호 장치
+    - "korean_subtitle_availability"  # 한글 자막 제공
+  
+  mandatory_compliance:
+    - "personal_information_protection_act"  # 개인정보보호법
+    - "broadcast_content_rating"  # 방송통신심의위원회 등급
+  
+  violation_severity: "HIGH"
+
+United_States:
+  country_name: "미국"
+  region: "North America"
+  
+  forbidden_keywords:
+    - "child_exploitation"  # 아동 착취
+  
+  ad_restrictions:
+    gambling_ads:
+      restriction_type: "state_based"
+      allowed_states: ["NV", "NJ", "PA", "MI", "WV"]  # 주별 도박 합법화 지역
+      reason: "Varies by state gambling laws"
+    alcohol_ads:
+      restriction_type: "age_verification"
+      minimum_age: 21
+    tobacco_ads: "completely_forbidden"  # Federal law
+  
+  age_rating_system: "MPA"  # Motion Picture Association (G, PG, PG-13, R, NC-17)
+  
+  mandatory_compliance:
+    - "coppa_compliance"  # Children's Online Privacy Protection Act (13세 미만)
+    - "ada_accessibility"  # Americans with Disabilities Act
+    - "ccpa_compliance"  # California Consumer Privacy Act
+  
+  violation_severity: "MEDIUM"
+
+Germany:
+  country_name: "독일"
+  region: "Europe"
+  
+  # 독일 특유의 강력한 규제
+  forbidden_keywords:
+    - "nazi"
+    - "swastika"
+    - "holocaust_denial"
+    - "hate_speech"
+  
+  ad_restrictions:
+    gambling_ads:
+      restriction_type: "licensed_only"
+      required_license: "German Interstate Treaty on Gambling"
+    alcohol_ads:
+      restriction_type: "youth_protection"
+      forbidden_before: "20:00"
+  
+  age_rating_system: "FSK"  # Freiwillige Selbstkontrolle der Filmwirtschaft
+  
+  mandatory_compliance:
+    - "gdpr_compliance"  # 데이터 보호법 (EU 내 가장 엄격)
+    - "jugendschutzgesetz"  # 청소년 보호법
+    - "network_enforcement_act"  # NetzDG (불법 콘텐츠 24시간 내 삭제)
+  
+  violation_severity: "CRITICAL"
+
+China:
+  country_name: "중국"
+  region: "East Asia"
+  
+  # 정치적 민감 콘텐츠
+  forbidden_keywords:
+    - "tiananmen"
+    - "dalai_lama"
+    - "taiwan_independence"
+    - "xinjiang"
+    - "hong_kong_protest"
+    - "gambling"
+    - "pornography"
+    - "violence"
+    - "superstition"  # 미신
+  
+  ad_restrictions:
+    gambling_ads: "completely_forbidden"
+    alcohol_ads: "heavily_restricted"
+    tobacco_ads: "completely_forbidden"
+  
+  age_rating_system: "SARFT"  # State Administration of Radio, Film, and Television
+  
+  mandatory_features:
+    - "content_pre_approval"  # 사전 심의 필수
+    - "data_localization"  # 데이터 중국 내 저장 의무
+    - "real_name_registration"  # 실명제
+  
+  mandatory_compliance:
+    - "cybersecurity_law"
+    - "socialist_core_values_alignment"  # 사회주의 핵심 가치관 부합
+    - "government_censorship_cooperation"
+  
+  violation_severity: "CRITICAL"
+
+India:
+  country_name: "인도"
+  region: "South Asia"
+  
+  forbidden_keywords:
+    - "cow_slaughter"  # 소 도축 (힌두교 금기)
+    - "religious_hatred"
+    - "separatist_content"
+  
+  ad_restrictions:
+    gambling_ads: "restricted_to_licensed_games"  # Rummy, Fantasy Sports 등 예외
+    alcohol_ads: "completely_forbidden"
+    tobacco_ads: "completely_forbidden"
+  
+  age_rating_system: "CBFC"  # Central Board of Film Certification
+  
+  mandatory_compliance:
+    - "it_rules_2021"  # Information Technology Rules
+    - "content_grievance_officer"  # 콘텐츠 이의제기 담당자 지정
+    - "parental_control_features"
+  
+  violation_severity: "HIGH"
+
+Japan:
+  country_name: "일본"
+  region: "East Asia"
+  
+  forbidden_keywords: []  # 표현의 자유가 비교적 보장됨
+  
+  ad_restrictions:
+    gambling_ads:
+      restriction_type: "limited_to_public_gambling"
+      allowed_types: ["pachinko", "horse_racing", "bicycle_racing", "boat_racing"]
+    alcohol_ads:
+      restriction_type: "self_regulation"
+      industry_code: "Japan Advertising Review Organization"
+  
+  age_rating_system: "Eirin"  # Film Classification and Rating Organization
+  
+  mandatory_compliance:
+    - "act_on_protection_of_personal_information"  # 개인정보보호법
+    - "anti_unfair_competition"
+  
+  violation_severity: "LOW"

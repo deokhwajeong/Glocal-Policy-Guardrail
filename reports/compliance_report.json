@@ -1,0 +1,188 @@
+{
+  "generated_at": "2026-01-13T01:29:11.671329",
+  "total_deployments": 10,
+  "results": [
+    {
+      "status": "CRITICAL",
+      "country": "Saudi_Arabia",
+      "timestamp": "2026-01-13T01:29:11.667015",
+      "violation_count": 6,
+      "violations": [
+        {
+          "type": "FORBIDDEN_KEYWORD",
+          "message": "Forbidden keyword 'gambling' detected in description",
+          "severity": "CRITICAL",
+          "detected_content": "gambling",
+          "timestamp": "2026-01-13T01:29:11.667304"
+        },
+        {
+          "type": "FORBIDDEN_KEYWORD",
+          "message": "Forbidden keyword 'casino' detected in description",
+          "severity": "CRITICAL",
+          "detected_content": "casino",
+          "timestamp": "2026-01-13T01:29:11.667313"
+        },
+        {
+          "type": "FORBIDDEN_KEYWORD",
+          "message": "Forbidden keyword 'poker' detected in description",
+          "severity": "CRITICAL",
+          "detected_content": "poker",
+          "timestamp": "2026-01-13T01:29:11.667318"
+        },
+        {
+          "type": "FORBIDDEN_KEYWORD",
+          "message": "Forbidden keyword 'gambling' detected in tags",
+          "severity": "CRITICAL",
+          "detected_content": "gambling",
+          "timestamp": "2026-01-13T01:29:11.667344"
+        },
+        {
+          "type": "FORBIDDEN_KEYWORD",
+          "message": "Forbidden keyword 'casino' detected in tags",
+          "severity": "CRITICAL",
+          "detected_content": "casino",
+          "timestamp": "2026-01-13T01:29:11.667348"
+        },
+        {
+          "type": "FORBIDDEN_KEYWORD",
+          "message": "Forbidden keyword 'poker' detected in tags",
+          "severity": "CRITICAL",
+          "detected_content": "poker",
+          "timestamp": "2026-01-13T01:29:11.667352"
+        }
+      ]
+    },
+    {
+      "status": "WARNING",
+      "country": "South_Korea",
+      "timestamp": "2026-01-13T01:29:11.667414",
+      "violation_count": 3,
+      "violations": [
+        {
+          "type": "MISSING_MANDATORY_FEATURE",
+          "message": "Required feature 'real_name_verification' is missing",
+          "severity": "HIGH",
+          "detected_content": "Available: ",
+          "timestamp": "2026-01-13T01:29:11.667564"
+        },
+        {
+          "type": "MISSING_MANDATORY_FEATURE",
+          "message": "Required feature 'youth_protection_system' is missing",
+          "severity": "HIGH",
+          "detected_content": "Available: ",
+          "timestamp": "2026-01-13T01:29:11.667567"
+        },
+        {
+          "type": "MISSING_MANDATORY_FEATURE",
+          "message": "Required feature 'korean_subtitle_availability' is missing",
+          "severity": "HIGH",
+          "detected_content": "Available: ",
+          "timestamp": "2026-01-13T01:29:11.667569"
+        }
+      ]
+    },
+    {
+      "status": "WARNING",
+      "country": "Spain",
+      "timestamp": "2026-01-13T01:29:11.667608",
+      "violation_count": 1,
+      "violations": [
+        {
+          "type": "AD_TIME_RESTRICTION",
+          "message": "gambling_ads only allowed during 01:00-05:00. Current: 15:00",
+          "severity": "HIGH",
+          "detected_content": "Scheduled at 15:00",
+          "timestamp": "2026-01-13T01:29:11.670166"
+        }
+      ]
+    },
+    {
+      "status": "PASS",
+      "country": "United_States",
+      "timestamp": "2026-01-13T01:29:11.670190",
+      "violation_count": 0,
+      "violations": []
+    },
+    {
+      "status": "CRITICAL",
+      "country": "Germany",
+      "timestamp": "2026-01-13T01:29:11.670262",
+      "violation_count": 2,
+      "violations": [
+        {
+          "type": "FORBIDDEN_KEYWORD",
+          "message": "Forbidden keyword 'nazi' detected in description",
+          "severity": "CRITICAL",
+          "detected_content": "nazi",
+          "timestamp": "2026-01-13T01:29:11.670376"
+        },
+        {
+          "type": "FORBIDDEN_KEYWORD",
+          "message": "Forbidden keyword 'swastika' detected in description",
+          "severity": "CRITICAL",
+          "detected_content": "swastika",
+          "timestamp": "2026-01-13T01:29:11.670382"
+        }
+      ]
+    },
+    {
+      "status": "CRITICAL",
+      "country": "China",
+      "timestamp": "2026-01-13T01:29:11.670422",
+      "violation_count": 1,
+      "violations": [
+        {
+          "type": "FORBIDDEN_KEYWORD",
+          "message": "Forbidden keyword 'hong_kong_protest' detected in description",
+          "severity": "CRITICAL",
+          "detected_content": "hong_kong_protest",
+          "timestamp": "2026-01-13T01:29:11.670633"
+        }
+      ]
+    },
+    {
+      "status": "WARNING",
+      "country": "South_Korea",
+      "timestamp": "2026-01-13T01:29:11.670705",
+      "violation_count": 1,
+      "violations": [
+        {
+          "type": "AD_TIME_RESTRICTION",
+          "message": "alcohol_ads forbidden during 07:00-22:00. Current: 20:00",
+          "severity": "HIGH",
+          "detected_content": "Scheduled at 20:00",
+          "timestamp": "2026-01-13T01:29:11.670782"
+        }
+      ]
+    },
+    {
+      "status": "PASS",
+      "country": "Japan",
+      "timestamp": "2026-01-13T01:29:11.670829",
+      "violation_count": 0,
+      "violations": []
+    },
+    {
+      "status": "WARNING",
+      "country": "India",
+      "timestamp": "2026-01-13T01:29:11.670846",
+      "violation_count": 1,
+      "violations": [
+        {
+          "type": "FORBIDDEN_KEYWORD",
+          "message": "Forbidden keyword 'cow_slaughter' detected in description",
+          "severity": "HIGH",
+          "detected_content": "cow_slaughter",
+          "timestamp": "2026-01-13T01:29:11.671062"
+        }
+      ]
+    },
+    {
+      "status": "PASS",
+      "country": "United_States",
+      "timestamp": "2026-01-13T01:29:11.671103",
+      "violation_count": 0,
+      "violations": []
+    }
+  ]
+}
