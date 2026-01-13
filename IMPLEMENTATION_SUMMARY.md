@@ -146,11 +146,11 @@ The framework is ready for CI/CD integration:
 - RESTful API for automation
 
 ## Dependencies
-- fastapi==0.109.0
+- fastapi==0.109.1 (security patched)
 - uvicorn[standard]==0.27.0
 - pydantic==2.5.3
 - PyYAML==6.0.1
-- python-multipart==0.0.6
+- python-multipart==0.0.18 (security patched)
 
 ## Code Quality
 - ✅ Pydantic v2 compatible
