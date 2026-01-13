@@ -245,18 +245,73 @@ Potential for publication in:
 
 ---
 
-## 🛠️ Future Enhancements
+## Automated Policy Updates
 
-- [ ] **AI-Powered Context Analysis**: Use LLMs to detect nuanced cultural violations
-- [ ] **Real-time Policy Updates**: Auto-sync with government APIs for law changes
-- [ ] **Dashboard Visualization**: Web UI for compliance monitoring
-- [ ] **Multi-language Support**: Detect violations in non-English content
-- [ ] **Blockchain Audit Trail**: Immutable compliance verification logs
-- [ ] **API Integration**: REST API for CI/CD pipeline integration
+### Regulatory Source Monitoring
+
+The framework includes an automated system to monitor official regulatory sources for policy changes:
+
+**Supported Monitoring Methods:**
+- RSS feed aggregation from regulatory bodies
+- Web scraping of official announcement pages  
+- API integration with government data portals
+- Commercial legal research APIs (LexisNexis, Westlaw)
+
+**Official Sources Tracked:**
+- USA: FCC, FTC (COPPA)
+- South Korea: 방송통신심의위원회, 개인정보보호위원회
+- Germany: BfDI, KJM
+- EU: EDPB (GDPR updates)
+- Spain: DGOJ, AEPD
+- China: 国家广播电视总局
+- Saudi Arabia: GCAM
+- India: Ministry of Information and Broadcasting
+- Japan: 個人情報保護委員会
+
+See [docs/OFFICIAL_REGULATORY_SOURCES.md](docs/OFFICIAL_REGULATORY_SOURCES.md) for complete source list.
+
+### Usage
+
+```bash
+# Check for regulatory updates immediately
+python update_scheduler.py --check-now
+
+# View update history
+python update_scheduler.py --report
+
+# Set up automated scheduling
+python update_scheduler.py --schedule
+```
+
+### Automated Workflow
+
+```
+Regulatory Source Monitoring
+         ↓
+Change Detection (hash-based)
+         ↓
+Update Log Creation
+         ↓
+AI-Powered Policy Suggestion
+         ↓
+Legal Team Review (required)
+         ↓
+YAML Policy Update
+         ↓
+Automated Testing
+         ↓
+Git Commit & Deploy
+```
+
+**Safety Features:**
+- Automatic backup before updates
+- Requires manual legal review
+- Version control integration
+- Rollback capability
 
 ---
 
-## 📚 Documentation
+## Future Work
 
 ### Policy Database Schema
 
