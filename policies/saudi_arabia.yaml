@@ -1,0 +1,51 @@
+# Saudi Arabia Policy Configuration
+country_code: SA
+country_name: Saudi Arabia
+
+# Forbidden keywords that cannot appear in content metadata
+forbidden_keywords:
+  - gambling
+  - alcohol
+  - pork
+  - casino
+  - betting
+  - lottery
+  - wine
+  - beer
+  - vodka
+
+# Content rating restrictions
+content_rating:
+  minimum_age: 12
+  prohibited_ratings:
+    - NC-17
+    - X
+
+# Ad time-window restrictions (in 24-hour format)
+advertising:
+  forbidden_time_windows:
+    - start: "12:00"
+      end: "13:00"
+      reason: "Prayer time - Dhuhr"
+    - start: "15:30"
+      end: "16:00"
+      reason: "Prayer time - Asr"
+    - start: "18:00"
+      end: "18:30"
+      reason: "Prayer time - Maghrib"
+    - start: "19:30"
+      end: "20:00"
+      reason: "Prayer time - Isha"
+  max_duration_minutes: 3
+
+# Mandatory features
+mandatory_features:
+  - parental_controls
+  - content_filtering
+  - prayer_time_notifications
+
+# Regional compliance
+compliance:
+  requires_local_content_quota: true
+  local_content_percentage: 30
+  requires_cultural_review: true

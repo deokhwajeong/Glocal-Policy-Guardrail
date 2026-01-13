@@ -1,0 +1,48 @@
+# South Korea Policy Configuration
+country_code: KR
+country_name: South Korea
+
+# Forbidden keywords that cannot appear in content metadata
+forbidden_keywords:
+  - north_korea_propaganda
+  - explicit_violence
+
+# Content rating restrictions (based on Korean rating system)
+content_rating:
+  minimum_age: 0
+  prohibited_ratings: []
+  allowed_ratings:
+    - ALL
+    - 7
+    - 12
+    - 15
+    - 18
+
+# Ad time-window restrictions
+advertising:
+  forbidden_time_windows: []
+  max_duration_minutes: 5
+  requires_clear_labeling: true
+
+# Mandatory features
+mandatory_features:
+  - real_name_verification
+  - age_verification
+  - shutdown_system  # Cinderella law - prevent youth access late night
+  - data_localization
+
+# Youth protection
+youth_protection:
+  enabled: true
+  shutdown_hours:
+    start: "00:00"
+    end: "06:00"
+  applies_to_age_under: 16
+
+# Regional compliance
+compliance:
+  requires_local_content_quota: true
+  local_content_percentage: 20
+  requires_kocsc_approval: true  # Korea Communications Standards Commission
+  requires_real_name: true
+  data_must_be_stored_locally: true
