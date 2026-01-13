@@ -28,8 +28,12 @@ class RegulatorySource:
     url: str
     method: str  # 'rss', 'api', 'scrape', 'manual'
     language: str
+    check_frequency: Optional[str] = None
     last_checked: Optional[str] = None
     last_hash: Optional[str] = None
+    note: Optional[str] = None
+    filter_keywords: Optional[List[str]] = None
+    applies_to: Optional[List[str]] = None
 
 
 class PolicyUpdateMonitor:

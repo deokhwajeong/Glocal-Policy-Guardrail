@@ -53,6 +53,13 @@ This framework introduces a **Policy-as-Code approach** that separates policy de
 - Violation statistics and risk heatmaps
 - Executive summary generation
 
+### Automated Policy Updates (NEW)
+- Monitors official regulatory sources from 8+ countries
+- RSS feed integration for real-time updates
+- Automated change detection and notification system
+- Policy update suggestions with legal review workflow
+- Daily scheduled checks via cron/task scheduler
+
 ---
 
 ## Architecture
@@ -60,10 +67,14 @@ This framework introduces a **Policy-as-Code approach** that separates policy de
 ```
 Glocal-Policy-Guardrail/
 ├── config/
-│   └── policy_rules.yaml          # Country-specific policy database
+│   ├── policy_rules.yaml          # Country-specific policy database
+│   └── regulatory_sources.yaml    # Regulatory monitoring sources
 ├── src/
 │   ├── compliance_scanner.py      # Core validation engine
-│   └── analytics.py               # Reporting and visualization
+│   ├── analytics.py               # Reporting and visualization
+│   └── policy_auto_updater.py     # Automated policy update system
+├── scripts/
+│   └── daily_update_check.py      # Daily regulatory monitoring
 ├── test_data/
 │   └── sample_deployments.yaml    # Test scenarios
 ├── main.py                        # Main execution script
@@ -164,6 +175,45 @@ print(result)
 # Output: CRITICAL: Found 2 violation(s) in Saudi_Arabia
 #           1. [CRITICAL] FORBIDDEN_KEYWORD: 'gambling' detected in description
 #           2. [CRITICAL] FORBIDDEN_KEYWORD: 'poker' detected in tags
+```
+
+### Automated Policy Monitoring
+
+```bash
+# Check for regulatory updates
+python scripts/daily_update_check.py
+
+# Setup daily automated checks (Linux/Mac)
+crontab -e
+# Add: 0 9 * * * /usr/bin/python3 /path/to/scripts/daily_update_check.py
+
+# View update logs
+cat reports/policy_updates.json
+```
+
+**Output Example**:
+```
+REGULATORY UPDATE REPORT
+======================================================================
+Generated: 2026-01-13 09:00:00
+Total Updates: 2
+======================================================================
+
+1. FCC News RSS (United_States)
+   Method: rss
+   Title: New Guidelines for Online Content Moderation
+   Link: https://www.fcc.gov/news/2026/01/12/...
+   Detected: 2026-01-13T09:00:15
+
+2. 방송통신심의위원회 (South_Korea)
+   Method: scrape
+   Note: Content changed - manual review required
+   Detected: 2026-01-13T09:00:23
+
+ACTION REQUIRED:
+1. Review each update for policy implications
+2. Update config/policy_rules.yaml if necessary
+3. Run compliance tests to verify changes
 ```
 
 ---
