@@ -1,0 +1,76 @@
+# Saudi Arabia Policy Configuration
+# Localized rules for Saudi Arabian Smart TV/OTT content
+
+country_name: "Saudi Arabia"
+country_code: "SA"
+region: "Middle East"
+
+# Forbidden content rules
+forbidden_content:
+  keywords:
+    - "alcohol"
+    - "gambling"
+    - "blasphemy"
+    - "pork"
+    - "dating"
+    - "LGBTQ"
+  categories:
+    - "adult_content"
+    - "alcohol_promotion"
+    - "gambling"
+    - "religious_criticism"
+    - "dating_shows"
+    - "immodest_content"
+
+# Content rating requirements
+rating_requirements:
+  required: true
+  allowed_ratings:
+    - "G"       # General audience
+    - "PG"      # Parental guidance
+    - "PG13"    # Parents strongly cautioned
+    - "15"      # 15 years and older
+    - "18"      # 18 years and older
+  description: "Saudi General Commission for Audiovisual Media ratings"
+
+# Advertisement window restrictions
+ad_windows:
+  max_duration_seconds: 60         # Maximum 60 seconds per ad break
+  min_interval_seconds: 900        # Minimum 15 minutes between ad breaks
+  max_per_hour: 6                  # Maximum 6 ad breaks per hour
+  restrictions:
+    - "No alcohol advertising"
+    - "No gambling advertising"
+    - "No ads with immodest imagery"
+    - "Prayer time blackout periods must be observed"
+
+# Language requirements
+language_requirements:
+  required_subtitles:
+    - "ar"      # Arabic subtitles required
+  required_audio: []  # Arabic audio recommended but not mandatory for foreign content
+  description: "Arabic subtitles mandatory for all foreign content"
+
+# Cultural restrictions
+cultural_restrictions:
+  sensitive_topics:
+    - "religious criticism"
+    - "political commentary"
+    - "royal family"
+    - "Islamic practices"
+  guidelines:
+    - "Respect for Islamic values and traditions"
+    - "No depiction of romantic relationships outside marriage"
+    - "Modest dress codes for all characters"
+    - "No criticism of Saudi government or royal family"
+    - "Content must align with Vision 2030 cultural objectives"
+
+# Additional compliance requirements
+compliance:
+  data_localization: true
+  privacy_law: "Saudi Data and AI Authority (SDAIA) regulations"
+  content_review_required: true
+  pre_approval_required: true
+  halal_certification: "Required for food/restaurant content"
+  prayer_time_restrictions: true
+  ramadan_specific_rules: true

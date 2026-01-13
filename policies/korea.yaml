@@ -1,0 +1,61 @@
+# Korea Policy Configuration
+# Localized rules for South Korean Smart TV/OTT content
+
+country_name: "South Korea"
+country_code: "KR"
+region: "Asia-Pacific"
+
+# Forbidden content rules
+forbidden_content:
+  keywords:
+    - "gambling"
+    - "illegal drugs"
+    - "extreme violence"
+  categories:
+    - "adult_content"
+    - "unrated_gambling"
+
+# Content rating requirements
+rating_requirements:
+  required: true
+  allowed_ratings:
+    - "ALL"      # All ages
+    - "7"        # 7 years and older
+    - "12"       # 12 years and older
+    - "15"       # 15 years and older
+    - "19"       # 19 years and older (adult)
+  description: "Korea Media Rating Board (KMRB) ratings"
+
+# Advertisement window restrictions
+ad_windows:
+  max_duration_seconds: 90         # Maximum 90 seconds per ad break
+  min_interval_seconds: 600        # Minimum 10 minutes between ad breaks
+  max_per_hour: 8                  # Maximum 8 ad breaks per hour
+  restrictions:
+    - "No ads during children's programming (ALL, 7 ratings)"
+    - "Political ads require pre-approval during election periods"
+
+# Language requirements
+language_requirements:
+  required_subtitles:
+    - "ko"      # Korean subtitles required
+  required_audio: []
+  description: "Korean subtitles mandatory for all foreign content"
+
+# Cultural restrictions
+cultural_restrictions:
+  sensitive_topics:
+    - "North Korea political content"
+    - "historical disputes"
+    - "comfort women"
+  guidelines:
+    - "Respect for national symbols and figures"
+    - "Sensitive handling of inter-Korean relations"
+    - "Compliance with broadcast standards for historical accuracy"
+
+# Additional compliance requirements
+compliance:
+  data_localization: true
+  privacy_law: "Personal Information Protection Act (PIPA)"
+  content_review_required: true
+  emergency_broadcast_capable: true
