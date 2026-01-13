@@ -2,7 +2,7 @@
 
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import JSONResponse
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 from typing import Dict, List, Any, Optional
 from pathlib import Path
 import sys
@@ -22,18 +22,8 @@ app = FastAPI(
 
 class ContentMetadata(BaseModel):
     """Content metadata for validation."""
-    title: str = Field(..., description="Content title")
-    description: Optional[str] = Field(None, description="Content description")
-    categories: List[str] = Field(default_factory=list, description="Content categories")
-    tags: List[str] = Field(default_factory=list, description="Content tags")
-    rating: Optional[str] = Field(None, description="Content rating")
-    duration_minutes: Optional[int] = Field(None, description="Content duration in minutes")
-    subtitle_languages: List[str] = Field(default_factory=list, description="Available subtitle languages")
-    audio_languages: List[str] = Field(default_factory=list, description="Available audio languages")
-    ad_breaks: List[Dict[str, Any]] = Field(default_factory=list, description="Advertisement break configurations")
-    
-    class Config:
-        json_schema_extra = {
+    model_config = ConfigDict(
+        json_schema_extra={
             "example": {
                 "title": "Example Movie",
                 "description": "An exciting adventure film",
@@ -49,15 +39,23 @@ class ContentMetadata(BaseModel):
                 ]
             }
         }
+    )
+    
+    title: str = Field(..., description="Content title")
+    description: Optional[str] = Field(None, description="Content description")
+    categories: List[str] = Field(default_factory=list, description="Content categories")
+    tags: List[str] = Field(default_factory=list, description="Content tags")
+    rating: Optional[str] = Field(None, description="Content rating")
+    duration_minutes: Optional[int] = Field(None, description="Content duration in minutes")
+    subtitle_languages: List[str] = Field(default_factory=list, description="Available subtitle languages")
+    audio_languages: List[str] = Field(default_factory=list, description="Available audio languages")
+    ad_breaks: List[Dict[str, Any]] = Field(default_factory=list, description="Advertisement break configurations")
 
 
 class ValidationRequest(BaseModel):
     """Request model for content validation."""
-    content: ContentMetadata = Field(..., description="Content to validate")
-    country: str = Field(..., description="Target country code (e.g., 'korea', 'saudi_arabia')")
-    
-    class Config:
-        json_schema_extra = {
+    model_config = ConfigDict(
+        json_schema_extra={
             "example": {
                 "content": {
                     "title": "Example Movie",
@@ -71,6 +69,10 @@ class ValidationRequest(BaseModel):
                 "country": "korea"
             }
         }
+    )
+    
+    content: ContentMetadata = Field(..., description="Content to validate")
+    country: str = Field(..., description="Target country code (e.g., 'korea', 'saudi_arabia')")
 
 
 class ValidationResponse(BaseModel):
