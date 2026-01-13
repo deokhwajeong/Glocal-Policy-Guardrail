@@ -1,0 +1,56 @@
+# Germany Policy Configuration
+country_code: DE
+country_name: Germany
+
+# Forbidden keywords that cannot appear in content metadata
+forbidden_keywords:
+  - nazi
+  - swastika
+  - hitler
+  - third_reich
+  - holocaust_denial
+
+# Content rating restrictions (FSK rating system)
+content_rating:
+  minimum_age: 0
+  prohibited_ratings: []
+  allowed_ratings:
+    - FSK_0
+    - FSK_6
+    - FSK_12
+    - FSK_16
+    - FSK_18
+
+# Ad time-window restrictions
+advertising:
+  forbidden_time_windows: []
+  max_duration_minutes: 12
+  max_per_hour_minutes: 12
+  requires_clear_separation: true  # Clear separation between content and ads
+
+# Mandatory features
+mandatory_features:
+  - gdpr_compliance
+  - data_privacy_controls
+  - youth_protection_system
+  - opt_in_tracking
+
+# Youth protection (JMStV - Jugendmedienschutz-Staatsvertrag)
+youth_protection:
+  enabled: true
+  requires_age_verification_for_18: true
+  requires_time_restriction_for_16: true
+  restricted_hours_16:
+    start: "06:00"
+    end: "22:00"
+  restricted_hours_18:
+    always_restricted: true
+
+# Regional compliance
+compliance:
+  requires_gdpr_compliance: true
+  requires_data_protection_officer: true
+  requires_impressum: true  # Legal disclosure requirement
+  requires_fsf_approval: false  # Voluntary self-regulation
+  cookie_consent_required: true
+  data_retention_max_days: 730
