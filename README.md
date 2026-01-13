@@ -91,14 +91,19 @@ print(f"Deployment Ready: {report['deployment_ready']}")
 Start the API server:
 
 ```bash
-# Option 1: Using Python module
+# Option 1: Using Python module (default: localhost:8000)
 python -m glocal_guardrail.api
 
 # Option 2: Using uvicorn directly
-uvicorn glocal_guardrail.api:app --reload --host 0.0.0.0 --port 8000
+uvicorn glocal_guardrail.api:app --reload --host 127.0.0.1 --port 8000
+
+# Option 3: Configure via environment variables
+export GUARDRAIL_HOST=0.0.0.0
+export GUARDRAIL_PORT=8080
+python -m glocal_guardrail.api
 ```
 
-API will be available at `http://localhost:8000`
+API will be available at `http://localhost:8000` (or your configured host/port)
 
 #### API Endpoints
 

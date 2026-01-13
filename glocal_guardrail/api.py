@@ -1,11 +1,17 @@
 """
 FastAPI interface for CI/CD pipeline integration
 """
+import os
+import logging
 from fastapi import FastAPI, HTTPException, status
 from pydantic import BaseModel, Field, ConfigDict
 from typing import List, Dict, Any, Optional
 from .governance import GovernanceEngine
 from . import __version__
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 
 app = FastAPI(
@@ -120,9 +126,10 @@ async def validate_content(request: ValidationRequest):
             }
         }
     except Exception as e:
+        logger.error(f"Validation error: {str(e)}", exc_info=True)
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Validation error: {str(e)}"
+            detail="An error occurred during validation. Please check your request and try again."
         )
 
 
@@ -147,9 +154,10 @@ async def validate_single_country(country_code: str, metadata: Dict[str, Any]):
         result = governance.check_single_country(metadata, country_code)
         return result.to_dict()
     except Exception as e:
+        logger.error(f"Validation error for country {country_code}: {str(e)}", exc_info=True)
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Validation error: {str(e)}"
+            detail="An error occurred during validation. Please check your request and try again."
         )
 
 
@@ -167,12 +175,19 @@ async def deployment_readiness_check(request: ValidationRequest):
         )
         return report
     except Exception as e:
+        logger.error(f"Deployment check error: {str(e)}", exc_info=True)
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Deployment check error: {str(e)}"
+            detail="An error occurred during deployment check. Please check your request and try again."
         )
 
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    
+    # Get configuration from environment variables with safe defaults
+    host = os.getenv("GUARDRAIL_HOST", "127.0.0.1")
+    port = int(os.getenv("GUARDRAIL_PORT", "8000"))
+    
+    logger.info(f"Starting Glocal Policy Guardrail API on {host}:{port}")
+    uvicorn.run(app, host=host, port=port)

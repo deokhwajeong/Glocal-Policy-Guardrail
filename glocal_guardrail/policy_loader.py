@@ -88,7 +88,13 @@ class PolicyLoader:
     
     def list_available_policies(self) -> List[str]:
         """List all available country codes"""
-        return ["SA", "KR", "DE"]
+        # Derive from country_file_map to avoid duplication
+        country_file_map = {
+            "SA": "saudi_arabia.yaml",
+            "KR": "south_korea.yaml",
+            "DE": "germany.yaml",
+        }
+        return list(country_file_map.keys())
     
     def clear_cache(self):
         """Clear the policy cache"""
