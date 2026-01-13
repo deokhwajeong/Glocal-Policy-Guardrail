@@ -1,0 +1,40 @@
+{
+  "title": "Global Streaming Platform",
+  "description": "Family-friendly entertainment for all ages",
+  "content_rating": "PG",
+  "minimum_age": 7,
+  "tags": [
+    "family",
+    "entertainment",
+    "streaming"
+  ],
+  "keywords": [
+    "video",
+    "movies",
+    "shows"
+  ],
+  "features": [
+    "parental_controls",
+    "content_filtering",
+    "prayer_time_notifications",
+    "real_name_verification",
+    "age_verification",
+    "shutdown_system",
+    "data_localization",
+    "gdpr_compliance",
+    "data_privacy_controls",
+    "youth_protection_system",
+    "opt_in_tracking"
+  ],
+  "ad_duration_minutes": 2,
+  "ad_schedule": [
+    "10:00",
+    "14:00",
+    "20:00"
+  ],
+  "youth_access_times": [],
+  "local_content_percentage": 35,
+  "real_name_verification_enabled": true,
+  "gdpr_compliant": true,
+  "data_stored_locally": true
+}

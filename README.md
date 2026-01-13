@@ -31,7 +31,7 @@ The Glocal Policy Guardrail is a comprehensive compliance validation engine that
 - Regional compliance checks (GDPR, data localization, real-name verification)
 - Local content quota validation
 
-## Installation
+## Quick Start
 
 ### Prerequisites
 
@@ -49,6 +49,16 @@ Or install the package in development mode:
 ```bash
 pip install -e .
 ```
+
+### Quick Server Start
+
+For the fastest way to start the API server:
+
+```bash
+python run_server.py
+```
+
+This will start the server with sensible defaults on `http://127.0.0.1:8000`
 
 ## Quick Start
 
@@ -224,6 +234,7 @@ See the `examples/` directory for complete usage examples:
 
 - `examples/usage_example.py` - Python API usage examples
 - `examples/api_client_example.py` - REST API client examples
+- `examples/sample_metadata.json` - Template metadata file for validation
 
 Run examples:
 
@@ -336,6 +347,8 @@ Contributions are welcome! To add a new country policy:
 3. Update `policy_loader.py` to include the new country code mapping
 4. Add tests for the new policy
 5. Update documentation
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines on adding new countries and contributing to the project.
 
 ## License
 
