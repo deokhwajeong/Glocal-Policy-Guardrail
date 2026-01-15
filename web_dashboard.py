@@ -4,6 +4,8 @@ Web Dashboard for Glocal Policy Guardrail
 Regulatory Update Monitoring Dashboard for Global OTT Platforms
 """
 from flask import Flask, render_template, jsonify, request
+from flask_swagger_ui import get_swaggerui_blueprint
+from flask_cors import CORS
 import json
 import yaml
 from pathlib import Path
@@ -13,7 +15,22 @@ import sys
 sys.path.insert(0, str(Path(__file__).parent))
 from src.policy_auto_updater import PolicyUpdateMonitor
 from src.change_tracker import ChangeTracker
+
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
+
+# Swagger UI configuration
+SWAGGER_URL = '/api/docs'
+API_URL = '/static/swagger.json'
+
+swaggerui_blueprint = get_swaggerui_blueprint(
+    SWAGGER_URL,
+    API_URL,
+    config={'app_name': "Glocal Policy Guardrail API"}
+)
+
+app.register_blueprint(swaggerui_blueprint, url_prefix=SWAGGER_URL)
+
 # Global variables - lazy initialization
 monitor = None
 tracker = None
