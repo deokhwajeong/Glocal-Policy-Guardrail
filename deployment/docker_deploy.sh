@@ -1,14 +1,11 @@
 #!/bin/bash
-# Docker를 사용한 배포 스크립트
-
+# Docker Deployment Script
 set -e
-
 echo "======================================"
 echo "Policy Guardrail Docker Deployment"
 echo "======================================"
 echo ""
-
-# .env 파일 확인
+# Check .env file
 if [ ! -f ".env" ]; then
     echo "Creating .env file from example..."
     cp .env.example .env
@@ -16,25 +13,19 @@ if [ ! -f ".env" ]; then
     echo ""
     read -p "Press Enter to continue or Ctrl+C to exit..."
 fi
-
-# Docker 설치 확인
+# Check Docker installation
 if ! command -v docker &> /dev/null; then
     echo "❌ Docker is not installed. Please install Docker first."
     exit 1
 fi
-
 if ! command -v docker-compose &> /dev/null && ! docker compose version &> /dev/null; then
     echo "❌ Docker Compose is not installed. Please install Docker Compose first."
     exit 1
 fi
-
 echo "✅ Docker and Docker Compose are installed"
 echo ""
-
-# 이미지 빌드
 echo "Building Docker image..."
 docker-compose build
-
 echo ""
 echo "======================================"
 echo "Deployment Options"
@@ -47,7 +38,6 @@ echo "4. View logs"
 echo "5. Restart services"
 echo ""
 read -p "Select option (1-5): " option
-
 case $option in
     1)
         echo "Starting scheduler..."
@@ -82,7 +72,6 @@ case $option in
         exit 1
         ;;
 esac
-
 echo ""
 echo "======================================"
 echo "Useful Commands"

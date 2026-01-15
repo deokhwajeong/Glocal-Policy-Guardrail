@@ -5,30 +5,24 @@ function showTab(tabName) {
  tabContents.forEach(content => {
  content.classList.remove('active');
  });
- 
  // Deactivate all tab buttons
  const tabs = document.querySelectorAll('.tab');
  tabs.forEach(tab => {
  tab.classList.remove('active');
  });
- 
  // Activate selected tab
  document.getElementById(tabName).classList.add('active');
  event.target.closest('.tab').classList.add('active');
 }
-
 // Ad schedule toggle
 function toggleAdSchedule() {
  const adScheduleSection = document.getElementById('adScheduleSection');
  const hasAds = document.getElementById('has_ads').checked;
- 
  adScheduleSection.style.display = hasAds ? 'block' : 'none';
 }
-
 // Form submission handler
 document.getElementById('checkForm').addEventListener('submit', async (e) => {
  e.preventDefault();
- 
  const formData = new FormData(e.target);
  const data = {
  country: formData.get('country'),
@@ -40,7 +34,6 @@ document.getElementById('checkForm').addEventListener('submit', async (e) => {
  features: []
  }
  };
- 
  // Process ad schedule
  if (formData.get('has_ads')) {
  const adDate = formData.get('ad_date');
@@ -51,7 +44,6 @@ document.getElementById('checkForm').addEventListener('submit', async (e) => {
  };
  }
  }
- 
  try {
  const response = await fetch('/api/check', {
  method: 'POST',
@@ -60,7 +52,6 @@ document.getElementById('checkForm').addEventListener('submit', async (e) => {
  },
  body: JSON.stringify(data)
  });
- 
  const result = await response.json();
  displayResult(result);
  } catch (error) {
@@ -68,20 +59,16 @@ document.getElementById('checkForm').addEventListener('submit', async (e) => {
  alert('An error occurred during checking.');
  }
 });
-
 // Display results
 function displayResult(result) {
  const resultCard = document.getElementById('resultCard');
  const resultContent = document.getElementById('resultContent');
- 
  let statusClass = 'status-' + result.status;
  let statusIcon = result.status === 'PASS' ? '✅' : (result.status === 'WARNING' ? '⚠️' : '❌');
- 
  let html = `
  <div class="result-status ${statusClass}">
  ${statusIcon} ${result.status}
  </div>
- 
  <div style="margin-bottom: 1.5rem;">
  <h3 style="margin-bottom: 0.5rem;">Inspection Information</h3>
  <p><strong>Country:</strong> ${result.country.replace('_', ' ')}</p>
@@ -89,13 +76,11 @@ function displayResult(result) {
  <p><strong>Genre:</strong> ${result.metadata.genre}</p>
  </div>
  `;
- 
  if (result.violations && result.violations.length > 0) {
  html += `
  <div class="violations-list">
  <h3 style="margin-bottom: 1rem;">⚠️ Violations Found</h3>
  `;
- 
  result.violations.forEach(violation => {
  html += `
  <div class="violation-item">
@@ -106,7 +91,6 @@ function displayResult(result) {
  </div>
  `;
  });
- 
  html += '</div>';
  } else {
  html += `
@@ -117,14 +101,11 @@ function displayResult(result) {
  </div>
  `;
  }
- 
  resultContent.innerHTML = html;
  resultCard.style.display = 'block';
- 
  // Scroll to results
  resultCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
-
 // Chart initialization (Analytics tab)
 function initCharts() {
  // Violations by country chart
@@ -184,7 +165,6 @@ function initCharts() {
  }
  });
  }
- 
  // Category distribution chart
  const categoryCtx = document.getElementById('categoryChart');
  if (categoryCtx) {
@@ -230,7 +210,6 @@ function initCharts() {
  });
  }
 }
-
 // Initialize charts on page load
 document.addEventListener('DOMContentLoaded', function() {
  // Initialize charts when analytics tab is activated
@@ -241,16 +220,13 @@ document.addEventListener('DOMContentLoaded', function() {
  });
  }
 });
-
 // Monitoring Filter Functions
 function filterMonitoring(status) {
  const cards = document.querySelectorAll('.monitor-card');
  const buttons = document.querySelectorAll('.filter-btn');
- 
  // Update active button
  buttons.forEach(btn => btn.classList.remove('active'));
  event.target.classList.add('active');
- 
  // Filter cards
  cards.forEach(card => {
  if (status === 'all') {
@@ -261,30 +237,24 @@ function filterMonitoring(status) {
  }
  });
 }
-
 // Show Country Details Modal
 async function showCountryDetails(country) {
  const modal = document.getElementById('countryModal');
  const modalBody = document.getElementById('modalBody');
  const modalTitle = document.getElementById('modalCountryName');
- 
  // Show modal with loading state
  modal.style.display = 'flex';
  modalTitle.textContent = country.replace(/_/g, ' ');
  modalBody.innerHTML = '<div class="loading">Loading country details...</div>';
- 
  try {
  const response = await fetch(`/api/country/${country}`);
  const data = await response.json();
- 
  if (data.error) {
  modalBody.innerHTML = `<div class="error">Error: ${data.error}</div>`;
  return;
  }
- 
  // Build detailed view
  let html = '<div class="country-details">';
- 
  // Compliance Overview
  html += '<div class="detail-section">';
  html += '<h3>📊 Compliance Overview</h3>';
@@ -308,7 +278,6 @@ async function showCountryDetails(country) {
  </span>
  </div>`;
  html += '</div></div>';
- 
  // Critical Issues
  if (data.compliance.critical_issues && data.compliance.critical_issues.length > 0) {
  html += '<div class="detail-section">';
@@ -323,7 +292,6 @@ async function showCountryDetails(country) {
  });
  html += '</div></div>';
  }
- 
  // Warnings
  if (data.compliance.warnings && data.compliance.warnings.length > 0) {
  html += '<div class="detail-section">';
@@ -337,7 +305,6 @@ async function showCountryDetails(country) {
  });
  html += '</div></div>';
  }
- 
  // Recent Updates
  if (data.recent_updates && data.recent_updates.length > 0) {
  html += '<div class="detail-section">';
@@ -357,7 +324,6 @@ async function showCountryDetails(country) {
  });
  html += '</div></div>';
  }
- 
  // Monitoring Sources
  if (data.sources && data.sources.length > 0) {
  html += '<div class="detail-section">';
@@ -374,21 +340,17 @@ async function showCountryDetails(country) {
  });
  html += '</div></div>';
  }
- 
  html += '</div>';
  modalBody.innerHTML = html;
- 
  } catch (error) {
  modalBody.innerHTML = `<div class="error">Failed to load country details: ${error.message}</div>`;
  }
 }
-
 // Close Country Modal
 function closeCountryModal() {
  const modal = document.getElementById('countryModal');
  modal.style.display = 'none';
 }
-
 // Close modal when clicking outside
 window.onclick = function(event) {
  const modal = document.getElementById('countryModal');
@@ -400,19 +362,15 @@ window.onclick = function(event) {
 async function refreshUpdates() {
  const btn = document.querySelector('.refresh-btn');
  const updatesList = document.getElementById('updatesList');
- 
  // Add loading state
  btn.classList.add('loading');
  btn.disabled = true;
- 
  try {
  const response = await fetch('/api/updates');
  const data = await response.json();
- 
  if (data.success && data.updates) {
  // Clear current list
  updatesList.innerHTML = '';
- 
  if (data.updates.length === 0) {
  updatesList.innerHTML = `
  <div class="empty-state">
@@ -425,13 +383,11 @@ async function refreshUpdates() {
  data.updates.forEach(update => {
  const updateItem = document.createElement('div');
  updateItem.className = 'update-item';
- 
  // Build confidence badge
  let confidenceBadge = '';
  if (update.confidence) {
  confidenceBadge = `<span class="confidence-badge confidence-${update.confidence}">${update.confidence.toUpperCase()}</span>`;
  }
- 
  // Build status badge
  let statusBadge = '';
  if (update.status) {
@@ -439,19 +395,16 @@ async function refreshUpdates() {
  const statusText = update.status.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
  statusBadge = `<span class="status-badge status-${statusClass}">${statusText}</span>`;
  }
- 
  // Build time display
  let timeDisplay = '';
  if (update.time) {
  timeDisplay = `<span class="update-time">${update.time}</span>`;
  }
- 
  // Build URL link
  let urlLink = '';
  if (update.url) {
  urlLink = `<a href="${update.url}" target="_blank" class="update-link">View Details →</a>`;
  }
- 
  updateItem.innerHTML = `
  <div class="update-header">
  <div>
@@ -469,11 +422,9 @@ async function refreshUpdates() {
  <p class="update-summary">${update.summary}</p>
  ${urlLink}
  `;
- 
  updatesList.appendChild(updateItem);
  });
  }
- 
  console.log(`Loaded ${data.updates.length} updates`);
  } else {
  throw new Error(data.error || 'Failed to load updates');
