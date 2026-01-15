@@ -18,6 +18,18 @@
 
 ## 📸 Demo
 
+### 🖥️ Web Dashboard UI
+
+![Web Dashboard](docs/images/dashboard.png)
+
+*Real-time compliance monitoring dashboard with interactive analytics*
+
+### 📚 API Documentation (Swagger UI)
+
+![Swagger UI](docs/images/swagger-ui.png)
+
+*Interactive API documentation with live endpoint testing*
+
 ### Command Line Output
 
 Run the compliance scanner with sample test cases:
@@ -164,6 +176,8 @@ graph TB
 - 📊 **Reports**: JSON/HTML compliance reports in `reports/`
 - 🔔 **Alerts**: Email, Slack, Discord notifications
 - 📈 **Metrics**: Prometheus monitoring at `/metrics`
+
+> 💡 **To generate UI screenshots**: Run `python web_dashboard.py` then `python scripts/generate_screenshots.py`
 
 ---
 
