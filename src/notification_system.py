@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
 Notification System for Regulatory Updates
-규제 업데이트 Notification system
+Regulatory Update Notification System
 
-이메일, Slack, Discord 등으로 업데이트 알림을 전송합니다.
+Sends update notifications via email, Slack, Discord, etc.
 """
 
 import os
@@ -18,7 +18,7 @@ import requests
 from pathlib import Path
 from dotenv import load_dotenv
 
-# .env 파일 로드
+# Load .env file
 load_dotenv()
 
 logging.basicConfig(level=logging.INFO)
@@ -26,20 +26,20 @@ logger = logging.getLogger(__name__)
 
 
 class NotificationConfig:
-    """알림 설정"""
+    """Notification configuration"""
     
     def __init__(self, config_file: str = "config/notifications.yaml"):
         self.config_file = Path(config_file)
         self.config = self._load_config()
     
     def _load_config(self) -> Dict:
-        """설정 로드"""
+        """Load configuration"""
         if self.config_file.exists():
             import yaml
             with open(self.config_file, 'r', encoding='utf-8') as f:
                 return yaml.safe_load(f)
         
-        # 기본 설정
+        # Default configuration
         return {
             "email": {
                 "enabled": False,
@@ -61,14 +61,14 @@ class NotificationConfig:
 
 
 class EmailNotifier:
-    """이메일 알림"""
+    """Email notification"""
     
     def __init__(self, config: Dict):
         self.config = config
         self.enabled = config.get("enabled", False)
     
     def send(self, subject: str, body: str, html_body: Optional[str] = None) -> bool:
-        """이메일 전송"""
+        """Send email"""
         if not self.enabled:
             logger.info("Email notifications disabled")
             return False
@@ -79,14 +79,14 @@ class EmailNotifier:
             msg['From'] = self.config['sender']
             msg['To'] = ', '.join(self.config['recipients'])
             
-            # 텍스트 버전
+            # Text version
             msg.attach(MIMEText(body, 'plain', 'utf-8'))
             
-            # HTML 버전 (있는 경우)
+            # HTML version (if available)
             if html_body:
                 msg.attach(MIMEText(html_body, 'html', 'utf-8'))
             
-            # SMTP 연결 및 전송
+            # SMTP connection and send
             with smtplib.SMTP(self.config['smtp_server'], self.config['smtp_port']) as server:
                 server.starttls()
                 server.login(self.config['sender'], self.config['password'])
@@ -101,7 +101,7 @@ class EmailNotifier:
 
 
 class SlackNotifier:
-    """Slack 알림"""
+    """Slack notification"""
     
     def __init__(self, config: Dict):
         self.config = config
@@ -109,7 +109,7 @@ class SlackNotifier:
         self.webhook_url = config.get("webhook_url", "")
     
     def send(self, message: str, blocks: Optional[List[Dict]] = None) -> bool:
-        """Slack 메시지 전송"""
+        """Send Slack message"""
         if not self.enabled or not self.webhook_url:
             logger.info("Slack notifications disabled or not configured")
             return False
@@ -139,7 +139,7 @@ class SlackNotifier:
             return False
     
     def format_update_message(self, updates: List[Dict]) -> List[Dict]:
-        """업데이트 메시지를 Slack 블록 형식으로 포맷"""
+        """Format update message in Slack block format"""
         blocks = [
             {
                 "type": "header",
@@ -158,7 +158,7 @@ class SlackNotifier:
             {"type": "divider"}
         ]
         
-        for idx, update in enumerate(updates[:10]):  # 최대 10개만 표시
+        for idx, update in enumerate(updates[:10]):  # Display max 10 items
             country = update.get('country', 'Unknown')
             source = update.get('source', 'Unknown')
             title = update.get('title', 'No title')
@@ -203,7 +203,7 @@ class SlackNotifier:
 
 
 class DiscordNotifier:
-    """Discord 알림"""
+    """Discord notification"""
     
     def __init__(self, config: Dict):
         self.config = config
@@ -211,7 +211,7 @@ class DiscordNotifier:
         self.webhook_url = config.get("webhook_url", "")
     
     def send(self, message: str, embeds: Optional[List[Dict]] = None) -> bool:
-        """Discord 메시지 전송"""
+        """Send Discord message"""
         if not self.enabled or not self.webhook_url:
             logger.info("Discord notifications disabled or not configured")
             return False
@@ -241,14 +241,14 @@ class DiscordNotifier:
             return False
     
     def format_update_embeds(self, updates: List[Dict]) -> List[Dict]:
-        """업데이트를 Discord embed 형식으로 포맷"""
+        """Format update in Discord embed format"""
         embeds = []
         
-        # 메인 embed
+        # Main embed
         main_embed = {
             "title": "🔔 Regulatory Update Alert",
             "description": f"{len(updates)} new regulatory update(s) detected",
-            "color": 0xFF6B35,  # 주황색
+            "color": 0xFF6B35,  # Orange color
             "timestamp": datetime.now().isoformat(),
             "footer": {
                 "text": "Glocal Policy Guardrail"
@@ -299,20 +299,20 @@ class NotificationManager:
             logger.info("No updates to notify")
             return results
         
-        # 이메일 알림
+        # Email notification
         email_subject = f"[Regulatory Alert] {len(updates)} New Updates Detected"
         email_body = self._format_email_body(updates)
         email_html = self._format_email_html(updates)
         
         results['email'] = self.email.send(email_subject, email_body, email_html)
         
-        # Slack 알림
+        # Slack notification
         slack_message = f"🔔 {len(updates)} new regulatory updates detected"
         slack_blocks = self.slack.format_update_message(updates)
         
         results['slack'] = self.slack.send(slack_message, slack_blocks)
         
-        # Discord 알림
+        # Discord notification
         discord_message = f"**🔔 Regulatory Update Alert**\n{len(updates)} new updates detected"
         discord_embeds = self.discord.format_update_embeds(updates)
         
@@ -407,7 +407,7 @@ class NotificationManager:
 
 
 def main():
-    """테스트용 메인 함수"""
+    """테스트용 Main function"""
     # 테스트 업데이트 데이터
     test_updates = [
         {

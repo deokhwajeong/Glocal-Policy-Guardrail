@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Regulatory Update Scheduler
-규제 업데이트 자동 스케줄러
+Automated Regulatory Update Scheduler
 
 Usage:
   python update_scheduler.py --check-now
@@ -21,7 +21,7 @@ from src.policy_auto_updater import PolicyUpdateMonitor, PolicyAutoUpdater
 
 
 def check_updates_now():
-    """즉시 업데이트 확인"""
+    """Check for updates immediately"""
     print("🔍 Checking for regulatory updates...")
     print("=" * 70)
     
@@ -32,14 +32,14 @@ def check_updates_now():
         print("✅ No updates detected. All policies are current.")
         return
     
-    # 리포트 생성
+    # Generate report
     report = monitor.generate_update_report(updates)
     print(report)
     
-    # 로그 저장
+    # Save log
     monitor.save_update_log(updates)
     
-    # 정책 제안 생성
+    # Generate policy proposal
     print("\n🤖 Generating policy update suggestions...")
     updater = PolicyAutoUpdater()
     
@@ -57,7 +57,7 @@ def check_updates_now():
 
 
 def generate_report():
-    """업데이트 리포트 생성"""
+    """Generate update report"""
     import json
     
     log_path = "reports/policy_updates.json"
@@ -78,7 +78,7 @@ def generate_report():
     print("=" * 70)
     print()
     
-    # 최근 10개 로그
+    # Last 10 logs
     recent_logs = logs[-10:]
     
     for log in recent_logs:
@@ -96,11 +96,11 @@ def generate_report():
 
 
 def setup_schedule():
-    """스케줄 설정 (cron job 또는 systemd timer)"""
+    """Schedule setup (cron job or systemd timer)"""
     print("📅 Setting up automatic update schedule...")
     print()
     
-    # Cron job 예제 생성
+    # Generate cron job example
     cron_command = "0 9 * * 1 cd /path/to/Glocal-Policy-Guardrail && python update_scheduler.py --check-now"
     
     print("To set up automatic checks, add this to your crontab:")
@@ -110,7 +110,7 @@ def setup_schedule():
     print("  crontab -e")
     print()
     
-    # GitHub Actions 예제
+    # GitHub Actions example
     github_actions = """
 # .github/workflows/regulatory_check.yml
 name: Regulatory Update Check
