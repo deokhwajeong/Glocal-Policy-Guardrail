@@ -61,9 +61,9 @@
                     
                     <form id="checkForm" class="check-form">
                         <div class="form-group">
-                            <label for="country">배포 Countries</label>
+                            <label for="country">Deployment Countries</label>
                             <select id="country" name="country" required>
-                                <option value="">Countries를 선택하세요</option>
+                                <option value="">Select a country</option>
                                 {% for country in countries %}
                                 <option value="{{ country }}">{{ country.replace('_', ' ') }}</option>
                                 {% endfor %}
@@ -90,12 +90,12 @@
 
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <textarea id="description" name="description" rows="3" placeholder="콘텐츠에 대한 Description을 입력하세요"></textarea>
+                            <textarea id="description" name="description" rows="3" placeholder="Enter content description"></textarea>
                         </div>
 
                         <div class="form-group">
                             <label for="tags">Tags (comma-separated)</label>
-                            <input type="text" id="tags" name="tags" placeholder="예: action, thriller, violence">
+                            <input type="text" id="tags" name="tags" placeholder="e.g., action, thriller, violence">
                         </div>
 
                         <div class="form-group">
@@ -231,7 +231,7 @@
                             <h3 class="update-title">{{ update.title }}</h3>
                             <p class="update-summary">{{ update.summary }}</p>
                             {% if update.url %}
-                            <a href="{{ update.url }}" target="_blank" class="update-link">자세히 보기 →</a>
+                            <a href="{{ update.url }}" target="_blank" class="update-link">View Details →</a>
                             {% endif %}
                         </div>
                         {% endfor %}
@@ -239,26 +239,26 @@
                 </div>
             </section>
 
-            <!-- Analytics Report 탭 -->
+            <!-- Analytics Report Tab -->
             <section id="analytics" class="tab-content">
                 <div class="card">
                     <h2 class="card-title">
                         <span class="icon">📈</span>
-                        컴플라이언스 분석
+                        Compliance Analysis
                     </h2>
                     <div class="analytics-grid">
                         <div class="chart-card">
-                            <h3>Countries별 위반 현황</h3>
+                            <h3>Violations by Country</h3>
                             <canvas id="violationChart"></canvas>
                         </div>
                         <div class="chart-card">
-                            <h3>카테고리별 분포</h3>
+                            <h3>Distribution by Category</h3>
                             <canvas id="categoryChart"></canvas>
                         </div>
                     </div>
                     
                     <div class="insights-section">
-                        <h3>주요 인사이트</h3>
+                        <h3>Key Insights</h3>
                         <div class="insights-grid">
                             {% for insight in insights %}
                             <div class="insight-card">

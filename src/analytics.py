@@ -1,6 +1,6 @@
 """
 Glocal Policy Guardrail - Visualization & Analytics
-컴플라이언스 검사 결과를 시각화하고 분석하는 도구
+Tool for visualizing and analyzing compliance inspection results
 """
 
 import json
@@ -10,17 +10,17 @@ from collections import defaultdict
 
 
 class ComplianceAnalytics:
-    """컴플라이언스 검사 결과 분석 및 시각화"""
+    """Compliance inspection result analysis and visualization"""
     
     def __init__(self):
         self.results_history = []
     
     def add_result(self, result_dict: Dict):
-        """결과 추가"""
+        """Add result"""
         self.results_history.append(result_dict)
     
     def generate_risk_heatmap(self, results: Dict) -> str:
-        """국가별 위험도 히트맵 생성 (ASCII 아트)"""
+        """Generate country risk heatmap (ASCII art)"""
         country_scores = {}
         
         for deployment_id, result in results.items():
@@ -33,13 +33,13 @@ class ComplianceAnalytics:
             country_scores[country]['total'] += violations
             country_scores[country]['count'] += 1
         
-        # 평균 위반 수 계산
+        # Calculate average violation count
         avg_violations = {
             country: scores['total'] / scores['count']
             for country, scores in country_scores.items()
         }
         
-        # 히트맵 생성
+        # Generate heatmap
         heatmap = ["", "🌍 GLOBAL COMPLIANCE RISK HEATMAP", "=" * 70]
         
         max_violations = max(avg_violations.values()) if avg_violations else 1
@@ -55,7 +55,7 @@ class ComplianceAnalytics:
         return "\n".join(heatmap)
     
     def _get_risk_emoji(self, avg_violations: float) -> str:
-        """위반 수에 따른 위험도 이모지"""
+        """Risk emoji based on violation count"""
         if avg_violations >= 5:
             return "🔴"
         elif avg_violations >= 3:
@@ -66,7 +66,7 @@ class ComplianceAnalytics:
             return "🟢"
     
     def generate_violation_breakdown(self, results: Dict) -> str:
-        """위반 유형별 분류"""
+        """Classify by violation type"""
         violation_types = defaultdict(int)
         
         for result in results.values():
@@ -79,7 +79,7 @@ class ComplianceAnalytics:
         
         for v_type, count in sorted(violation_types.items(), key=lambda x: x[1], reverse=True):
             percentage = (count / total_violations * 100) if total_violations > 0 else 0
-            bar_length = int(percentage / 2.5)  # 40칸 기준
+            bar_length = int(percentage / 2.5)  # Based on 40 columns
             bar = "█" * bar_length
             
             breakdown.append(f"{v_type:30} │{bar:40}│ {count:3} ({percentage:5.1f}%)")
@@ -90,7 +90,7 @@ class ComplianceAnalytics:
         return "\n".join(breakdown)
     
     def generate_severity_distribution(self, results: Dict) -> str:
-        """심각도 분포 차트"""
+        """Severity distribution chart"""
         severity_counts = defaultdict(int)
         
         for result in results.values():
@@ -124,14 +124,14 @@ class ComplianceAnalytics:
         return "\n".join(chart)
     
     def generate_executive_summary(self, results: Dict) -> str:
-        """경영진용 요약 리포트"""
+        """Executive summary report"""
         total = len(results)
         passed = sum(1 for r in results.values() if r.status == "PASS")
         critical = sum(1 for r in results.values() if r.status == "CRITICAL")
         
         total_violations = sum(len(r.violations) for r in results.values())
         
-        # 가장 위험한 국가
+        # Most risky countries
         country_risk = defaultdict(int)
         for result in results.values():
             if result.status == "CRITICAL":
@@ -168,7 +168,7 @@ class ComplianceAnalytics:
         return "\n".join(summary)
     
     def export_to_json(self, results: Dict, filepath: str = "compliance_report.json"):
-        """JSON 형식으로 리포트 내보내기"""
+        """Export report in JSON format"""
         export_data = {
             "generated_at": datetime.now().isoformat(),
             "total_deployments": len(results),
@@ -182,7 +182,7 @@ class ComplianceAnalytics:
 
 
 def generate_full_analytics_report(results: Dict) -> str:
-    """전체 분석 리포트 생성"""
+    """Generate comprehensive analysis report"""
     analytics = ComplianceAnalytics()
     
     report_sections = [

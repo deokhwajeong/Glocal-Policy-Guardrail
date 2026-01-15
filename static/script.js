@@ -1,23 +1,23 @@
-// 탭 전환 기능
+// Tab switching functionality
 function showTab(tabName) {
-    // 모든 탭 컨텐츠 숨기기
+    // Hide all tab contents
     const tabContents = document.querySelectorAll('.tab-content');
     tabContents.forEach(content => {
         content.classList.remove('active');
     });
     
-    // 모든 탭 버튼 비활성화
+    // Deactivate all tab buttons
     const tabs = document.querySelectorAll('.tab');
     tabs.forEach(tab => {
         tab.classList.remove('active');
     });
     
-    // 선택된 탭 활성화
+    // Activate selected tab
     document.getElementById(tabName).classList.add('active');
     event.target.closest('.tab').classList.add('active');
 }
 
-// 광고 스케줄 토글
+// Ad schedule toggle
 function toggleAdSchedule() {
     const adScheduleSection = document.getElementById('adScheduleSection');
     const hasAds = document.getElementById('has_ads').checked;
@@ -25,7 +25,7 @@ function toggleAdSchedule() {
     adScheduleSection.style.display = hasAds ? 'block' : 'none';
 }
 
-// 폼 제출 처리
+// Form submission handler
 document.getElementById('checkForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     
@@ -41,7 +41,7 @@ document.getElementById('checkForm').addEventListener('submit', async (e) => {
         }
     };
     
-    // 광고 스케줄 처리
+    // Process ad schedule
     if (formData.get('has_ads')) {
         const adDate = formData.get('ad_date');
         const adTime = formData.get('ad_time');
@@ -65,11 +65,11 @@ document.getElementById('checkForm').addEventListener('submit', async (e) => {
         displayResult(result);
     } catch (error) {
         console.error('Error:', error);
-        alert('Checking...가 발생했습니다.');
+        alert('An error occurred during checking.');
     }
 });
 
-// 결과 표시
+// Display results
 function displayResult(result) {
     const resultCard = document.getElementById('resultCard');
     const resultContent = document.getElementById('resultContent');
@@ -83,24 +83,24 @@ function displayResult(result) {
         </div>
         
         <div style="margin-bottom: 1.5rem;">
-            <h3 style="margin-bottom: 0.5rem;">검사 정보</h3>
-            <p><strong>국가:</strong> ${result.country.replace('_', ' ')}</p>
-            <p><strong>콘텐츠:</strong> ${result.metadata.title}</p>
-            <p><strong>장르:</strong> ${result.metadata.genre}</p>
+            <h3 style="margin-bottom: 0.5rem;">Inspection Information</h3>
+            <p><strong>Country:</strong> ${result.country.replace('_', ' ')}</p>
+            <p><strong>Content:</strong> ${result.metadata.title}</p>
+            <p><strong>Genre:</strong> ${result.metadata.genre}</p>
         </div>
     `;
     
     if (result.violations && result.violations.length > 0) {
         html += `
             <div class="violations-list">
-                <h3 style="margin-bottom: 1rem;">⚠️ 발견된 위반 사항</h3>
+                <h3 style="margin-bottom: 1rem;">⚠️ Violations Found</h3>
         `;
         
         result.violations.forEach(violation => {
             html += `
                 <div class="violation-item">
                     <div class="violation-severity">${violation.severity}</div>
-                    <div><strong>규정:</strong> ${violation.rule_id}</div>
+                    <div><strong>Rule:</strong> ${violation.rule_id}</div>
                     <div style="margin-top: 0.5rem; color: var(--text-secondary);">${violation.message}</div>
                     ${violation.recommendation ? `<div style="margin-top: 0.5rem; color: var(--primary);">💡 ${violation.recommendation}</div>` : ''}
                 </div>
@@ -112,8 +112,8 @@ function displayResult(result) {
         html += `
             <div style="padding: 2rem; text-align: center; background: rgba(16, 185, 129, 0.05); border-radius: var(--radius); border: 1px solid rgba(16, 185, 129, 0.2);">
                 <div style="font-size: 3rem; margin-bottom: 1rem;">🎉</div>
-                <h3 style="color: var(--success); margin-bottom: 0.5rem;">모든 검사를 Passed했습니다!</h3>
-                <p style="color: var(--text-secondary);">이 콘텐츠는 해당 국가의 모든 규정을 준수합니다.</p>
+                <h3 style="color: var(--success); margin-bottom: 0.5rem;">All Checks Passed!</h3>
+                <p style="color: var(--text-secondary);">This content complies with all regulations for the specified country.</p>
             </div>
         `;
     }
@@ -121,13 +121,13 @@ function displayResult(result) {
     resultContent.innerHTML = html;
     resultCard.style.display = 'block';
     
-    // 결과로 스크롤
+    // Scroll to results
     resultCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// 차트 초기화 (분석 탭)
+// Chart initialization (Analytics tab)
 function initCharts() {
-    // 국가별 위반 현황 차트
+    // Violations by country chart
     const violationCtx = document.getElementById('violationChart');
     if (violationCtx) {
         new Chart(violationCtx, {
@@ -135,7 +135,7 @@ function initCharts() {
             data: {
                 labels: ['South Korea', 'United States', 'Germany', 'China', 'Saudi Arabia'],
                 datasets: [{
-                    label: '위반 건수',
+                    label: 'Violation Count',
                     data: [12, 8, 15, 20, 5],
                     backgroundColor: [
                         'rgba(239, 68, 68, 0.8)',
@@ -185,7 +185,7 @@ function initCharts() {
         });
     }
     
-    // 카테고리별 분포 차트
+    // Category distribution chart
     const categoryCtx = document.getElementById('categoryChart');
     if (categoryCtx) {
         new Chart(categoryCtx, {
@@ -231,9 +231,9 @@ function initCharts() {
     }
 }
 
-// 페이지 로드 시 차트 초기화
-document.addEventListener('DOMContentLoaded', () => {
-    // 분석 탭이 활성화될 때 차트 초기화
+// Initialize charts on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize charts when analytics tab is activated
     const analyticsTab = document.querySelector('.tab[onclick*="analytics"]');
     if (analyticsTab) {
         analyticsTab.addEventListener('click', () => {

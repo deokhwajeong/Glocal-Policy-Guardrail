@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
 Regulatory Change Tracking System
-규제 변경사항 추적 및 버전 관리 시스템
+Regulatory Change Tracking and Version Management System
 
-규제 업데이트의 변경사항을 추적하고 히스토리를 관리합니다.
+Tracks regulatory updates and manages change history.
 """
 
 import json
@@ -50,7 +50,7 @@ class ChangeTracker:
         self.versions = self._load_versions()
     
     def _load_changes(self) -> List[Dict]:
-        """변경 기록 로드"""
+        """Load change records"""
         if self.changes_file.exists():
             with open(self.changes_file, 'r', encoding='utf-8') as f:
                 data = json.load(f)
@@ -62,7 +62,7 @@ class ChangeTracker:
         return []
     
     def _load_versions(self) -> List[Dict]:
-        """버전 히스토리 로드"""
+        """Load version history"""
         if self.versions_file.exists():
             with open(self.versions_file, 'r', encoding='utf-8') as f:
                 data = json.load(f)
@@ -74,24 +74,24 @@ class ChangeTracker:
         return []
     
     def record_change(self, change: PolicyChange):
-        """변경사항 기록"""
+        """Record change entry"""
         self.changes.append(asdict(change))
         self._save_changes()
         
         logger.info(f"Change recorded: {change.country} - {change.field}")
     
     def _save_changes(self):
-        """변경 기록 저장"""
+        """Save change records"""
         with open(self.changes_file, 'w', encoding='utf-8') as f:
             json.dump(self.changes, f, indent=2, ensure_ascii=False)
     
     def create_version_snapshot(self, policy_path: str = "config/policy_rules.yaml"):
-        """현재 정책의 버전 스냅샷 생성"""
+        """Create policy version snapshot"""
         try:
             with open(policy_path, 'r', encoding='utf-8') as f:
                 policy_data = yaml.safe_load(f)
             
-            # 정책 해시 생성
+            # Generate policy hash
             policy_str = json.dumps(policy_data, sort_keys=True)
             policy_hash = hashlib.sha256(policy_str.encode()).hexdigest()
             
@@ -104,12 +104,12 @@ class ChangeTracker:
             
             self.versions.append(version)
             
-            # 버전별 스냅샷 저장
+            # Save version snapshot
             snapshot_file = self.history_path / f"snapshot_v{version['version']}.yaml"
             with open(snapshot_file, 'w', encoding='utf-8') as f:
                 yaml.dump(policy_data, f, allow_unicode=True, sort_keys=False)
             
-            # 버전 목록 저장
+            # Save version list
             with open(self.versions_file, 'w', encoding='utf-8') as f:
                 json.dump(self.versions, f, indent=2, ensure_ascii=False)
             
@@ -121,15 +121,15 @@ class ChangeTracker:
             return None
     
     def get_pending_changes(self) -> List[Dict]:
-        """승인 대기 중인 변경사항 조회"""
+        """Retrieve pending changes awaiting approval"""
         return [c for c in self.changes if not c.get('approved', False)]
     
     def get_approved_changes(self) -> List[Dict]:
-        """승인된 변경사항 조회"""
+        """Retrieve approved changes"""
         return [c for c in self.changes if c.get('approved', False) and not c.get('applied', False)]
     
     def approve_change(self, change_index: int, reviewer: str):
-        """변경사항 승인"""
+        """Approve change"""
         if 0 <= change_index < len(self.changes):
             self.changes[change_index]['approved'] = True
             self.changes[change_index]['reviewer'] = reviewer
@@ -141,7 +141,7 @@ class ChangeTracker:
         return False
     
     def mark_applied(self, change_index: int):
-        """변경사항 적용 완료 표시"""
+        """Mark change as applied"""
         if 0 <= change_index < len(self.changes):
             self.changes[change_index]['applied'] = True
             self.changes[change_index]['applied_at'] = datetime.now().isoformat()
@@ -152,7 +152,7 @@ class ChangeTracker:
         return False
     
     def generate_change_report(self, days: int = 30) -> str:
-        """변경사항 리포트 생성"""
+        """Generate change report"""
         from datetime import timedelta
         
         cutoff_date = datetime.now() - timedelta(days=days)
@@ -172,7 +172,7 @@ class ChangeTracker:
             ""
         ]
         
-        # 국가별 그룹화
+        # Group by country
         by_country = {}
         for change in recent_changes:
             country = change['country']
@@ -196,7 +196,7 @@ class ChangeTracker:
                 
                 report.append("")
         
-        # 통계
+        # Statistics
         report.append("=" * 70)
         report.append("STATISTICS:")
         pending = len([c for c in recent_changes if not c.get('approved')])
@@ -211,7 +211,7 @@ class ChangeTracker:
         return "\n".join(report)
     
     def diff_versions(self, version1: int, version2: int) -> Optional[Dict]:
-        """두 버전 간 차이점 비교"""
+        """Compare differences between two versions"""
         snapshot1 = self.history_path / f"snapshot_v{version1}.yaml"
         snapshot2 = self.history_path / f"snapshot_v{version2}.yaml"
         
@@ -225,7 +225,7 @@ class ChangeTracker:
         with open(snapshot2, 'r', encoding='utf-8') as f:
             data2 = yaml.safe_load(f)
         
-        # 간단한 diff (실제로는 더 정교한 비교 필요)
+        # Simple diff (more sophisticated comparison needed in practice)
         diff = {
             "version1": version1,
             "version2": version2,
@@ -234,19 +234,19 @@ class ChangeTracker:
             "modified": {}
         }
         
-        # TODO: 실제 diff 로직 구현
+        # TODO: Implement actual diff logic
         
         return diff
 
 
 class ChangeReviewSystem:
-    """변경사항 검토 시스템"""
+    """Change Review System"""
     
     def __init__(self):
         self.tracker = ChangeTracker()
     
     def review_pending_changes(self):
-        """대기 중인 변경사항 검토"""
+        """Review pending changes"""
         pending = self.tracker.get_pending_changes()
         
         if not pending:
@@ -277,7 +277,7 @@ class ChangeReviewSystem:
         print("To approve changes, use the web dashboard or CLI tool")
     
     def interactive_review(self):
-        """대화형 검토 모드"""
+        """Interactive review mode"""
         pending = self.tracker.get_pending_changes()
         
         if not pending:
@@ -313,7 +313,7 @@ class ChangeReviewSystem:
 
 
 def main():
-    """메인 함수"""
+    """Main function"""
     import argparse
     
     parser = argparse.ArgumentParser(description='Change Tracking System')
