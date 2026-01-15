@@ -1,10 +1,4 @@
-"""
-Regulatory Policy Auto-Update System
-자동 규제 정책 업데이트 시스템
-
-This module monitors official regulatory sources and automatically updates
-the policy database when changes are detected.
-"""
+"""English docstring"""
 
 import requests
 import feedparser
@@ -25,7 +19,7 @@ logger = logging.getLogger(__name__)
 
 @dataclass
 class RegulatorySource:
-    """Regulatory 정보 출처"""
+    """English docstring"""
     country: str
     name: str
     url: str
@@ -47,7 +41,7 @@ class PolicyUpdateMonitor:
         self.update_log = []
     
     def _load_sources(self, path: str) -> List[RegulatorySource]:
-        """Regulatory 소스 설정 로드"""
+        """Regulatory Source Configuration Load"""
         try:
             with open(path, 'r', encoding='utf-8') as f:
                 data = yaml.safe_load(f)
@@ -57,7 +51,7 @@ class PolicyUpdateMonitor:
             return self._get_default_sources()
     
     def _get_default_sources(self) -> List[RegulatorySource]:
-        """기본 규제 소스 목록"""
+        """English docstring"""
         return [
             RegulatorySource(
                 country="United_States",
@@ -84,7 +78,7 @@ class PolicyUpdateMonitor:
         ]
     
     def check_for_updates(self) -> List[Dict]:
-        """모든 소스에서 업데이트 확인"""
+        """English docstring"""
         updates = []
         
         for source in self.sources:
@@ -111,21 +105,21 @@ class PolicyUpdateMonitor:
         return updates
     
     def _check_rss_feed(self, source: RegulatorySource) -> Optional[Dict]:
-        """RSS 피드 확인"""
+        """English docstring"""
         try:
             feed = feedparser.parse(source.url)
             
             if not feed.entries:
                 return None
             
-            # 가장 최근 항목 가져오기
+            # English comment 최근 항목 가져오기
             latest = feed.entries[0]
             
-            # 콘텐츠 해시 생성
+            # English comment 해시 Generate
             content = f"{latest.title}{latest.get('summary', '')}"
             current_hash = hashlib.md5(content.encode()).hexdigest()
             
-            # 변경 감지
+            # English comment 감지
             if source.last_hash and source.last_hash == current_hash:
                 return None
             
@@ -146,7 +140,7 @@ class PolicyUpdateMonitor:
             return None
     
     def _check_api(self, source: RegulatorySource) -> Optional[Dict]:
-        """API 엔드포인트 확인"""
+        """English docstring"""
         try:
             response = requests.get(source.url, timeout=10)
             
@@ -173,7 +167,7 @@ class PolicyUpdateMonitor:
             return None
     
     def _check_website(self, source: RegulatorySource) -> Optional[Dict]:
-        """웹사이트 스크래핑 (개선된 변경 감지)"""
+        """English docstring"""
         try:
             headers = {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
@@ -187,8 +181,8 @@ class PolicyUpdateMonitor:
             # BeautifulSoup으로 파싱
             soup = BeautifulSoup(response.content, 'html.parser')
             
-            # 메인 콘텐츠 추출 (사이트마다 다를 수 있음)
-            # 일반적인 뉴스/공지사항 영역 찾기
+            # English comment 콘텐츠 추출 (사이트마다 다를 수 있음)
+            # English comment 뉴스/공지사항 영역 찾기
             main_content = None
             for selector in ['main', 'article', '.content', '#content', '.notice-list', '.news-list']:
                 main_content = soup.select_one(selector)
@@ -198,23 +192,23 @@ class PolicyUpdateMonitor:
             if not main_content:
                 main_content = soup.body if soup.body else soup
             
-            # 텍스트만 추출
+            # English comment 추출
             text_content = main_content.get_text(strip=True, separator=' ')
             current_hash = hashlib.md5(text_content.encode()).hexdigest()
             
-            # 해시 저장 디렉토리
+            # English comment Save 디렉토리
             hash_dir = Path("reports/source_hashes")
             hash_dir.mkdir(parents=True, exist_ok=True)
             hash_file = hash_dir / f"{source.country}_{source.name.replace(' ', '_')}.json"
             
-            # 이전 해시 로드
+            # English comment 해시 Load
             previous_hash = None
             if hash_file.exists():
                 with open(hash_file, 'r') as f:
                     data = json.load(f)
                     previous_hash = data.get('hash')
             
-            # 해시 저장
+            # English comment Save
             with open(hash_file, 'w') as f:
                 json.dump({
                     'hash': current_hash,
@@ -222,15 +216,15 @@ class PolicyUpdateMonitor:
                     'url': source.url
                 }, f, indent=2)
             
-            # 변경 감지
+            # English comment 감지
             if previous_hash and previous_hash == current_hash:
                 return None
             
-            # 최신 항목 추출 시도
+            # English comment 항목 추출 시도
             latest_title = "Content updated"
             latest_link = source.url
             
-            # 첫 번째 제목/링크 찾기
+            # English comment 번째 제목/링크 찾기
             for tag in ['h1', 'h2', 'h3', 'h4']:
                 title_elem = main_content.find(tag)
                 if title_elem:
@@ -260,7 +254,7 @@ class PolicyUpdateMonitor:
             return None
     
     def generate_update_report(self, updates: List[Dict]) -> str:
-        """업데이트 리포트 생성"""
+        """English docstring"""
         if not updates:
             return "No regulatory updates detected."
         
@@ -297,7 +291,7 @@ class PolicyUpdateMonitor:
         return "\n".join(report)
     
     def save_update_log(self, updates: List[Dict], filepath: str = "reports/policy_updates.json"):
-        """업데이트 로그 저장"""
+        """English docstring"""
         import os
         os.makedirs(os.path.dirname(filepath), exist_ok=True)
         
@@ -307,17 +301,17 @@ class PolicyUpdateMonitor:
             "updates": updates
         }
         
-        # 기존 로그 읽기
+        # English comment 로그 읽기
         try:
             with open(filepath, 'r', encoding='utf-8') as f:
                 logs = json.load(f)
         except FileNotFoundError:
             logs = []
         
-        # 새 로그 추가
+        # English comment 로그 추가
         logs.append(log_entry)
         
-        # 저장 (최근 100개만 유지)
+        # Save (최근 100개만 유지)
         with open(filepath, 'w', encoding='utf-8') as f:
             json.dump(logs[-100:], f, indent=2, ensure_ascii=False)
         
@@ -325,28 +319,25 @@ class PolicyUpdateMonitor:
 
 
 class PolicyAutoUpdater:
-    """정책 자동 업데이트 시스템"""
+    """English docstring"""
     
     def __init__(self, policy_path: str = "config/policy_rules.yaml"):
         self.policy_path = policy_path
         self.policy_db = self._load_policy()
     
     def _load_policy(self) -> Dict:
-        """현재 정책 로드"""
+        """English docstring"""
         with open(self.policy_path, 'r', encoding='utf-8') as f:
             return yaml.safe_load(f)
     
     def suggest_policy_update(self, regulatory_update: Dict) -> Optional[Dict]:
-        """
-        규제 업데이트를 기반으로 정책 변경 제안
-        (실제로는 AI/LLM을 사용하여 자동 분석)
-        """
+        """English docstring"""
         country = regulatory_update.get('country')
         
         if country not in self.policy_db:
             return None
         
-        # 간단한 키워드 기반 제안 (실제로는 더 정교한 NLP 필요)
+        # English comment 키워드 기반 제안 (실제로는 더 정교한 NLP 필요)
         suggestion = {
             "country": country,
             "current_policy": self.policy_db[country],
@@ -355,7 +346,7 @@ class PolicyAutoUpdater:
             "requires_legal_review": True
         }
         
-        # 예: 제목에서 키워드 감지
+        # English: 제목에서 키워드 감지
         title = regulatory_update.get('title', '').lower()
         
         if 'gambling' in title or 'gaming' in title:
@@ -375,21 +366,19 @@ class PolicyAutoUpdater:
         return suggestion if suggestion['suggested_changes'] else None
     
     def apply_policy_update(self, country: str, changes: Dict, backup: bool = True):
-        """
-        정책 업데이트 적용 (수동 승인 후)
-        """
+        """English docstring"""
         if backup:
-            # 백업 생성
+            # English comment Generate
             backup_path = f"{self.policy_path}.backup.{datetime.now().strftime('%Y%m%d_%H%M%S')}"
             with open(backup_path, 'w', encoding='utf-8') as f:
                 yaml.dump(self.policy_db, f, allow_unicode=True)
             logger.info(f"Backup created: {backup_path}")
         
-        # 변경사항 적용
+        # English comment 적용
         if country in self.policy_db:
             self.policy_db[country].update(changes)
             
-            # 저장
+            # Save
             with open(self.policy_path, 'w', encoding='utf-8') as f:
                 yaml.dump(self.policy_db, f, allow_unicode=True, sort_keys=False)
             
@@ -399,32 +388,32 @@ class PolicyAutoUpdater:
 
 
 def main():
-    """메인 실행 함수"""
+    """English docstring"""
     print("=" * 70)
     print("REGULATORY POLICY AUTO-UPDATE SYSTEM")
     print("=" * 70)
     print()
     
-    # 업데이트 모니터 초기화
+    # Update 모니터 Initialize
     monitor = PolicyUpdateMonitor()
     
     print(f"Monitoring {len(monitor.sources)} regulatory sources...")
     print()
     
-    # 업데이트 확인
+    # Update Verify
     updates = monitor.check_for_updates()
     
-    # 리포트 생성
+    # English comment Generate
     report = monitor.generate_update_report(updates)
     print(report)
     
-    # 로그 저장
+    # English comment Save
     if updates:
         monitor.save_update_log(updates)
         print()
         print("✅ Update log saved to reports/policy_updates.json")
         
-        # 정책 업데이트 제안 생성
+        # English comment Update 제안 Generate
         updater = PolicyAutoUpdater()
         
         print()

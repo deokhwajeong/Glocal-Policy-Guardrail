@@ -96,7 +96,7 @@ def test_configuration():
             print(f"⚠️  {file_path} not found")
             all_ok = False
     
-    # .env 파일 확인
+    # .env 파일 Verify
     if Path(".env").exists():
         print("✅ .env")
     else:
@@ -106,7 +106,7 @@ def test_configuration():
 
 
 def test_monitor():
-    """모니터링 시스템 테스트"""
+    """English docstring"""
     print("\n" + "=" * 70)
     print("Testing Update Monitor...")
     print("=" * 70)
@@ -117,7 +117,7 @@ def test_monitor():
         monitor = PolicyUpdateMonitor()
         print(f"✅ Monitor initialized with {len(monitor.sources)} sources")
         
-        # 소스 출력
+        # Source 출력
         print("\nConfigured sources:")
         by_country = {}
         for source in monitor.sources:
@@ -136,7 +136,7 @@ def test_monitor():
 
 
 def test_directories():
-    """필수 디렉토리 생성 테스트"""
+    """English docstring"""
     print("\n" + "=" * 70)
     print("Creating Necessary Directories...")
     print("=" * 70)
@@ -156,7 +156,7 @@ def test_directories():
 
 
 def run_quick_test():
-    """빠른 기능 테스트"""
+    """English docstring"""
     print("\n" + "=" * 70)
     print("Running Quick Functionality Test...")
     print("=" * 70)
@@ -167,7 +167,7 @@ def run_quick_test():
         monitor = PolicyUpdateMonitor()
         print("✅ Monitor created")
         
-        # 첫 번째 소스만 테스트
+        # English comment 번째 Source만 Test
         if monitor.sources:
             test_source = monitor.sources[0]
             print(f"\nTesting first source: {test_source.name}")
@@ -175,7 +175,7 @@ def run_quick_test():
             print(f"  Method: {test_source.method}")
             print(f"  URL: {test_source.url}")
             
-            # 실제 체크는 시간이 걸릴 수 있으므로 스킵
+            # English comment 체크는 시간이 걸릴 수 있으므로 스킵
             print("  (Actual check skipped for speed)")
         
         return True
@@ -188,7 +188,7 @@ def run_quick_test():
 
 
 def main():
-    """메인 테스트 실행"""
+    """English docstring"""
     print("\n" + "=" * 70)
     print("GLOCAL POLICY GUARDRAIL - SYSTEM INTEGRATION TEST")
     print("=" * 70)
@@ -196,7 +196,7 @@ def main():
     
     results = []
     
-    # 각 테스트 실행
+    # English comment Test Execute
     results.append(("Imports", test_imports()))
     results.append(("Dependencies", test_dependencies()))
     results.append(("Configuration", test_configuration()))
@@ -204,7 +204,7 @@ def main():
     results.append(("Monitor", test_monitor()))
     results.append(("Quick Test", run_quick_test()))
     
-    # 결과 요약
+    # Result 요약
     print("\n" + "=" * 70)
     print("TEST RESULTS SUMMARY")
     print("=" * 70)

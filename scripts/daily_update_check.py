@@ -1,18 +1,5 @@
 #!/usr/bin/env python3
-"""
-Daily Policy Update Checker
-일일 정책 업데이트 확인 스케줄러
-
-Usage:
-  python scripts/daily_update_check.py
-  
-For automated scheduling:
-  # Linux/Mac crontab
-  0 9 * * * /usr/bin/python3 /path/to/daily_update_check.py
-  
-  # Windows Task Scheduler
-  Run daily at 9:00 AM
-"""
+"""English docstring"""
 
 import sys
 import os
@@ -25,7 +12,7 @@ from src.policy_auto_updater import PolicyUpdateMonitor, PolicyAutoUpdater
 from datetime import datetime
 import logging
 
-# 로깅 설정
+# English comment Configuration
 log_dir = Path(__file__).parent.parent / "reports"
 log_dir.mkdir(exist_ok=True)
 
@@ -42,16 +29,12 @@ logger = logging.getLogger(__name__)
 
 
 def send_notification(updates: list, report: str):
-    """
-    업데이트 알림 전송 (이메일, Slack 등)
-    
-    TODO: 실제 구현 시 SMTP 또는 Slack webhook 사용
-    """
+    """English docstring"""
     if not updates:
         logger.info("No notifications to send - no updates detected")
         return
     
-    # 간단한 파일 알림
+    # English comment 파일 알림
     notification_file = log_dir / f"ALERT_updates_detected_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
     
     with open(notification_file, 'w', encoding='utf-8') as f:
@@ -77,35 +60,35 @@ def send_notification(updates: list, report: str):
 
 
 def main():
-    """메인 실행 함수"""
+    """English docstring"""
     logger.info("=" * 70)
     logger.info("DAILY REGULATORY UPDATE CHECK")
     logger.info("=" * 70)
     logger.info(f"Start time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     
     try:
-        # 모니터 초기화
+        # English comment Initialize
         monitor = PolicyUpdateMonitor()
         logger.info(f"Initialized monitor with {len(monitor.sources)} sources")
         
-        # 업데이트 확인
+        # Update Verify
         logger.info("Checking for regulatory updates...")
         updates = monitor.check_for_updates()
         
-        # 리포트 생성
+        # English comment Generate
         report = monitor.generate_update_report(updates)
         
-        # 로그 저장
+        # English comment Save
         monitor.save_update_log(updates)
         
-        # 콘솔 출력
+        # English comment 출력
         print("\n" + report + "\n")
         
-        # 업데이트 발견 시 알림
+        # Update 발견 시 알림
         if updates:
             send_notification(updates, report)
             
-            # 정책 업데이트 제안 생성
+            # English comment Update 제안 Generate
             updater = PolicyAutoUpdater()
             
             logger.info("Generating policy update suggestions...")
@@ -119,7 +102,7 @@ def main():
             if suggestions:
                 logger.info(f"Generated {len(suggestions)} policy update suggestions")
                 
-                # 제안사항 저장
+                # English comment Save
                 suggestion_file = log_dir / f"policy_suggestions_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
                 import json
                 with open(suggestion_file, 'w', encoding='utf-8') as f:

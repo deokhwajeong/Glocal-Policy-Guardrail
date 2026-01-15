@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-"""
-Automatic Regulatory Update Scheduler
-자동 규제 업데이트 스케줄러
-
-24/7 자동 실행되며 설정된 주기에 따라 각 국가별 규제를 체크합니다.
-"""
+"""English docstring"""
 
 import sys
 import os
@@ -23,7 +18,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from src.policy_auto_updater import PolicyUpdateMonitor, PolicyAutoUpdater
 from src.notification_system import NotificationManager
 
-# 로깅 설정
+# English comment Configuration
 log_dir = Path(__file__).parent.parent / "reports" / "scheduler_logs"
 log_dir.mkdir(parents=True, exist_ok=True)
 
@@ -39,7 +34,7 @@ logger = logging.getLogger(__name__)
 
 
 class RegulatoryUpdateScheduler:
-    """Regulatory 업데이트 Auto scheduler"""
+    """Regulatory Update Auto scheduler"""
     
     def __init__(self, config_path: str = "config/regulatory_sources.yaml"):
         self.config_path = config_path
@@ -51,13 +46,13 @@ class RegulatoryUpdateScheduler:
         logger.info("Regulatory Update Scheduler initialized")
     
     def check_daily_sources(self):
-        """일일 체크 소스 확인"""
+        """English docstring"""
         logger.info("=" * 70)
         logger.info("Running DAILY regulatory check...")
         logger.info("=" * 70)
         
         try:
-            # 일일 체크 소스만 필터링
+            # English comment 체크 Source만 필터링
             daily_sources = [s for s in self.monitor.sources if s.check_frequency == "daily"]
             
             if not daily_sources:
@@ -66,13 +61,13 @@ class RegulatoryUpdateScheduler:
             
             logger.info(f"Checking {len(daily_sources)} daily sources...")
             
-            # 임시로 소스 교체
+            # English comment Source 교체
             original_sources = self.monitor.sources
             self.monitor.sources = daily_sources
             
             updates = self.monitor.check_for_updates()
             
-            # 원래 소스 복원
+            # English comment Source 복원
             self.monitor.sources = original_sources
             
             if updates:
@@ -84,7 +79,7 @@ class RegulatoryUpdateScheduler:
             logger.error(f"Error in daily check: {e}", exc_info=True)
     
     def check_weekly_sources(self):
-        """주간 체크 소스 확인"""
+        """English docstring"""
         logger.info("=" * 70)
         logger.info("Running WEEKLY regulatory check...")
         logger.info("=" * 70)
@@ -114,7 +109,7 @@ class RegulatoryUpdateScheduler:
             logger.error(f"Error in weekly check: {e}", exc_info=True)
     
     def check_monthly_sources(self):
-        """월간 체크 소스 확인"""
+        """English docstring"""
         logger.info("=" * 70)
         logger.info("Running MONTHLY regulatory check...")
         logger.info("=" * 70)
@@ -144,17 +139,17 @@ class RegulatoryUpdateScheduler:
             logger.error(f"Error in monthly check: {e}", exc_info=True)
     
     def _process_updates(self, updates: list, frequency: str):
-        """업데이트 처리"""
+        """English docstring"""
         logger.info(f"🔔 {len(updates)} update(s) detected from {frequency} check!")
         
-        # 리포트 생성
+        # English comment Generate
         report = self.monitor.generate_update_report(updates)
         logger.info("\n" + report)
         
-        # 로그 저장
+        # English comment Save
         self.monitor.save_update_log(updates)
         
-        # 정책 제안 생성
+        # English comment 제안 Generate
         logger.info("\n🤖 Generating policy update suggestions...")
         suggestions = []
         
@@ -165,7 +160,7 @@ class RegulatoryUpdateScheduler:
                 logger.info(f"  - Suggestion generated for {update['country']}")
         
         if suggestions:
-            # 제안 저장
+            # English comment Save
             suggestions_file = Path("reports/policy_suggestions.json")
             suggestions_file.parent.mkdir(parents=True, exist_ok=True)
             
@@ -186,7 +181,7 @@ class RegulatoryUpdateScheduler:
         self._send_notifications(updates, frequency)
     
     def _send_notifications(self, updates: list, frequency: str):
-        """알림 전송 (이메일, Slack, Discord)"""
+        """English docstring"""
         try:
             logger.info(f"📧 Sending notifications for {len(updates)} updates...")
             results = self.notifier.notify_updates(updates)
@@ -200,10 +195,10 @@ class RegulatoryUpdateScheduler:
             logger.error(f"Error sending notifications: {e}", exc_info=True)
     
     def setup_jobs(self):
-        """스케줄 작업 설정"""
+        """English docstring"""
         logger.info("Setting up scheduled jobs...")
         
-        # 일일 체크: 매일 오전 9시 (KST)
+        # English comment English: 매일 오전 9시 (KST)
         self.scheduler.add_job(
             self.check_daily_sources,
             CronTrigger(hour=9, minute=0),
@@ -213,7 +208,7 @@ class RegulatoryUpdateScheduler:
         )
         logger.info("✓ Daily check scheduled: 09:00 KST")
         
-        # 주간 체크: 매주 월요일 오전 10시
+        # English comment English: 매주 월요일 오전 10시
         self.scheduler.add_job(
             self.check_weekly_sources,
             CronTrigger(day_of_week='mon', hour=10, minute=0),
@@ -223,7 +218,7 @@ class RegulatoryUpdateScheduler:
         )
         logger.info("✓ Weekly check scheduled: Monday 10:00 KST")
         
-        # 월간 체크: 매월 1일 오전 11시
+        # English comment English: 매월 1일 오전 11시
         self.scheduler.add_job(
             self.check_monthly_sources,
             CronTrigger(day=1, hour=11, minute=0),
@@ -233,7 +228,7 @@ class RegulatoryUpdateScheduler:
         )
         logger.info("✓ Monthly check scheduled: 1st of month 11:00 KST")
         
-        # 헬스 체크: 매 시간
+        # English comment English: 매 시간
         self.scheduler.add_job(
             self._health_check,
             IntervalTrigger(hours=1),
@@ -244,13 +239,13 @@ class RegulatoryUpdateScheduler:
         logger.info("✓ Health check scheduled: Every hour")
     
     def _health_check(self):
-        """스케줄러 상태 체크"""
+        """English docstring"""
         logger.info(f"[Health Check] Scheduler running - {datetime.now().isoformat()}")
         logger.info(f"  Total sources: {len(self.monitor.sources)}")
         logger.info(f"  Active jobs: {len(self.scheduler.get_jobs())}")
     
     def start(self):
-        """스케줄러 시작"""
+        """English docstring"""
         logger.info("=" * 70)
         logger.info("REGULATORY UPDATE SCHEDULER STARTING")
         logger.info("=" * 70)
@@ -273,7 +268,7 @@ class RegulatoryUpdateScheduler:
 
 
 def main():
-    """메인 함수"""
+    """English docstring"""
     import argparse
     import json
     
@@ -295,7 +290,7 @@ def main():
     elif args.monthly:
         scheduler.check_monthly_sources()
     else:
-        # 기본: 데몬 모드로 실행
+        # English: 데몬 모드로 Execute
         scheduler.start()
 
 

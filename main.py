@@ -1,14 +1,11 @@
-"""
-Glocal Policy Guardrail - Main Execution & Demo
-실제 테스트 시나리오를 실행하는 메인 프로그램
-"""
+"""English docstring"""
 
 import sys
 import os
 import yaml
 from datetime import datetime
 
-# 상대 경로 import를 위한 경로 추가
+# English comment 경로 import를 위한 경로 추가
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from src.compliance_scanner import ComplianceGuardrail, ComplianceResult
@@ -16,7 +13,7 @@ from src.analytics import generate_full_analytics_report, ComplianceAnalytics
 
 
 def load_test_cases(test_file_path: str = "test_data/sample_deployments.yaml"):
-    """테스트 케이스 로드"""
+    """English docstring"""
     try:
         with open(test_file_path, 'r', encoding='utf-8') as f:
             return yaml.safe_load(f)
@@ -29,7 +26,7 @@ def load_test_cases(test_file_path: str = "test_data/sample_deployments.yaml"):
 
 
 def run_test_case(guardrail: ComplianceGuardrail, test_name: str, test_data: dict):
-    """개별 테스트 케이스 실행"""
+    """English docstring"""
     print(f"\n{'='*70}")
     print(f"🧪 Test Case: {test_name}")
     print(f"{'='*70}")
@@ -39,13 +36,13 @@ def run_test_case(guardrail: ComplianceGuardrail, test_name: str, test_data: dic
     ad_schedule = test_data.get('ad_schedule')
     expected_result = test_data.get('expected_result', 'UNKNOWN')
     
-    # 광고 스케줄이 있는 경우 시간 파싱
+    # English comment 스케줄이 있는 경우 시간 파싱
     current_time = None
     if ad_schedule and 'scheduled_time' in ad_schedule:
         current_time = datetime.fromisoformat(ad_schedule['scheduled_time'])
         print(f"📅 Scheduled Time: {current_time.strftime('%Y-%m-%d %H:%M:%S')}")
     
-    # 컴플라이언스 검사 실행
+    # English comment Check Execute
     result = guardrail.check_deployment(
         country=country,
         content_metadata=content_metadata,
@@ -53,7 +50,7 @@ def run_test_case(guardrail: ComplianceGuardrail, test_name: str, test_data: dic
         current_time=current_time
     )
     
-    # 결과 출력
+    # Result 출력
     print(f"\n📋 Content Details:")
     print(f"   Title: {content_metadata.get('title', 'N/A')}")
     print(f"   Genre: {content_metadata.get('genre', 'N/A')}")
@@ -61,7 +58,7 @@ def run_test_case(guardrail: ComplianceGuardrail, test_name: str, test_data: dic
     
     print(f"\n{result}")
     
-    # 예상 결과와 비교
+    # English comment Result와 비교
     test_passed = result.status == expected_result
     if test_passed:
         print(f"\n✅ TEST PASSED: Expected '{expected_result}', Got '{result.status}'")
@@ -72,7 +69,7 @@ def run_test_case(guardrail: ComplianceGuardrail, test_name: str, test_data: dic
 
 
 def run_all_tests():
-    """모든 테스트 케이스 실행"""
+    """English docstring"""
     print("""
 ╔══════════════════════════════════════════════════════════════════════╗
 ║  🌍 GLOCAL POLICY GUARDRAIL - COMPLIANCE SCANNER                     ║
@@ -80,7 +77,7 @@ def run_all_tests():
 ╚══════════════════════════════════════════════════════════════════════╝
 """)
     
-    # 가드레일 초기화
+    # English comment Initialize
     try:
         guardrail = ComplianceGuardrail()
         print(f"✅ Policy Database Loaded Successfully")
@@ -89,13 +86,13 @@ def run_all_tests():
         print(f"❌ Failed to initialize guardrail: {e}")
         return
     
-    # 테스트 케이스 로드
+    # Test 케이스 Load
     test_cases = load_test_cases()
     if not test_cases:
         print("❌ No test cases loaded. Exiting.")
         return
     
-    # 모든 테스트 실행
+    # English comment Test Execute
     test_results = {}
     passed_count = 0
     failed_count = 0
@@ -115,7 +112,7 @@ def run_all_tests():
         else:
             failed_count += 1
     
-    # 최종 요약
+    # English comment 요약
     print(f"\n\n{'='*70}")
     print("📊 FINAL TEST SUMMARY")
     print(f"{'='*70}")
@@ -125,7 +122,7 @@ def run_all_tests():
     print(f"Success Rate: {(passed_count / (passed_count + failed_count) * 100):.1f}%")
     print(f"{'='*70}\n")
     
-    # 위반 통계
+    # English comment 통계
     print("\n📈 VIOLATION STATISTICS BY COUNTRY:")
     print(f"{'='*70}")
     
@@ -160,15 +157,15 @@ def run_all_tests():
     print(f"\n{'='*70}")
     print("✨ Testing Complete!")
     
-    # 고급 분석 리포트 생성
+    # English comment 분석 리포트 Generate
     print("\n\n")
     print("🎨 Generating Advanced Analytics Report...")
     print("="*70)
     
-    # 결과를 딕셔너리로 변환
+    # Result를 딕셔너리로 변환
     results_dict = {name: data['result'] for name, data in test_results.items()}
     
-    # 전체 분석 리포트 출력
+    # English comment 분석 리포트 출력
     analytics_report = generate_full_analytics_report(results_dict)
     print(analytics_report)
     
@@ -176,7 +173,7 @@ def run_all_tests():
     analytics = ComplianceAnalytics()
     export_path = "reports/compliance_report.json"
     
-    # reports 디렉토리 생성
+    # reports 디렉토리 Generate
     import os
     os.makedirs("reports", exist_ok=True)
     
@@ -185,7 +182,7 @@ def run_all_tests():
 
 
 def run_interactive_demo():
-    """대화형 데모 모드"""
+    """English docstring"""
     print("\n🎮 Interactive Demo Mode")
     print("="*70)
     
@@ -205,7 +202,7 @@ def run_interactive_demo():
             
             country = guardrail.supported_countries[int(choice) - 1]
             
-            # 간단한 테스트 콘텐츠 입력
+            # English comment Test 콘텐츠 입력
             title = input("\nEnter content title: ").strip()
             description = input("Enter content description: ").strip()
             
