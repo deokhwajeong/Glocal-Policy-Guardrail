@@ -321,7 +321,7 @@ class NotificationManager:
         return results
     
     def _format_email_body(self, updates: List[Dict]) -> str:
-        """이메일 본문 (텍스트) 포맷"""
+        """English docstring"""
         lines = [
             "=" * 70,
             "REGULATORY UPDATE NOTIFICATION",
@@ -352,7 +352,7 @@ class NotificationManager:
         return "\n".join(lines)
     
     def _format_email_html(self, updates: List[Dict]) -> str:
-        """이메일 본문 (HTML) 포맷"""
+        """English docstring"""
         html = f"""
         <html>
         <head>
@@ -407,8 +407,8 @@ class NotificationManager:
 
 
 def main():
-    """테스트용 Main function"""
-    # 테스트 업데이트 데이터
+    """English docstring"""
+    # Test Update 데이터
     test_updates = [
         {
             "country": "South_Korea",
