@@ -396,3 +396,99 @@ window.onclick = function(event) {
  closeCountryModal();
  }
 }
+// Refresh Regulatory Updates
+async function refreshUpdates() {
+ const btn = document.querySelector('.refresh-btn');
+ const updatesList = document.getElementById('updatesList');
+ 
+ // Add loading state
+ btn.classList.add('loading');
+ btn.disabled = true;
+ 
+ try {
+ const response = await fetch('/api/updates');
+ const data = await response.json();
+ 
+ if (data.success && data.updates) {
+ // Clear current list
+ updatesList.innerHTML = '';
+ 
+ if (data.updates.length === 0) {
+ updatesList.innerHTML = `
+ <div class="empty-state">
+ <p>No recent regulatory updates available.</p>
+ <p style="color: var(--text-secondary); font-size: 0.9rem;">Updates will appear here when detected by the monitoring system.</p>
+ </div>
+ `;
+ } else {
+ // Render updates
+ data.updates.forEach(update => {
+ const updateItem = document.createElement('div');
+ updateItem.className = 'update-item';
+ 
+ // Build confidence badge
+ let confidenceBadge = '';
+ if (update.confidence) {
+ confidenceBadge = `<span class="confidence-badge confidence-${update.confidence}">${update.confidence.toUpperCase()}</span>`;
+ }
+ 
+ // Build status badge
+ let statusBadge = '';
+ if (update.status) {
+ const statusClass = update.status.replace(/_/g, '-');
+ const statusText = update.status.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+ statusBadge = `<span class="status-badge status-${statusClass}">${statusText}</span>`;
+ }
+ 
+ // Build time display
+ let timeDisplay = '';
+ if (update.time) {
+ timeDisplay = `<span class="update-time">${update.time}</span>`;
+ }
+ 
+ // Build URL link
+ let urlLink = '';
+ if (update.url) {
+ urlLink = `<a href="${update.url}" target="_blank" class="update-link">View Details →</a>`;
+ }
+ 
+ updateItem.innerHTML = `
+ <div class="update-header">
+ <div>
+ <span class="update-source">${update.source}</span>
+ <span class="update-country">${update.country}</span>
+ ${confidenceBadge}
+ ${statusBadge}
+ </div>
+ <div>
+ <span class="update-date">${update.date}</span>
+ ${timeDisplay}
+ </div>
+ </div>
+ <h3 class="update-title">${update.title}</h3>
+ <p class="update-summary">${update.summary}</p>
+ ${urlLink}
+ `;
+ 
+ updatesList.appendChild(updateItem);
+ });
+ }
+ 
+ console.log(`Loaded ${data.updates.length} updates`);
+ } else {
+ throw new Error(data.error || 'Failed to load updates');
+ }
+ } catch (error) {
+ console.error('Error refreshing updates:', error);
+ updatesList.innerHTML = `
+ <div class="error">
+ <p>Failed to refresh updates: ${error.message}</p>
+ <p style="margin-top: 0.5rem; font-size: 0.9rem;">Please try again later.</p>
+ </div>
+ `;
+ } finally {
+ // Remove loading state
+ btn.classList.remove('loading');
+ btn.disabled = false;
+ }
+}

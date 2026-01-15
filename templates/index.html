@@ -214,19 +214,39 @@
  <!-- Regulatory Updates Tab -->
  <section id="updates" class="tab-content">
  <div class="card">
+ <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
  <h2 class="card-title">
  <span class="icon">🔔</span>
  Recent Regulatory Updates
  </h2>
- <div class="updates-list">
+ <button onclick="refreshUpdates()" class="refresh-btn" title="Refresh updates">
+ <span class="refresh-icon">🔄</span> Refresh
+ </button>
+ </div>
+ <div class="updates-list" id="updatesList">
  {% for update in recent_updates %}
  <div class="update-item">
  <div class="update-header">
  <div>
  <span class="update-source">{{ update.source }}</span>
  <span class="update-country">{{ update.country }}</span>
+ {% if update.confidence %}
+ <span class="confidence-badge confidence-{{ update.confidence }}">
+ {{ update.confidence|upper }}
+ </span>
+ {% endif %}
+ {% if update.status %}
+ <span class="status-badge status-{{ update.status.replace('_', '-') }}">
+ {{ update.status.replace('_', ' ')|title }}
+ </span>
+ {% endif %}
  </div>
+ <div>
  <span class="update-date">{{ update.date }}</span>
+ {% if update.time %}
+ <span class="update-time">{{ update.time }}</span>
+ {% endif %}
+ </div>
  </div>
  <h3 class="update-title">{{ update.title }}</h3>
  <p class="update-summary">{{ update.summary }}</p>
@@ -235,6 +255,12 @@
  {% endif %}
  </div>
  {% endfor %}
+ {% if not recent_updates %}
+ <div class="empty-state">
+ <p>No recent regulatory updates available.</p>
+ <p style="color: var(--text-secondary); font-size: 0.9rem;">Updates will appear here when detected by the monitoring system.</p>
+ </div>
+ {% endif %}
  </div>
  </div>
  </section>
