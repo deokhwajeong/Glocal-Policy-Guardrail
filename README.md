@@ -1,5 +1,6 @@
 # Glocal Policy Guardrail
-**Policy-as-Code Framework for Automated Compliance Verification in Global OTT Platforms**
+
+> **Policy-as-Code framework for automated compliance verification across 8+ countries. Reduces manual review time by 99.9% for global OTT platforms with real-time regulatory monitoring and AI-powered policy updates.**
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/deokhwajeong/Glocal-Policy-Guardrail/ci.yml?branch=main&logo=github)](https://github.com/deokhwajeong/Glocal-Policy-Guardrail/actions)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
