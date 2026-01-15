@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
 
 @dataclass
 class RegulatorySource:
-    """규제 정보 출처"""
+    """Regulatory 정보 출처"""
     country: str
     name: str
     url: str
@@ -40,14 +40,14 @@ class RegulatorySource:
 
 
 class PolicyUpdateMonitor:
-    """정책 업데이트 모니터링 시스템"""
+    """Policy update monitoring system"""
     
     def __init__(self, config_path: str = "config/regulatory_sources.yaml"):
         self.sources = self._load_sources(config_path)
         self.update_log = []
     
     def _load_sources(self, path: str) -> List[RegulatorySource]:
-        """규제 소스 설정 로드"""
+        """Regulatory 소스 설정 로드"""
         try:
             with open(path, 'r', encoding='utf-8') as f:
                 data = yaml.safe_load(f)

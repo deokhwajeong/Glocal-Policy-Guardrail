@@ -65,7 +65,7 @@ document.getElementById('checkForm').addEventListener('submit', async (e) => {
         displayResult(result);
     } catch (error) {
         console.error('Error:', error);
-        alert('검사 중 오류가 발생했습니다.');
+        alert('Checking...가 발생했습니다.');
     }
 });
 
@@ -112,7 +112,7 @@ function displayResult(result) {
         html += `
             <div style="padding: 2rem; text-align: center; background: rgba(16, 185, 129, 0.05); border-radius: var(--radius); border: 1px solid rgba(16, 185, 129, 0.2);">
                 <div style="font-size: 3rem; margin-bottom: 1rem;">🎉</div>
-                <h3 style="color: var(--success); margin-bottom: 0.5rem;">모든 검사를 통과했습니다!</h3>
+                <h3 style="color: var(--success); margin-bottom: 0.5rem;">모든 검사를 Passed했습니다!</h3>
                 <p style="color: var(--text-secondary);">이 콘텐츠는 해당 국가의 모든 규정을 준수합니다.</p>
             </div>
         `;

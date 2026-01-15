@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 
 @dataclass
 class PolicyChange:
-    """정책 변경 기록"""
+    """Policy change record"""
     timestamp: str
     country: str
     change_type: str  # 'update', 'new', 'deprecated'
@@ -37,7 +37,7 @@ class PolicyChange:
 
 
 class ChangeTracker:
-    """변경사항 추적 시스템"""
+    """Change tracking system"""
     
     def __init__(self, history_path: str = "reports/change_history"):
         self.history_path = Path(history_path)
