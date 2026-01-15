@@ -1,6 +1,5 @@
 # Regulatory Sources Configuration
-# 규제 정보 소스 설정
-
+# Regulatory Information Source Configuration
 sources:
   # United States
   - country: "United_States"
@@ -9,29 +8,25 @@ sources:
     method: "rss"
     language: "en"
     check_frequency: "daily"
-    
   - country: "United_States"
     name: "FTC COPPA Updates"
     url: "https://www.ftc.gov/news-events/topics/protecting-consumer-privacy-security/childrens-privacy"
     method: "scrape"
     language: "en"
     check_frequency: "weekly"
-
   # South Korea
   - country: "South_Korea"
-    name: "방송통신심의위원회 공지사항"
+    name: "Korea Communications Standards Commission Announcements"
     url: "https://www.kocsc.or.kr/news/notice"
     method: "scrape"
     language: "ko"
     check_frequency: "weekly"
-    
   - country: "South_Korea"
-    name: "개인정보보호위원회 보도자료"
+    name: "Personal Information Protection Commission Press Releases"
     url: "https://www.pipc.go.kr/np/default/page.do?mCode=D010030000"
     method: "scrape"
     language: "ko"
     check_frequency: "weekly"
-
   # Germany
   - country: "Germany"
     name: "BfDI Press Releases"
@@ -39,14 +34,12 @@ sources:
     method: "scrape"
     language: "de"
     check_frequency: "weekly"
-    
   - country: "Germany"
     name: "KJM Decisions"
     url: "https://www.kjm-online.de/aufsicht/entscheidungen"
     method: "scrape"
     language: "de"
     check_frequency: "monthly"
-
   # European Union
   - country: "EU_General"
     name: "EDPB Decisions"
@@ -55,7 +48,6 @@ sources:
     language: "en"
     check_frequency: "monthly"
     applies_to: ["Germany", "Spain"]
-
   # Spain
   - country: "Spain"
     name: "DGOJ Noticias"
@@ -63,14 +55,12 @@ sources:
     method: "scrape"
     language: "es"
     check_frequency: "monthly"
-    
   - country: "Spain"
     name: "AEPD Novedades"
     url: "https://www.aepd.es/es/prensa-y-comunicacion/notas-de-prensa"
     method: "scrape"
     language: "es"
     check_frequency: "weekly"
-
   # China
   - country: "China"
     name: "国家广播电视总局 公告"
@@ -79,7 +69,6 @@ sources:
     language: "zh"
     check_frequency: "monthly"
     note: "VPN may be required for access outside China"
-
   # Saudi Arabia
   - country: "Saudi_Arabia"
     name: "GCAM Announcements"
@@ -87,7 +76,6 @@ sources:
     method: "scrape"
     language: "en"
     check_frequency: "monthly"
-
   # India
   - country: "India"
     name: "MIB Press Releases"
@@ -96,7 +84,6 @@ sources:
     language: "en"
     check_frequency: "weekly"
     filter_keywords: ["OTT", "digital media", "IT Rules"]
-
   # Japan
   - country: "Japan"
     name: "個人情報保護委員会 新着情報"
@@ -104,24 +91,20 @@ sources:
     method: "scrape"
     language: "ja"
     check_frequency: "monthly"
-
 # Commercial API Services (Optional - Require Subscription)
 commercial_apis:
   - name: "LexisNexis Regulatory Tracker"
     url: "https://www.lexisnexis.com/api/regulatory"
     coverage: "global"
     cost: "enterprise"
-    
   - name: "Thomson Reuters Westlaw"
     url: "https://legal.thomsonreuters.com/api"
     coverage: "200+ countries"
     cost: "enterprise"
-    
   - name: "Compliance.ai"
     url: "https://www.compliance.ai/api"
     coverage: "financial regulations, media laws"
     cost: "subscription"
-
 # Update Notification Settings
 notifications:
   email:
@@ -129,28 +112,20 @@ notifications:
     recipients:
       - "compliance-team@example.com"
       - "legal@example.com"
-    
   slack:
     enabled: false
     webhook_url: "https://hooks.slack.com/services/YOUR/WEBHOOK/URL"
     channel: "#regulatory-updates"
-    
   github:
     enabled: true
     action: "create_issue"
     labels: ["regulatory-update", "needs-review"]
-
 # Automation Settings
 automation:
   auto_check: true
   schedule: "0 9 * * 1"  # Every Monday at 9 AM (cron format)
-  
   auto_suggest: true  # AI-based policy update suggestions
-  
   auto_apply: false  # Requires manual approval
-  
   require_legal_review: true
-  
   backup_before_update: true
-  
   run_tests_after_update: true

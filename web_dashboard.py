@@ -3,26 +3,20 @@
 Web Dashboard for Glocal Policy Guardrail
 Regulatory Update Monitoring Dashboard for Global OTT Platforms
 """
-
 from flask import Flask, render_template, jsonify, request
 import json
 import yaml
 from pathlib import Path
 from datetime import datetime, timedelta
 import sys
-
 # Add src to path
 sys.path.insert(0, str(Path(__file__).parent))
-
 from src.policy_auto_updater import PolicyUpdateMonitor
 from src.change_tracker import ChangeTracker
-
 app = Flask(__name__)
-
 # Global variables - lazy initialization
 monitor = None
 tracker = None
-
 def init_globals():
     """Initialize global variables"""
     global monitor, tracker
@@ -36,7 +30,6 @@ def init_globals():
             import traceback
             traceback.print_exc()
             monitor = None
-    
     if tracker is None:
         try:
             print("Initializing ChangeTracker...")
@@ -47,24 +40,19 @@ def init_globals():
             import traceback
             traceback.print_exc()
             tracker = None
-
-
 @app.route('/')
 def index():
     """Main dashboard page"""
     try:
         init_globals()
-        
         # Generate basic statistics data
         stats = {
             'countries': len(set(s.country for s in monitor.sources)) if monitor else 0,
             'total_checks': 0,
             'success_rate': 0
         }
-        
         # Country list
         countries = sorted(set(s.country for s in monitor.sources)) if monitor else []
-        
         # Monitoring data (status by country) - Load from compliance report
         monitoring = {}
         compliance_file = Path("reports/compliance_report.json")
@@ -84,7 +72,6 @@ def index():
                         }
             except:
                 pass
-        
         # Fallback if no compliance data
         if not monitoring and monitor:
             for country in countries:
@@ -97,20 +84,16 @@ def index():
                     'warnings': 0,
                     'last_checked': datetime.now().isoformat()
                 }
-        
         # Recent updates - Load from policy_updates.json
         recent_updates = []
         log_file = Path("reports/policy_updates.json")
-        
         if log_file.exists():
             try:
                 with open(log_file, 'r') as f:
                     logs = json.load(f)
-                
                 if logs:
                     stats['total_checks'] = len(logs)
                     stats['success_rate'] = 95
-                    
                     # Collect all updates with timestamps
                     all_updates = []
                     for log_entry in logs:
@@ -124,7 +107,6 @@ def index():
                             except:
                                 date_str = timestamp[:10] if timestamp else 'N/A'
                                 time_str = ''
-                            
                             all_updates.append({
                                 'source': update.get('source', 'Unknown'),
                                 'country': update.get('country', 'Unknown'),
@@ -137,16 +119,14 @@ def index():
                                 'timestamp': timestamp,
                                 'summary': update.get('summary', update.get('title', 'Regulatory update detected'))
                             })
-                    
                     # Sort by timestamp (newest first) and take top 10
                     all_updates.sort(key=lambda x: x['timestamp'], reverse=True)
                     recent_updates = all_updates[:10]
             except Exception as e:
                 print(f"Error loading policy updates: {e}")
                 pass
-        
-        return render_template('index.html', 
-                             stats=stats, 
+        return render_template('index.html',
+                             stats=stats,
                              countries=countries,
                              monitoring=monitoring,
                              recent_updates=recent_updates)
@@ -155,13 +135,11 @@ def index():
         import traceback
         traceback.print_exc()
         # Render with default values on error
-        return render_template('index.html', 
+        return render_template('index.html',
                              stats={'countries': 0, 'total_checks': 0, 'success_rate': 0},
                              countries=[],
                              monitoring={},
                              recent_updates=[])
-
-
 @app.route('/api/status')
 def get_status():
     """Get system status"""
@@ -169,7 +147,6 @@ def get_status():
         init_globals()
         if monitor is None or tracker is None:
             return jsonify({"error": "System not initialized"}), 500
-        
         # Read recent update logs
         log_file = Path("reports/policy_updates.json")
         recent_log = None
@@ -178,11 +155,9 @@ def get_status():
                 logs = json.load(f)
                 if logs and len(logs) > 0:
                     recent_log = logs[-1]
-        
         # Pending changes
         pending_changes = tracker.get_pending_changes()
         approved_changes = tracker.get_approved_changes()
-        
         status = {
             "total_sources": len(monitor.sources),
             "sources_by_frequency": {
@@ -197,12 +172,9 @@ def get_status():
             "total_changes": len(tracker.changes),
             "system_status": "running"
         }
-        
         return jsonify(status)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-
 @app.route('/api/sources')
 def get_sources():
     """Get list of monitored sources"""
@@ -220,32 +192,25 @@ def get_sources():
                 "frequency": source.check_frequency,
                 "language": source.language
             })
-        
         return jsonify({"sources": sources, "total": len(sources)})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-
 @app.route('/api/updates')
 def get_updates():
     """Get recent updates"""
     try:
         days = int(request.args.get('days', 30))
         log_file = Path("reports/policy_updates.json")
-        
         if not log_file.exists():
             return jsonify({"success": True, "updates": [], "total": 0})
-        
         with open(log_file, 'r') as f:
             logs = json.load(f)
-        
         # Filter last N days
         cutoff = datetime.now() - timedelta(days=days)
         recent_logs = [
             log for log in logs
             if datetime.fromisoformat(log['timestamp']) > cutoff
         ]
-        
         # Extract all updates with enhanced formatting
         all_updates = []
         for log in recent_logs:
@@ -259,7 +224,6 @@ def get_updates():
                 except:
                     date_str = timestamp[:10] if timestamp else 'N/A'
                     time_str = ''
-                
                 all_updates.append({
                     'source': update.get('source', 'Unknown'),
                     'country': update.get('country', 'Unknown'),
@@ -272,10 +236,8 @@ def get_updates():
                     'timestamp': timestamp,
                     'summary': update.get('summary', update.get('title', 'Regulatory update detected'))
                 })
-        
         # Sort by timestamp (newest first)
         all_updates.sort(key=lambda x: x['timestamp'], reverse=True)
-        
         return jsonify({
             "success": True,
             "updates": all_updates[:20],  # Return top 20
@@ -285,8 +247,6 @@ def get_updates():
         })
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-
 @app.route('/api/changes')
 def get_changes():
     """Get changes"""
@@ -295,22 +255,18 @@ def get_changes():
         if tracker is None:
             return jsonify({"error": "System not initialized"}), 500
         status_filter = request.args.get('status', 'all')
-        
         if status_filter == 'pending':
             changes = tracker.get_pending_changes()
         elif status_filter == 'approved':
             changes = tracker.get_approved_changes()
         else:
             changes = tracker.changes
-        
         return jsonify({
             "changes": changes,
             "total": len(changes)
         })
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-
 @app.route('/api/changes/<int:change_id>/approve', methods=['POST'])
 def approve_change(change_id):
     """Approve a change"""
@@ -320,17 +276,13 @@ def approve_change(change_id):
             return jsonify({"error": "System not initialized"}), 500
         data = request.get_json()
         reviewer = data.get('reviewer', 'Web User')
-        
         success = tracker.approve_change(change_id, reviewer)
-        
         if success:
             return jsonify({"success": True, "message": "Change approved"})
         else:
             return jsonify({"success": False, "message": "Change not found"}), 404
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-
 @app.route('/api/check-now', methods=['POST'])
 def check_now():
     """Run update check immediately"""
@@ -340,22 +292,17 @@ def check_now():
             return jsonify({"error": "System not initialized"}), 500
         data = request.get_json() or {}
         frequency = data.get('frequency', 'all')
-        
         # Filter by frequency
         if frequency != 'all':
             original_sources = monitor.sources
             monitor.sources = [s for s in monitor.sources if s.check_frequency == frequency]
-        
         updates = monitor.check_for_updates()
-        
         # Restore original sources
         if frequency != 'all':
             monitor.sources = original_sources
-        
         # Save log
         if updates:
             monitor.save_update_log(updates)
-        
         return jsonify({
             "success": True,
             "updates": updates,
@@ -363,8 +310,6 @@ def check_now():
         })
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-
 @app.route('/api/stats')
 def get_stats():
     """Get statistics data"""
@@ -372,7 +317,6 @@ def get_stats():
         init_globals()
         if monitor is None:
             return jsonify({"error": "System not initialized"}), 500
-        
         # Source count by country
         countries = {}
         for source in monitor.sources:
@@ -380,20 +324,16 @@ def get_stats():
             if country not in countries:
                 countries[country] = 0
             countries[country] += 1
-        
         # Update count for last 30 days
         log_file = Path("reports/policy_updates.json")
         daily_updates = {}
-        
         if log_file.exists():
             with open(log_file, 'r') as f:
                 logs = json.load(f)
-            
             for log in logs[-30:]:  # Last 30 logs
                 date = log['timestamp'][:10]
                 count = log.get('updates_count', 0)
                 daily_updates[date] = daily_updates.get(date, 0) + count
-        
         return jsonify({
             "countries": countries,
             "daily_updates": daily_updates,
@@ -401,26 +341,20 @@ def get_stats():
         })
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-
 @app.route('/api/country/<country_name>')
 def get_country_details(country_name):
     """Get detailed information for a specific country"""
     try:
         init_globals()
-        
         # Load compliance report
         compliance_file = Path("reports/compliance_report.json")
         country_data = None
-        
         if compliance_file.exists():
             with open(compliance_file, 'r') as f:
                 compliance_data = json.load(f)
                 country_data = compliance_data.get('country_details', {}).get(country_name)
-        
         if not country_data:
             return jsonify({"error": "Country not found"}), 404
-        
         # Get recent updates for this country
         recent_updates = []
         log_file = Path("reports/policy_updates.json")
@@ -436,7 +370,6 @@ def get_country_details(country_name):
                                 'source': update.get('source', ''),
                                 'confidence': update.get('confidence', '')
                             })
-        
         # Get sources monitoring this country
         sources = []
         if monitor:
@@ -449,7 +382,6 @@ def get_country_details(country_name):
                 }
                 for s in monitor.sources if s.country == country_name
             ]
-        
         return jsonify({
             "country": country_name,
             "compliance": country_data,
@@ -459,8 +391,6 @@ def get_country_details(country_name):
         })
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-
 @app.route('/health')
 def health():
     """Health check endpoint"""
@@ -468,21 +398,16 @@ def health():
         "status": "healthy",
         "timestamp": datetime.now().isoformat()
     })
-
-
 def main():
     """Main function"""
     import os
-    
     # Create required directories
     Path("reports").mkdir(exist_ok=True)
     Path("reports/scheduler_logs").mkdir(exist_ok=True)
-    
     # Run in development mode
     host = os.getenv('DASHBOARD_HOST', '0.0.0.0')
     port = int(os.getenv('DASHBOARD_PORT', 5000))
     debug = os.getenv('FLASK_DEBUG', 'false').lower() == 'true'
-    
     print("=" * 70)
     print("GLOCAL POLICY GUARDRAIL - WEB DASHBOARD")
     print("=" * 70)
@@ -490,9 +415,6 @@ def main():
     print("Press Ctrl+C to stop")
     print("=" * 70)
     print()
-    
     app.run(host=host, port=port, debug=debug)
-
-
 if __name__ == '__main__':
     main()

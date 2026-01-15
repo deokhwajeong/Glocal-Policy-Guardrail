@@ -34,7 +34,6 @@
  </div>
  </div>
  </header>
-
  <nav class="tabs">
  <button class="tab active" onclick="showTab('checker')">
  <span class="tab-icon">🔍</span> Compliance Checker
@@ -49,7 +48,6 @@
  <span class="tab-icon">📈</span> Analytics Report
  </button>
  </nav>
-
  <main>
  <!-- Compliance Checker Tab -->
  <section id="checker" class="tab-content active">
@@ -58,7 +56,6 @@
  <span class="icon">🔍</span>
  Content Distribution Check
  </h2>
- 
  <form id="checkForm" class="check-form">
  <div class="form-group">
  <label for="country">Deployment Countries</label>
@@ -69,7 +66,6 @@
  {% endfor %}
  </select>
  </div>
-
  <div class="form-row">
  <div class="form-group">
  <label for="title">Content Title</label>
@@ -87,24 +83,20 @@
  </select>
  </div>
  </div>
-
  <div class="form-group">
  <label for="description">Description</label>
  <textarea id="description" name="description" rows="3" placeholder="Enter content description"></textarea>
  </div>
-
  <div class="form-group">
  <label for="tags">Tags (comma-separated)</label>
  <input type="text" id="tags" name="tags" placeholder="e.g., action, thriller, violence">
  </div>
-
  <div class="form-group">
  <label>
  <input type="checkbox" name="has_ads" id="has_ads" onchange="toggleAdSchedule()">
  Include Ads
  </label>
  </div>
-
  <div id="adScheduleSection" style="display: none;">
  <div class="form-row">
  <div class="form-group">
@@ -117,14 +109,12 @@
  </div>
  </div>
  </div>
-
  <button type="submit" class="btn btn-primary">
  <span class="btn-icon">🚀</span>
  Start Check
  </button>
  </form>
  </div>
-
  <div id="resultCard" class="card result-card" style="display: none;">
  <h2 class="card-title">
  <span class="icon">📋</span>
@@ -133,7 +123,6 @@
  <div id="resultContent"></div>
  </div>
  </section>
-
  <!-- Monitoring Dashboard Tab -->
  <section id="monitor" class="tab-content">
  <div class="card">
@@ -141,14 +130,12 @@
  <span class="icon">📊</span>
  Global Compliance Monitoring
  </h2>
- 
  <div class="monitoring-filters">
  <button class="filter-btn active" onclick="filterMonitoring('all')">All Countries</button>
  <button class="filter-btn" onclick="filterMonitoring('compliant')">✓ Compliant</button>
  <button class="filter-btn" onclick="filterMonitoring('partial')">⚠ Partial</button>
  <button class="filter-btn" onclick="filterMonitoring('non_compliant')">✗ Non-Compliant</button>
  </div>
- 
  <div class="monitoring-grid">
  {% for country, data in monitoring.items() %}
  <div class="monitor-card" data-status="{{ data.status }}" onclick="showCountryDetails('{{ country }}')">
@@ -196,7 +183,6 @@
  {% endfor %}
  </div>
  </div>
- 
  <!-- Country Detail Modal -->
  <div id="countryModal" class="modal" style="display: none;">
  <div class="modal-content">
@@ -210,7 +196,6 @@
  </div>
  </div>
  </section>
-
  <!-- Regulatory Updates Tab -->
  <section id="updates" class="tab-content">
  <div class="card">
@@ -264,7 +249,6 @@
  </div>
  </div>
  </section>
-
  <!-- Analytics Report Tab -->
  <section id="analytics" class="tab-content">
  <div class="card">
@@ -282,7 +266,6 @@
  <canvas id="categoryChart"></canvas>
  </div>
  </div>
- 
  <div class="insights-section">
  <h3>Key Insights</h3>
  <div class="insights-grid">
@@ -300,12 +283,10 @@
  </div>
  </section>
  </main>
-
  <footer class="footer">
  <p>&copy; 2026 Glocal Policy Guardrail | Policy-as-Code for Global OTT</p>
  </footer>
  </div>
-
  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>

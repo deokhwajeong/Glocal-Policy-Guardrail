@@ -1,7 +1,6 @@
 # Sample Content Deployment Test Cases
-# 가상 OTT 플랫폼의 콘텐츠 배포 시나리오
-
-# 테스트 케이스 1: 사우디아라비아 - 도박 콘텐츠 (위반)
+# Content Deployment Scenarios for Virtual OTT Platform
+#   1: Saudi Arabia -   ()
 test_case_1:
   country: "Saudi_Arabia"
   content_metadata:
@@ -14,22 +13,20 @@ test_case_1:
     features: []
   expected_result: "CRITICAL"
   expected_violations: ["FORBIDDEN_KEYWORD"]
-
-# 테스트 케이스 2: 대한민국 - 본인인증 없는 성인 콘텐츠 (위반)
+#   2: South Korea - Real-name Verification    ()
 test_case_2:
   country: "South_Korea"
   content_metadata:
-    title: "성인 드라마"
-    description: "19세 이상 시청가 드라마"
+    title: " "
+    description: "19   "
     genre: "Drama"
     tags: ["adult", "romance"]
     age_rating_system: "KMRB"
     age_rating: "19"
-    features: []  # real_name_verification 누락!
+    features: []  # real_name_verification !
   expected_result: "WARNING"
   expected_violations: ["MISSING_MANDATORY_FEATURE"]
-
-# 테스트 케이스 3: 스페인 - 낮 시간대 도박 광고 (위반)
+#   3:  -     ()
 test_case_3:
   country: "Spain"
   content_metadata:
@@ -42,11 +39,10 @@ test_case_3:
     features: ["gdpr_compliance", "audio_description_for_disabled"]
   ad_schedule:
     ad_type: "gambling_ads"
-    scheduled_time: "2026-01-13T15:00:00"  # 오후 3시 (불허)
+    scheduled_time: "2026-01-13T15:00:00"  #  3 ()
   expected_result: "CRITICAL"
   expected_violations: ["AD_TIME_RESTRICTION"]
-
-# 테스트 케이스 4: 미국 - 정상적인 콘텐츠 (통과)
+#   4:  -   ()
 test_case_4:
   country: "United_States"
   content_metadata:
@@ -59,8 +55,7 @@ test_case_4:
     features: ["coppa_compliance", "ada_accessibility", "ccpa_compliance"]
   expected_result: "PASS"
   expected_violations: []
-
-# 테스트 케이스 5: 독일 - 나치 관련 콘텐츠 (위반)
+#   5:  -    ()
 test_case_5:
   country: "Germany"
   content_metadata:
@@ -73,8 +68,7 @@ test_case_5:
     features: ["gdpr_compliance"]
   expected_result: "CRITICAL"
   expected_violations: ["FORBIDDEN_KEYWORD"]
-
-# 테스트 케이스 6: 중국 - 정치적 민감 콘텐츠 (위반)
+#   6:  -    ()
 test_case_6:
   country: "China"
   content_metadata:
@@ -87,13 +81,12 @@ test_case_6:
     features: ["content_pre_approval", "data_localization", "real_name_registration"]
   expected_result: "CRITICAL"
   expected_violations: ["FORBIDDEN_KEYWORD"]
-
-# 테스트 케이스 7: 한국 - 청소년 보호시간대 주류 광고 (위반)
+#   7:  -     ()
 test_case_7:
   country: "South_Korea"
   content_metadata:
-    title: "드라마 시리즈"
-    description: "가족 드라마"
+    title: " "
+    description: " "
     genre: "Drama"
     tags: ["family", "drama"]
     age_rating_system: "KMRB"
@@ -101,11 +94,10 @@ test_case_7:
     features: ["real_name_verification", "youth_protection_system", "korean_subtitle_availability"]
   ad_schedule:
     ad_type: "alcohol_ads"
-    scheduled_time: "2026-01-13T20:00:00"  # 저녁 8시 (청소년 보호시간대)
+    scheduled_time: "2026-01-13T20:00:00"  #  8 ( )
   expected_result: "CRITICAL"
   expected_violations: ["AD_TIME_RESTRICTION"]
-
-# 테스트 케이스 8: 일본 - 정상적인 콘텐츠 (통과)
+#   8:  -   ()
 test_case_8:
   country: "Japan"
   content_metadata:
@@ -118,8 +110,7 @@ test_case_8:
     features: []
   expected_result: "PASS"
   expected_violations: []
-
-# 테스트 케이스 9: 인도 - 종교적 금기 콘텐츠 (위반)
+#   9:  -    ()
 test_case_9:
   country: "India"
   content_metadata:
@@ -132,8 +123,7 @@ test_case_9:
     features: ["content_grievance_officer", "parental_control_features"]
   expected_result: "CRITICAL"
   expected_violations: ["FORBIDDEN_KEYWORD"]
-
-# 테스트 케이스 10: 다중 국가 배포 - 글로벌 콘텐츠
+#   10:    -
 test_case_10:
   country: "United_States"
   content_metadata:

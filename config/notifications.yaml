@@ -1,46 +1,36 @@
 # Notification Configuration
-# 알림 시스템 설정
-
+# Notification System Configuration
 email:
-  enabled: false  # true로 변경하여 이메일 알림 활성화
+  enabled: false  # Set to true to enable email notifications
   smtp_server: "smtp.gmail.com"
   smtp_port: 587
-  sender: ""  # 발신자 이메일 주소
-  password: ""  # 이메일 비밀번호 또는 앱 비밀번호 (환경변수 사용 권장)
+  sender: ""  # Sender email address
+  password: ""  #      (  )
   recipients:
     - "admin@example.com"
     - "compliance@example.com"
-
 slack:
-  enabled: false  # true로 변경하여 Slack 알림 활성화
+  enabled: false  # true  Slack
   webhook_url: ""  # Slack Incoming Webhook URL
-  # Webhook URL 생성 방법:
-  # 1. Slack 워크스페이스에서 Apps & integrations 열기
-  # 2. Incoming Webhooks 검색 및 추가
-  # 3. 채널 선택 및 Webhook URL 복사
-
+  # Webhook URL  :
+  # 1. Slack  Apps & integrations
+  # 2. Incoming Webhooks
+  # 3.    Webhook URL
 discord:
-  enabled: false  # true로 변경하여 Discord 알림 활성화
+  enabled: false  # true  Discord
   webhook_url: ""  # Discord Webhook URL
-  # Webhook URL 생성 방법:
-  # 1. Discord 서버 설정 > 연동 > Webhooks
-  # 2. 새 Webhook 생성
-  # 3. Webhook URL 복사
-
-# 알림 발송 조건
+  # Webhook URL  :
+  # 1. Discord   >  > Webhooks
+  # 2.  Webhook
+  # 3. Webhook URL
 notification_rules:
-  # 즉시 알림을 보낼 조건
-  immediate:
+    immediate:
     - high_priority: true
     - critical_keywords: ["urgent", "immediate", "breaking"]
-  
-  # 일일 요약 알림
-  daily_digest:
+    daily_digest:
     enabled: true
     time: "09:00"  # KST
-  
-  # 주간 요약 알림
-  weekly_digest:
+    weekly_digest:
     enabled: true
     day: "monday"
     time: "10:00"  # KST

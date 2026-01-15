@@ -3,19 +3,16 @@
 Generate realistic sample data for Glocal Policy Guardrail
 Creates sample policy updates, compliance reports, and change history
 """
-
 import json
 import random
 from datetime import datetime, timedelta
 from pathlib import Path
-
 # Realistic OTT regulatory data based on actual global regulations
 COUNTRIES = [
  "South_Korea", "United_States", "United_Kingdom", "Germany", "France",
  "Japan", "India", "Brazil", "Australia", "Canada", "Singapore",
  "Netherlands", "Spain", "Italy", "Mexico"
 ]
-
 REGULATORY_UPDATES = {
  "South_Korea": [
  "K-Content mandatory subtitle requirements updated",
@@ -88,7 +85,6 @@ REGULATORY_UPDATES = {
  "Bill C-11 implementation guidelines"
  ]
 }
-
 SOURCES = [
  "Ministry of Culture, Sports and Tourism",
  "Federal Communications Commission",
@@ -101,7 +97,6 @@ SOURCES = [
  "ACMA",
  "CRTC"
 ]
-
 VIOLATION_TYPES = [
  "Missing required subtitles",
  "Incorrect content rating",
@@ -114,24 +109,19 @@ VIOLATION_TYPES = [
  "Required metadata missing",
  "Geographic restriction violation"
 ]
-
 def generate_policy_updates(num_days=90, updates_per_day=2):
  """Generate realistic policy update logs"""
  updates_log = []
- 
  for i in range(num_days):
  date = datetime.now() - timedelta(days=num_days - i)
- 
  for _ in range(random.randint(1, updates_per_day)):
  country = random.choice(COUNTRIES)
  country_updates = REGULATORY_UPDATES.get(country, REGULATORY_UPDATES["South_Korea"])
- 
  log_entry = {
  "timestamp": date.isoformat(),
  "updates_count": random.randint(1, 5),
  "updates": []
  }
- 
  for _ in range(log_entry["updates_count"]):
  update = {
  "country": country,
@@ -143,11 +133,8 @@ def generate_policy_updates(num_days=90, updates_per_day=2):
  "status": "pending_review"
  }
  log_entry["updates"].append(update)
- 
  updates_log.append(log_entry)
- 
  return updates_log
-
 def generate_compliance_report():
  """Generate comprehensive compliance report"""
  report = {
@@ -162,11 +149,9 @@ def generate_compliance_report():
  },
  "country_details": {}
  }
- 
  for country in COUNTRIES:
  checks = random.randint(25, 45)
  violations = random.randint(0, 5)
- 
  report["country_details"][country] = {
  "compliance_status": "compliant" if violations == 0 else "partial" if violations < 3 else "non_compliant",
  "total_checks": checks,
@@ -177,7 +162,6 @@ def generate_compliance_report():
  "critical_issues": [],
  "warnings": []
  }
- 
  if violations > 0:
  for _ in range(violations):
  issue = {
@@ -186,23 +170,18 @@ def generate_compliance_report():
  "description": f"Compliance issue detected in {country}",
  "remediation": "Update content metadata and implement required features"
  }
- 
  if issue["severity"] == "high":
  report["country_details"][country]["critical_issues"].append(issue)
  else:
  report["country_details"][country]["warnings"].append(issue)
- 
  return report
-
 def generate_change_history():
  """Generate change tracking history"""
  changes = []
  change_id = 1
- 
  for i in range(50):
  date = datetime.now() - timedelta(days=random.randint(0, 90))
  country = random.choice(COUNTRIES)
- 
  change = {
  "id": change_id,
  "timestamp": date.isoformat(),
@@ -218,41 +197,33 @@ def generate_change_history():
  "applied": random.choice([True, True, False]),
  "reviewer": random.choice(["compliance_team", "legal_team", "product_manager", None])
  }
- 
  changes.append(change)
  change_id += 1
- 
  return {"changes": changes, "versions": []}
-
 def main():
  """Generate all sample data"""
  print("Generating realistic sample data for OTT compliance platform...")
- 
  # Create directories
  Path("reports").mkdir(exist_ok=True)
  Path("reports/change_history").mkdir(exist_ok=True)
- 
  # Generate policy updates
  print("📝 Generating policy updates (90 days)...")
  updates = generate_policy_updates(num_days=90, updates_per_day=2)
  with open("reports/policy_updates.json", "w") as f:
  json.dump(updates, f, indent=2)
  print(f" ✅ Created {len(updates)} policy update entries")
- 
  # Generate compliance report
  print("📊 Generating compliance report...")
  report = generate_compliance_report()
  with open("reports/compliance_report.json", "w") as f:
  json.dump(report, f, indent=2)
  print(f" ✅ Created compliance report for {len(COUNTRIES)} countries")
- 
  # Generate change history
  print("📜 Generating change history...")
  history = generate_change_history()
  with open("reports/change_history/changes.json", "w") as f:
  json.dump(history, f, indent=2)
  print(f" ✅ Created {len(history['changes'])} change records")
- 
  print("\n✨ Sample data generation complete!")
  print("\n📈 Summary:")
  print(f" - Policy Updates: {len(updates)} entries over 90 days")
@@ -261,6 +232,5 @@ def main():
  print(f" - Compliance Checks: {report['summary']['total_checks']}")
  print(f" - Violations Found: {report['summary']['violations_found']}")
  print(f" - Change Records: {len(history['changes'])}")
- 
 if __name__ == "__main__":
  main()
