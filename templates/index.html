@@ -1,286 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌍 Glocal Policy Guardrail</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>🌍 Glocal Policy Guardrail</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="header-content">
-                <h1 class="logo">
-                    <span class="logo-icon">🌍</span>
-                    Glocal Policy Guardrail
-                </h1>
-                <p class="subtitle">Policy-as-Code Framework for Global OTT Platforms</p>
-            </div>
-            <div class="header-stats">
-                <div class="stat-card">
-                    <div class="stat-value">{{ stats.countries }}</div>
-                    <div class="stat-label">Countries</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">{{ stats.total_checks }}</div>
-                    <div class="stat-label">Checks Completed</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">{{ stats.success_rate }}%</div>
-                    <div class="stat-label">Pass Rate</div>
-                </div>
-            </div>
-        </header>
+ <div class="container">
+ <header class="header">
+ <div class="header-content">
+ <h1 class="logo">
+ <span class="logo-icon">🌍</span>
+ Glocal Policy Guardrail
+ </h1>
+ <p class="subtitle">Policy-as-Code Framework for Global OTT Platforms</p>
+ </div>
+ <div class="header-stats">
+ <div class="stat-card">
+ <div class="stat-value">{{ stats.countries }}</div>
+ <div class="stat-label">Countries</div>
+ </div>
+ <div class="stat-card">
+ <div class="stat-value">{{ stats.total_checks }}</div>
+ <div class="stat-label">Checks Completed</div>
+ </div>
+ <div class="stat-card">
+ <div class="stat-value">{{ stats.success_rate }}%</div>
+ <div class="stat-label">Pass Rate</div>
+ </div>
+ </div>
+ </header>
 
-        <nav class="tabs">
-            <button class="tab active" onclick="showTab('checker')">
-                <span class="tab-icon">🔍</span> Compliance Checker
-            </button>
-            <button class="tab" onclick="showTab('monitor')">
-                <span class="tab-icon">📊</span> Monitoring Dashboard
-            </button>
-            <button class="tab" onclick="showTab('updates')">
-                <span class="tab-icon">🔔</span> Regulatory Updates
-            </button>
-            <button class="tab" onclick="showTab('analytics')">
-                <span class="tab-icon">📈</span> Analytics Report
-            </button>
-        </nav>
+ <nav class="tabs">
+ <button class="tab active" onclick="showTab('checker')">
+ <span class="tab-icon">🔍</span> Compliance Checker
+ </button>
+ <button class="tab" onclick="showTab('monitor')">
+ <span class="tab-icon">📊</span> Monitoring Dashboard
+ </button>
+ <button class="tab" onclick="showTab('updates')">
+ <span class="tab-icon">🔔</span> Regulatory Updates
+ </button>
+ <button class="tab" onclick="showTab('analytics')">
+ <span class="tab-icon">📈</span> Analytics Report
+ </button>
+ </nav>
 
-        <main>
-            <!-- Compliance Checker Tab -->
-            <section id="checker" class="tab-content active">
-                <div class="card">
-                    <h2 class="card-title">
-                        <span class="icon">🔍</span>
-                        Content Distribution Check
-                    </h2>
-                    
-                    <form id="checkForm" class="check-form">
-                        <div class="form-group">
-                            <label for="country">Deployment Countries</label>
-                            <select id="country" name="country" required>
-                                <option value="">Select a country</option>
-                                {% for country in countries %}
-                                <option value="{{ country }}">{{ country.replace('_', ' ') }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
+ <main>
+ <!-- Compliance Checker Tab -->
+ <section id="checker" class="tab-content active">
+ <div class="card">
+ <h2 class="card-title">
+ <span class="icon">🔍</span>
+ Content Distribution Check
+ </h2>
+ 
+ <form id="checkForm" class="check-form">
+ <div class="form-group">
+ <label for="country">Deployment Countries</label>
+ <select id="country" name="country" required>
+ <option value="">Select a country</option>
+ {% for country in countries %}
+ <option value="{{ country }}">{{ country.replace('_', ' ') }}</option>
+ {% endfor %}
+ </select>
+ </div>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="title">Content Title</label>
-                                <input type="text" id="title" name="title" placeholder="e.g., New Drama Series" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="genre">Genre</label>
-                                <select id="genre" name="genre" required>
-                                    <option value="Drama">Drama</option>
-                                    <option value="Movie">Movie</option>
-                                    <option value="Documentary">Documentary</option>
-                                    <option value="Entertainment">Entertainment</option>
-                                    <option value="News">News</option>
-                                    <option value="Educational">Educational</option>
-                                </select>
-                            </div>
-                        </div>
+ <div class="form-row">
+ <div class="form-group">
+ <label for="title">Content Title</label>
+ <input type="text" id="title" name="title" placeholder="e.g., New Drama Series" required>
+ </div>
+ <div class="form-group">
+ <label for="genre">Genre</label>
+ <select id="genre" name="genre" required>
+ <option value="Drama">Drama</option>
+ <option value="Movie">Movie</option>
+ <option value="Documentary">Documentary</option>
+ <option value="Entertainment">Entertainment</option>
+ <option value="News">News</option>
+ <option value="Educational">Educational</option>
+ </select>
+ </div>
+ </div>
 
-                        <div class="form-group">
-                            <label for="description">Description</label>
-                            <textarea id="description" name="description" rows="3" placeholder="Enter content description"></textarea>
-                        </div>
+ <div class="form-group">
+ <label for="description">Description</label>
+ <textarea id="description" name="description" rows="3" placeholder="Enter content description"></textarea>
+ </div>
 
-                        <div class="form-group">
-                            <label for="tags">Tags (comma-separated)</label>
-                            <input type="text" id="tags" name="tags" placeholder="e.g., action, thriller, violence">
-                        </div>
+ <div class="form-group">
+ <label for="tags">Tags (comma-separated)</label>
+ <input type="text" id="tags" name="tags" placeholder="e.g., action, thriller, violence">
+ </div>
 
-                        <div class="form-group">
-                            <label>
-                                <input type="checkbox" name="has_ads" id="has_ads" onchange="toggleAdSchedule()">
-                                Include Ads
-                            </label>
-                        </div>
+ <div class="form-group">
+ <label>
+ <input type="checkbox" name="has_ads" id="has_ads" onchange="toggleAdSchedule()">
+ Include Ads
+ </label>
+ </div>
 
-                        <div id="adScheduleSection" style="display: none;">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="ad_date">Ad Date</label>
-                                    <input type="date" id="ad_date" name="ad_date">
-                                </div>
-                                <div class="form-group">
-                                    <label for="ad_time">Ad Time</label>
-                                    <input type="time" id="ad_time" name="ad_time">
-                                </div>
-                            </div>
-                        </div>
+ <div id="adScheduleSection" style="display: none;">
+ <div class="form-row">
+ <div class="form-group">
+ <label for="ad_date">Ad Date</label>
+ <input type="date" id="ad_date" name="ad_date">
+ </div>
+ <div class="form-group">
+ <label for="ad_time">Ad Time</label>
+ <input type="time" id="ad_time" name="ad_time">
+ </div>
+ </div>
+ </div>
 
-                        <button type="submit" class="btn btn-primary">
-                            <span class="btn-icon">🚀</span>
-                            Start Check
-                        </button>
-                    </form>
-                </div>
+ <button type="submit" class="btn btn-primary">
+ <span class="btn-icon">🚀</span>
+ Start Check
+ </button>
+ </form>
+ </div>
 
-                <div id="resultCard" class="card result-card" style="display: none;">
-                    <h2 class="card-title">
-                        <span class="icon">📋</span>
-                        Check Results
-                    </h2>
-                    <div id="resultContent"></div>
-                </div>
-            </section>
+ <div id="resultCard" class="card result-card" style="display: none;">
+ <h2 class="card-title">
+ <span class="icon">📋</span>
+ Check Results
+ </h2>
+ <div id="resultContent"></div>
+ </div>
+ </section>
 
-            <!-- Monitoring Dashboard Tab -->
-            <section id="monitor" class="tab-content">
-                <div class="card">
-                    <h2 class="card-title">
-                        <span class="icon">📊</span>
-                        Global Compliance Monitoring
-                    </h2>
-                    
-                    <div class="monitoring-filters">
-                        <button class="filter-btn active" onclick="filterMonitoring('all')">All Countries</button>
-                        <button class="filter-btn" onclick="filterMonitoring('compliant')">✓ Compliant</button>
-                        <button class="filter-btn" onclick="filterMonitoring('partial')">⚠ Partial</button>
-                        <button class="filter-btn" onclick="filterMonitoring('non_compliant')">✗ Non-Compliant</button>
-                    </div>
-                    
-                    <div class="monitoring-grid">
-                        {% for country, data in monitoring.items() %}
-                        <div class="monitor-card" data-status="{{ data.status }}" onclick="showCountryDetails('{{ country }}')">
-                            <div class="monitor-header">
-                                <div class="country-info">
-                                    <h3>{{ country.replace('_', ' ') }}</h3>
-                                    <span class="last-checked">Last: {{ data.last_checked[:10] if data.last_checked else 'N/A' }}</span>
-                                </div>
-                                <span class="status-badge status-{{ data.status }}">
-                                    {% if data.status == 'compliant' %}✓ Compliant
-                                    {% elif data.status == 'partial' %}⚠ Partial
-                                    {% else %}✗ Non-Compliant{% endif %}
-                                </span>
-                            </div>
-                            <div class="monitor-stats">
-                                <div class="monitor-stat">
-                                    <span class="label">Checks</span>
-                                    <span class="value">{{ data.checks }}</span>
-                                </div>
-                                <div class="monitor-stat">
-                                    <span class="label">Violations</span>
-                                    <span class="value {% if data.violations > 0 %}critical{% endif %}">{{ data.violations }}</span>
-                                </div>
-                                <div class="monitor-stat">
-                                    <span class="label">Compliance Rate</span>
-                                    <span class="value {% if data.pass_rate < 80 %}critical{% elif data.pass_rate < 95 %}warning{% else %}success{% endif %}">
-                                        {{ data.pass_rate }}%
-                                    </span>
-                                </div>
-                            </div>
-                            {% if data.critical_issues > 0 or data.warnings > 0 %}
-                            <div class="monitor-alerts">
-                                {% if data.critical_issues > 0 %}
-                                <span class="alert alert-critical">🚨 {{ data.critical_issues }} Critical</span>
-                                {% endif %}
-                                {% if data.warnings > 0 %}
-                                <span class="alert alert-warning">⚠️ {{ data.warnings }} Warnings</span>
-                                {% endif %}
-                            </div>
-                            {% endif %}
-                            <div class="monitor-footer">
-                                <span class="view-details">View Details →</span>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-                
-                <!-- Country Detail Modal -->
-                <div id="countryModal" class="modal" style="display: none;">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h2 id="modalCountryName">Country Details</h2>
-                            <button class="modal-close" onclick="closeCountryModal()">&times;</button>
-                        </div>
-                        <div id="modalBody" class="modal-body">
-                            <div class="loading">Loading...</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+ <!-- Monitoring Dashboard Tab -->
+ <section id="monitor" class="tab-content">
+ <div class="card">
+ <h2 class="card-title">
+ <span class="icon">📊</span>
+ Global Compliance Monitoring
+ </h2>
+ 
+ <div class="monitoring-filters">
+ <button class="filter-btn active" onclick="filterMonitoring('all')">All Countries</button>
+ <button class="filter-btn" onclick="filterMonitoring('compliant')">✓ Compliant</button>
+ <button class="filter-btn" onclick="filterMonitoring('partial')">⚠ Partial</button>
+ <button class="filter-btn" onclick="filterMonitoring('non_compliant')">✗ Non-Compliant</button>
+ </div>
+ 
+ <div class="monitoring-grid">
+ {% for country, data in monitoring.items() %}
+ <div class="monitor-card" data-status="{{ data.status }}" onclick="showCountryDetails('{{ country }}')">
+ <div class="monitor-header">
+ <div class="country-info">
+ <h3>{{ country.replace('_', ' ') }}</h3>
+ <span class="last-checked">Last: {{ data.last_checked[:10] if data.last_checked else 'N/A' }}</span>
+ </div>
+ <span class="status-badge status-{{ data.status }}">
+ {% if data.status == 'compliant' %}✓ Compliant
+ {% elif data.status == 'partial' %}⚠ Partial
+ {% else %}✗ Non-Compliant{% endif %}
+ </span>
+ </div>
+ <div class="monitor-stats">
+ <div class="monitor-stat">
+ <span class="label">Checks</span>
+ <span class="value">{{ data.checks }}</span>
+ </div>
+ <div class="monitor-stat">
+ <span class="label">Violations</span>
+ <span class="value {% if data.violations > 0 %}critical{% endif %}">{{ data.violations }}</span>
+ </div>
+ <div class="monitor-stat">
+ <span class="label">Compliance Rate</span>
+ <span class="value {% if data.pass_rate < 80 %}critical{% elif data.pass_rate < 95 %}warning{% else %}success{% endif %}">
+ {{ data.pass_rate }}%
+ </span>
+ </div>
+ </div>
+ {% if data.critical_issues > 0 or data.warnings > 0 %}
+ <div class="monitor-alerts">
+ {% if data.critical_issues > 0 %}
+ <span class="alert alert-critical">🚨 {{ data.critical_issues }} Critical</span>
+ {% endif %}
+ {% if data.warnings > 0 %}
+ <span class="alert alert-warning">⚠️ {{ data.warnings }} Warnings</span>
+ {% endif %}
+ </div>
+ {% endif %}
+ <div class="monitor-footer">
+ <span class="view-details">View Details →</span>
+ </div>
+ </div>
+ {% endfor %}
+ </div>
+ </div>
+ 
+ <!-- Country Detail Modal -->
+ <div id="countryModal" class="modal" style="display: none;">
+ <div class="modal-content">
+ <div class="modal-header">
+ <h2 id="modalCountryName">Country Details</h2>
+ <button class="modal-close" onclick="closeCountryModal()">&times;</button>
+ </div>
+ <div id="modalBody" class="modal-body">
+ <div class="loading">Loading...</div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-            <!-- Regulatory Updates Tab -->
-            <section id="updates" class="tab-content">
-                <div class="card">
-                    <h2 class="card-title">
-                        <span class="icon">🔔</span>
-                        Recent Regulatory Updates
-                    </h2>
-                    <div class="updates-list">
-                        {% for update in recent_updates %}
-                        <div class="update-item">
-                            <div class="update-header">
-                                <div>
-                                    <span class="update-source">{{ update.source }}</span>
-                                    <span class="update-country">{{ update.country }}</span>
-                                </div>
-                                <span class="update-date">{{ update.date }}</span>
-                            </div>
-                            <h3 class="update-title">{{ update.title }}</h3>
-                            <p class="update-summary">{{ update.summary }}</p>
-                            {% if update.url %}
-                            <a href="{{ update.url }}" target="_blank" class="update-link">View Details →</a>
-                            {% endif %}
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </section>
+ <!-- Regulatory Updates Tab -->
+ <section id="updates" class="tab-content">
+ <div class="card">
+ <h2 class="card-title">
+ <span class="icon">🔔</span>
+ Recent Regulatory Updates
+ </h2>
+ <div class="updates-list">
+ {% for update in recent_updates %}
+ <div class="update-item">
+ <div class="update-header">
+ <div>
+ <span class="update-source">{{ update.source }}</span>
+ <span class="update-country">{{ update.country }}</span>
+ </div>
+ <span class="update-date">{{ update.date }}</span>
+ </div>
+ <h3 class="update-title">{{ update.title }}</h3>
+ <p class="update-summary">{{ update.summary }}</p>
+ {% if update.url %}
+ <a href="{{ update.url }}" target="_blank" class="update-link">View Details →</a>
+ {% endif %}
+ </div>
+ {% endfor %}
+ </div>
+ </div>
+ </section>
 
-            <!-- Analytics Report Tab -->
-            <section id="analytics" class="tab-content">
-                <div class="card">
-                    <h2 class="card-title">
-                        <span class="icon">📈</span>
-                        Compliance Analysis
-                    </h2>
-                    <div class="analytics-grid">
-                        <div class="chart-card">
-                            <h3>Violations by Country</h3>
-                            <canvas id="violationChart"></canvas>
-                        </div>
-                        <div class="chart-card">
-                            <h3>Distribution by Category</h3>
-                            <canvas id="categoryChart"></canvas>
-                        </div>
-                    </div>
-                    
-                    <div class="insights-section">
-                        <h3>Key Insights</h3>
-                        <div class="insights-grid">
-                            {% for insight in insights %}
-                            <div class="insight-card">
-                                <div class="insight-icon">{{ insight.icon }}</div>
-                                <div class="insight-content">
-                                    <h4>{{ insight.title }}</h4>
-                                    <p>{{ insight.description }}</p>
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
+ <!-- Analytics Report Tab -->
+ <section id="analytics" class="tab-content">
+ <div class="card">
+ <h2 class="card-title">
+ <span class="icon">📈</span>
+ Compliance Analysis
+ </h2>
+ <div class="analytics-grid">
+ <div class="chart-card">
+ <h3>Violations by Country</h3>
+ <canvas id="violationChart"></canvas>
+ </div>
+ <div class="chart-card">
+ <h3>Distribution by Category</h3>
+ <canvas id="categoryChart"></canvas>
+ </div>
+ </div>
+ 
+ <div class="insights-section">
+ <h3>Key Insights</h3>
+ <div class="insights-grid">
+ {% for insight in insights %}
+ <div class="insight-card">
+ <div class="insight-icon">{{ insight.icon }}</div>
+ <div class="insight-content">
+ <h4>{{ insight.title }}</h4>
+ <p>{{ insight.description }}</p>
+ </div>
+ </div>
+ {% endfor %}
+ </div>
+ </div>
+ </div>
+ </section>
+ </main>
 
-        <footer class="footer">
-            <p>&copy; 2026 Glocal Policy Guardrail | Policy-as-Code for Global OTT</p>
-        </footer>
-    </div>
+ <footer class="footer">
+ <p>&copy; 2026 Glocal Policy Guardrail | Policy-as-Code for Global OTT</p>
+ </footer>
+ </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+ <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+ <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
