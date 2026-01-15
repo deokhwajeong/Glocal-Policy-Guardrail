@@ -1,0 +1,79 @@
+version: '3.8'
+
+services:
+  policy-guardrail:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: policy-guardrail-scheduler
+    restart: unless-stopped
+    
+    environment:
+      - TZ=Asia/Seoul
+      - PYTHONUNBUFFERED=1
+    
+    env_file:
+      - .env
+    
+    volumes:
+      # 데이터 영속성
+      - ./reports:/app/reports
+      - ./config:/app/config
+      
+      # 로컬 개발용 (선택사항)
+      # - ./src:/app/src
+    
+    # 스케줄러가 백그라운드로 실행되므로 tty 불필요
+    # ports:
+    #   - "5000:5000"  # 웹 대시보드 (필요시 주석 해제)
+    
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    
+    # 헬스체크
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import os; exit(0 if os.path.exists('reports/scheduler_logs') else 1)"]
+      interval: 1h
+      timeout: 10s
+      retries: 3
+      start_period: 5m
+
+  # 선택사항: 웹 대시보드
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: policy-guardrail-dashboard
+    restart: unless-stopped
+    
+    command: python3 web_dashboard.py
+    
+    environment:
+      - TZ=Asia/Seoul
+      - PYTHONUNBUFFERED=1
+    
+    env_file:
+      - .env
+    
+    volumes:
+      - ./reports:/app/reports
+      - ./config:/app/config
+    
+    ports:
+      - "5000:5000"
+    
+    depends_on:
+      - policy-guardrail
+    
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  reports:
+  config:

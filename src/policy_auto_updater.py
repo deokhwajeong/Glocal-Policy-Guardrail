@@ -13,8 +13,11 @@ import yaml
 import json
 from datetime import datetime
 from typing import Dict, List, Optional
-from dataclasses import dataclass
+from dataclasses import dataclass, asdict
 import logging
+from bs4 import BeautifulSoup
+import os
+from pathlib import Path
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -170,27 +173,86 @@ class PolicyUpdateMonitor:
             return None
     
     def _check_website(self, source: RegulatorySource) -> Optional[Dict]:
-        """웹사이트 스크래핑 (간단한 변경 감지)"""
+        """웹사이트 스크래핑 (개선된 변경 감지)"""
         try:
-            response = requests.get(source.url, timeout=10)
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            }
+            response = requests.get(source.url, headers=headers, timeout=15)
             
             if response.status_code != 200:
+                logger.warning(f"Non-200 status code for {source.name}: {response.status_code}")
                 return None
             
-            # 간단한 콘텐츠 해시 (실제로는 BeautifulSoup 등으로 파싱 필요)
-            current_hash = hashlib.md5(response.content).hexdigest()
+            # BeautifulSoup으로 파싱
+            soup = BeautifulSoup(response.content, 'html.parser')
             
-            if source.last_hash and source.last_hash == current_hash:
+            # 메인 콘텐츠 추출 (사이트마다 다를 수 있음)
+            # 일반적인 뉴스/공지사항 영역 찾기
+            main_content = None
+            for selector in ['main', 'article', '.content', '#content', '.notice-list', '.news-list']:
+                main_content = soup.select_one(selector)
+                if main_content:
+                    break
+            
+            if not main_content:
+                main_content = soup.body if soup.body else soup
+            
+            # 텍스트만 추출
+            text_content = main_content.get_text(strip=True, separator=' ')
+            current_hash = hashlib.md5(text_content.encode()).hexdigest()
+            
+            # 해시 저장 디렉토리
+            hash_dir = Path("reports/source_hashes")
+            hash_dir.mkdir(parents=True, exist_ok=True)
+            hash_file = hash_dir / f"{source.country}_{source.name.replace(' ', '_')}.json"
+            
+            # 이전 해시 로드
+            previous_hash = None
+            if hash_file.exists():
+                with open(hash_file, 'r') as f:
+                    data = json.load(f)
+                    previous_hash = data.get('hash')
+            
+            # 해시 저장
+            with open(hash_file, 'w') as f:
+                json.dump({
+                    'hash': current_hash,
+                    'last_checked': datetime.now().isoformat(),
+                    'url': source.url
+                }, f, indent=2)
+            
+            # 변경 감지
+            if previous_hash and previous_hash == current_hash:
                 return None
+            
+            # 최신 항목 추출 시도
+            latest_title = "Content updated"
+            latest_link = source.url
+            
+            # 첫 번째 제목/링크 찾기
+            for tag in ['h1', 'h2', 'h3', 'h4']:
+                title_elem = main_content.find(tag)
+                if title_elem:
+                    latest_title = title_elem.get_text(strip=True)
+                    link_elem = title_elem.find('a') or title_elem.find_parent('a')
+                    if link_elem and link_elem.get('href'):
+                        latest_link = link_elem['href']
+                        if not latest_link.startswith('http'):
+                            from urllib.parse import urljoin
+                            latest_link = urljoin(source.url, latest_link)
+                    break
             
             return {
                 "source": source.name,
                 "country": source.country,
                 "method": "scrape",
+                "title": latest_title,
                 "url": source.url,
+                "link": latest_link,
                 "hash": current_hash,
                 "detected_at": datetime.now().isoformat(),
-                "note": "Content changed - manual review required"
+                "note": "Content changed - review required" if previous_hash else "Initial hash recorded"
             }
             
         except Exception as e:

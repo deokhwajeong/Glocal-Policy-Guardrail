@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌍 Glocal Policy Guardrail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">
+                    <span class="logo-icon">🌍</span>
+                    Glocal Policy Guardrail
+                </h1>
+                <p class="subtitle">Policy-as-Code Framework for Global OTT Platforms</p>
+            </div>
+            <div class="header-stats">
+                <div class="stat-card">
+                    <div class="stat-value">{{ stats.countries }}</div>
+                    <div class="stat-label">국가</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">{{ stats.total_checks }}</div>
+                    <div class="stat-label">검사 완료</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">{{ stats.success_rate }}%</div>
+                    <div class="stat-label">통과율</div>
+                </div>
+            </div>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab active" onclick="showTab('checker')">
+                <span class="tab-icon">🔍</span> 컴플라이언스 체커
+            </button>
+            <button class="tab" onclick="showTab('monitor')">
+                <span class="tab-icon">📊</span> 모니터링 대시보드
+            </button>
+            <button class="tab" onclick="showTab('updates')">
+                <span class="tab-icon">🔔</span> 규제 업데이트
+            </button>
+            <button class="tab" onclick="showTab('analytics')">
+                <span class="tab-icon">📈</span> 분석 리포트
+            </button>
+        </nav>
+
+        <main>
+            <!-- 컴플라이언스 체커 탭 -->
+            <section id="checker" class="tab-content active">
+                <div class="card">
+                    <h2 class="card-title">
+                        <span class="icon">🔍</span>
+                        컨텐츠 배포 검사
+                    </h2>
+                    
+                    <form id="checkForm" class="check-form">
+                        <div class="form-group">
+                            <label for="country">배포 국가</label>
+                            <select id="country" name="country" required>
+                                <option value="">국가를 선택하세요</option>
+                                {% for country in countries %}
+                                <option value="{{ country }}">{{ country.replace('_', ' ') }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="title">콘텐츠 제목</label>
+                                <input type="text" id="title" name="title" placeholder="예: 신규 드라마 시리즈" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="genre">장르</label>
+                                <select id="genre" name="genre" required>
+                                    <option value="Drama">드라마</option>
+                                    <option value="Movie">영화</option>
+                                    <option value="Documentary">다큐멘터리</option>
+                                    <option value="Entertainment">예능</option>
+                                    <option value="News">뉴스</option>
+                                    <option value="Educational">교육</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">설명</label>
+                            <textarea id="description" name="description" rows="3" placeholder="콘텐츠에 대한 설명을 입력하세요"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tags">태그 (쉼표로 구분)</label>
+                            <input type="text" id="tags" name="tags" placeholder="예: action, thriller, violence">
+                        </div>
+
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" name="has_ads" id="has_ads" onchange="toggleAdSchedule()">
+                                광고 포함
+                            </label>
+                        </div>
+
+                        <div id="adScheduleSection" style="display: none;">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="ad_date">광고 날짜</label>
+                                    <input type="date" id="ad_date" name="ad_date">
+                                </div>
+                                <div class="form-group">
+                                    <label for="ad_time">광고 시간</label>
+                                    <input type="time" id="ad_time" name="ad_time">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            <span class="btn-icon">🚀</span>
+                            검사 시작
+                        </button>
+                    </form>
+                </div>
+
+                <div id="resultCard" class="card result-card" style="display: none;">
+                    <h2 class="card-title">
+                        <span class="icon">📋</span>
+                        검사 결과
+                    </h2>
+                    <div id="resultContent"></div>
+                </div>
+            </section>
+
+            <!-- 모니터링 대시보드 탭 -->
+            <section id="monitor" class="tab-content">
+                <div class="card">
+                    <h2 class="card-title">
+                        <span class="icon">📊</span>
+                        실시간 컴플라이언스 모니터링
+                    </h2>
+                    <div class="monitoring-grid">
+                        {% for country, data in monitoring.items() %}
+                        <div class="monitor-card">
+                            <div class="monitor-header">
+                                <h3>{{ country.replace('_', ' ') }}</h3>
+                                <span class="status-badge status-{{ data.status }}">{{ data.status }}</span>
+                            </div>
+                            <div class="monitor-stats">
+                                <div class="monitor-stat">
+                                    <span class="label">검사 횟수</span>
+                                    <span class="value">{{ data.checks }}</span>
+                                </div>
+                                <div class="monitor-stat">
+                                    <span class="label">위반 건수</span>
+                                    <span class="value critical">{{ data.violations }}</span>
+                                </div>
+                                <div class="monitor-stat">
+                                    <span class="label">통과율</span>
+                                    <span class="value">{{ data.pass_rate }}%</span>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+
+            <!-- 규제 업데이트 탭 -->
+            <section id="updates" class="tab-content">
+                <div class="card">
+                    <h2 class="card-title">
+                        <span class="icon">🔔</span>
+                        최근 규제 업데이트
+                    </h2>
+                    <div class="updates-list">
+                        {% for update in recent_updates %}
+                        <div class="update-item">
+                            <div class="update-header">
+                                <div>
+                                    <span class="update-source">{{ update.source }}</span>
+                                    <span class="update-country">{{ update.country }}</span>
+                                </div>
+                                <span class="update-date">{{ update.date }}</span>
+                            </div>
+                            <h3 class="update-title">{{ update.title }}</h3>
+                            <p class="update-summary">{{ update.summary }}</p>
+                            {% if update.url %}
+                            <a href="{{ update.url }}" target="_blank" class="update-link">자세히 보기 →</a>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+
+            <!-- 분석 리포트 탭 -->
+            <section id="analytics" class="tab-content">
+                <div class="card">
+                    <h2 class="card-title">
+                        <span class="icon">📈</span>
+                        컴플라이언스 분석
+                    </h2>
+                    <div class="analytics-grid">
+                        <div class="chart-card">
+                            <h3>국가별 위반 현황</h3>
+                            <canvas id="violationChart"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <h3>카테고리별 분포</h3>
+                            <canvas id="categoryChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="insights-section">
+                        <h3>주요 인사이트</h3>
+                        <div class="insights-grid">
+                            {% for insight in insights %}
+                            <div class="insight-card">
+                                <div class="insight-icon">{{ insight.icon }}</div>
+                                <div class="insight-content">
+                                    <h4>{{ insight.title }}</h4>
+                                    <p>{{ insight.description }}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 Glocal Policy Guardrail | Policy-as-Code for Global OTT</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
