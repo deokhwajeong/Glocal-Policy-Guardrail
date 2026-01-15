@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Notification System for Regulatory Updates
-규제 업데이트 알림 시스템
+규제 업데이트 Notification system
 
 이메일, Slack, Discord 등으로 업데이트 알림을 전송합니다.
 """

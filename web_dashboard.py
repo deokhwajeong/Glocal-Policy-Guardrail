@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Web Dashboard for Glocal Policy Guardrail
-규제 업데이트 모니터링 웹 대시보드
+Regulatory Update Monitoring Dashboard for Global OTT Platforms
 """
 
 from flask import Flask, render_template, jsonify, request
@@ -19,12 +19,12 @@ from src.change_tracker import ChangeTracker
 
 app = Flask(__name__)
 
-# 전역 변수 - 지연 초기화
+# Global variables - lazy initialization
 monitor = None
 tracker = None
 
 def init_globals():
-    """전역 변수 초기화"""
+    """Initialize global variables"""
     global monitor, tracker
     if monitor is None:
         try:
@@ -51,21 +51,21 @@ def init_globals():
 
 @app.route('/')
 def index():
-    """메인 대시보드"""
+    """Main dashboard page"""
     try:
         init_globals()
         
-        # 기본 통계 데이터 생성
+        # Generate basic statistics data
         stats = {
             'countries': len(set(s.country for s in monitor.sources)) if monitor else 0,
             'total_checks': 0,
             'success_rate': 0
         }
         
-        # 국가 목록
+        # Country list
         countries = sorted(set(s.country for s in monitor.sources)) if monitor else []
         
-        # 모니터링 데이터 (국가별 상태)
+        # Monitoring data (status by country)
         monitoring = {}
         if monitor:
             for country in countries:
@@ -76,10 +76,10 @@ def index():
                     'pass_rate': 100
                 }
         
-        # 최근 업데이트
+        # Recent updates
         recent_updates = []
         
-        # 최근 검사 결과가 있으면 로드
+        # Load recent check results if available
         log_file = Path("reports/policy_updates.json")
         if log_file.exists():
             try:
@@ -89,7 +89,7 @@ def index():
                         stats['total_checks'] = len(logs)
                         stats['success_rate'] = 95
                         
-                        # 최근 5개 업데이트 추출
+                        # Extract last 5 updates
                         for log in logs[-5:]:
                             for update in log.get('updates', []):
                                 recent_updates.append({
@@ -110,7 +110,7 @@ def index():
         print(f"Error in index: {e}")
         import traceback
         traceback.print_exc()
-        # 에러 발생 시 기본값으로 렌더링
+        # Render with default values on error
         return render_template('index.html', 
                              stats={'countries': 0, 'total_checks': 0, 'success_rate': 0},
                              countries=[],
@@ -120,7 +120,7 @@ def index():
 
 @app.route('/api/status')
 def get_status():
-    """시스템 상태 조회"""
+    """Get system status"""
     try:
         init_globals()
         if monitor is None or tracker is None:
@@ -134,7 +134,7 @@ def get_status():
         else:
             recent_log = None
         
-        # 대기 중인 변경사항
+        # Pending changes
         pending_changes = tracker.get_pending_changes()
         approved_changes = tracker.get_approved_changes()
         
@@ -160,7 +160,7 @@ def get_status():
 
 @app.route('/api/sources')
 def get_sources():
-    """모니터링 중인 소스 목록"""
+    """Get list of monitored sources"""
     try:
         init_globals()
         if monitor is None:
@@ -183,7 +183,7 @@ def get_sources():
 
 @app.route('/api/updates')
 def get_updates():
-    """최근 업데이트 조회"""
+    """Get recent updates"""
     try:
         days = int(request.args.get('days', 30))
         log_file = Path("reports/policy_updates.json")
@@ -194,14 +194,14 @@ def get_updates():
         with open(log_file, 'r') as f:
             logs = json.load(f)
         
-        # 최근 N일 필터링
+        # Filter last N days
         cutoff = datetime.now() - timedelta(days=days)
         recent_logs = [
             log for log in logs
             if datetime.fromisoformat(log['timestamp']) > cutoff
         ]
         
-        # 모든 업데이트 추출
+        # Extract all updates
         all_updates = []
         for log in recent_logs:
             for update in log.get('updates', []):
@@ -219,7 +219,7 @@ def get_updates():
 
 @app.route('/api/changes')
 def get_changes():
-    """변경사항 조회"""
+    """Get changes"""
     try:
         init_globals()
         if tracker is None:
@@ -243,7 +243,7 @@ def get_changes():
 
 @app.route('/api/changes/<int:change_id>/approve', methods=['POST'])
 def approve_change(change_id):
-    """변경사항 승인"""
+    """Approve a change"""
     try:
         init_globals()
         if tracker is None:
@@ -263,7 +263,7 @@ def approve_change(change_id):
 
 @app.route('/api/check-now', methods=['POST'])
 def check_now():
-    """즉시 업데이트 체크 실행"""
+    """Run update check immediately"""
     try:
         init_globals()
         if monitor is None:
@@ -271,18 +271,18 @@ def check_now():
         data = request.get_json() or {}
         frequency = data.get('frequency', 'all')
         
-        # 주파수별 필터링
+        # Filter by frequency
         if frequency != 'all':
             original_sources = monitor.sources
             monitor.sources = [s for s in monitor.sources if s.check_frequency == frequency]
         
         updates = monitor.check_for_updates()
         
-        # 원래 소스 복원
+        # Restore original sources
         if frequency != 'all':
             monitor.sources = original_sources
         
-        # 로그 저장
+        # Save log
         if updates:
             monitor.save_update_log(updates)
         
@@ -297,7 +297,7 @@ def check_now():
 
 @app.route('/api/stats')
 def get_stats():
-    """통계 데이터"""
+    """Get statistics data"""
     try:
         init_globals()
         if monitor is None:
@@ -310,7 +310,7 @@ def get_stats():
                 countries[country] = 0
             countries[country] += 1
         
-        # 최근 30일 업데이트 수
+        # Update count for last 30 days
         log_file = Path("reports/policy_updates.json")
         daily_updates = {}
         
@@ -318,7 +318,7 @@ def get_stats():
             with open(log_file, 'r') as f:
                 logs = json.load(f)
             
-            for log in logs[-30:]:  # 최근 30개 로그
+            for log in logs[-30:]:  # Last 30 logs
                 date = log['timestamp'][:10]
                 count = log.get('updates_count', 0)
                 daily_updates[date] = daily_updates.get(date, 0) + count
@@ -334,7 +334,7 @@ def get_stats():
 
 @app.route('/health')
 def health():
-    """헬스체크"""
+    """Health check endpoint"""
     return jsonify({
         "status": "healthy",
         "timestamp": datetime.now().isoformat()
@@ -342,14 +342,14 @@ def health():
 
 
 def main():
-    """메인 함수"""
+    """Main function"""
     import os
     
-    # 필요한 디렉토리 생성
+    # Create required directories
     Path("reports").mkdir(exist_ok=True)
     Path("reports/scheduler_logs").mkdir(exist_ok=True)
     
-    # 개발 모드에서 실행
+    # Run in development mode
     host = os.getenv('DASHBOARD_HOST', '0.0.0.0')
     port = int(os.getenv('DASHBOARD_PORT', 5000))
     debug = os.getenv('FLASK_DEBUG', 'false').lower() == 'true'

@@ -39,7 +39,7 @@ logger = logging.getLogger(__name__)
 
 
 class RegulatoryUpdateScheduler:
-    """규제 업데이트 자동 스케줄러"""
+    """Regulatory 업데이트 Auto scheduler"""
     
     def __init__(self, config_path: str = "config/regulatory_sources.yaml"):
         self.config_path = config_path
