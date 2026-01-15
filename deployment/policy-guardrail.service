@@ -1,0 +1,32 @@
+[Unit]
+Description=Glocal Policy Guardrail - Regulatory Update Scheduler
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/workspaces/Glocal-Policy-Guardrail
+Environment="PATH=/usr/local/bin:/usr/bin:/bin"
+Environment="PYTHONUNBUFFERED=1"
+
+# 환경변수 파일 로드
+EnvironmentFile=/workspaces/Glocal-Policy-Guardrail/.env
+
+# 스케줄러 실행
+ExecStart=/usr/bin/python3 /workspaces/Glocal-Policy-Guardrail/src/auto_scheduler.py --daemon
+
+# 재시작 정책
+Restart=always
+RestartSec=10
+
+# 로그 설정
+StandardOutput=append:/workspaces/Glocal-Policy-Guardrail/reports/scheduler_logs/systemd.log
+StandardError=append:/workspaces/Glocal-Policy-Guardrail/reports/scheduler_logs/systemd_error.log
+
+# 보안 설정
+PrivateTmp=true
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

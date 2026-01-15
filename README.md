@@ -31,6 +31,15 @@ This framework introduces a **Policy-as-Code approach** that separates policy de
 
 ## Key Features
 
+### 🔄 Automatic Regulatory Update System (NEW!)
+- **24/7 Monitoring**: Continuously monitors official regulatory sources across 9+ countries
+- **Smart Detection**: RSS feeds, web scraping, and API monitoring with hash-based change detection
+- **Multi-Channel Alerts**: Email, Slack, and Discord notifications for regulatory updates
+- **Change Tracking**: Complete audit trail with version snapshots and approval workflow
+- **Flexible Deployment**: systemd service, Docker container, or manual execution
+
+[📖 Auto-Update System Guide](docs/AUTO_UPDATE_GUIDE.md)
+
 ### Multi-Country Policy Database
 - Pre-configured regulatory rules for 8 countries (Saudi Arabia, Spain, South Korea, USA, Germany, China, India, Japan)
 - YAML-based declarative policy definitions
