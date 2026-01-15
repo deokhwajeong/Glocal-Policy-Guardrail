@@ -1,0 +1,15 @@
+{
+  "sprint": "Sprint 1",
+  "created_at": "2026-01-15",
+  "issues": [
+    "[DRY RUN] Would create: GPG-001: Set up CI/CD pipeline with GitHub Actions",
+    "[DRY RUN] Would create: GPG-002: Write unit tests for ComplianceScanner",
+    "[DRY RUN] Would create: GPG-003: Write unit tests for PolicyUpdateMonitor",
+    "[DRY RUN] Would create: GPG-004: Add integration tests for REST API",
+    "[DRY RUN] Would create: GPG-005: Set up code coverage reporting",
+    "[DRY RUN] Would create: GPG-006: Add linting (black, flake8, mypy)",
+    "[DRY RUN] Would create: GPG-007: Fix all existing linting errors",
+    "[DRY RUN] Would create: GPG-008: Set up pre-commit hooks",
+    "[DRY RUN] Would create: GPG-009: Document test running procedures"
+  ]
+}

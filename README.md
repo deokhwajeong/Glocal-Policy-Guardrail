@@ -490,12 +490,23 @@ Country_Name:
 ```
 ---
 ## Contributing
-Contributions are welcome. To contribute:
+We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+
+**Quick Start**:
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/new-country-policy`)
 3. Commit your changes (`git commit -m 'Add policy for Brazil'`)
 4. Push to the branch (`git push origin feature/new-country-policy`)
 5. Open a Pull Request
+
+**Areas to Contribute**:
+- 🌍 Add support for new countries
+- 🐛 Report or fix bugs
+- 📚 Improve documentation
+- ✨ Suggest new features
+- 🧪 Write tests
+
+See our [Roadmap](ROADMAP.md) and [Backlog](BACKLOG.md) for planned features and priorities.
 ---
 ## License
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.

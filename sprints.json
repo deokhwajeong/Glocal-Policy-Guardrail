@@ -1,0 +1,369 @@
+{
+  "sprint_1": {
+    "sprint_number": 1,
+    "start_date": "2026-01-15",
+    "end_date": "2026-01-28",
+    "goal": "Set up development infrastructure and improve code quality to 95% test coverage",
+    "capacity": 40,
+    "velocity_target": 40,
+    "status": "active",
+    "stories": [
+      {
+        "id": "GPG-001",
+        "title": "Set up CI/CD pipeline with GitHub Actions",
+        "description": "Implement automated testing and deployment pipeline using GitHub Actions",
+        "type": "feature",
+        "priority": "high",
+        "points": 8,
+        "assignee": null,
+        "status": "todo",
+        "acceptance_criteria": [
+          "GitHub Actions workflow created",
+          "Runs tests on every PR",
+          "Auto-deploys on merge to main",
+          "Build status badge in README"
+        ],
+        "tasks": [
+          "Create .github/workflows/ci.yml",
+          "Configure pytest in CI",
+          "Set up code coverage reporting",
+          "Configure Docker build and push",
+          "Add deployment step for main branch"
+        ]
+      },
+      {
+        "id": "GPG-002",
+        "title": "Write unit tests for ComplianceScanner",
+        "description": "Comprehensive unit test coverage for compliance scanning functionality",
+        "type": "test",
+        "priority": "high",
+        "points": 5,
+        "assignee": null,
+        "status": "todo",
+        "acceptance_criteria": [
+          "95% coverage for src/compliance_scanner.py",
+          "All edge cases tested",
+          "Mock external dependencies",
+          "Tests run in < 5 seconds"
+        ],
+        "tasks": [
+          "Test forbidden keyword detection",
+          "Test ad restriction validation",
+          "Test feature requirement checking",
+          "Test multi-country scanning",
+          "Add parameterized tests for all countries"
+        ]
+      },
+      {
+        "id": "GPG-003",
+        "title": "Write unit tests for PolicyUpdateMonitor",
+        "description": "Test coverage for regulatory monitoring and update detection",
+        "type": "test",
+        "priority": "high",
+        "points": 5,
+        "assignee": null,
+        "status": "todo",
+        "acceptance_criteria": [
+          "95% coverage for src/policy_auto_updater.py",
+          "Mock RSS feeds and web scraping",
+          "Test hash-based change detection",
+          "Test notification generation"
+        ],
+        "tasks": [
+          "Test RSS feed parsing",
+          "Test web scraping logic",
+          "Test change detection",
+          "Test update logging",
+          "Test notification sending"
+        ]
+      },
+      {
+        "id": "GPG-004",
+        "title": "Add integration tests for REST API",
+        "description": "End-to-end tests for all API endpoints",
+        "type": "test",
+        "priority": "high",
+        "points": 8,
+        "assignee": null,
+        "status": "todo",
+        "acceptance_criteria": [
+          "All endpoints tested",
+          "Request/response validation",
+          "Error handling tested",
+          "Authentication tested (when added)"
+        ],
+        "tasks": [
+          "Test GET /api/status",
+          "Test POST /api/compliance/scan",
+          "Test GET /api/compliance/report",
+          "Test GET /api/regulatory/updates",
+          "Test error responses (400, 404, 500)"
+        ]
+      },
+      {
+        "id": "GPG-005",
+        "title": "Set up code coverage reporting",
+        "description": "Configure coverage.py and integrate with CI",
+        "type": "tooling",
+        "priority": "medium",
+        "points": 3,
+        "assignee": null,
+        "status": "todo",
+        "acceptance_criteria": [
+          "Coverage reports generated in CI",
+          "HTML coverage report artifact",
+          "Coverage badge in README",
+          "Minimum coverage threshold enforced"
+        ],
+        "tasks": [
+          "Configure pytest-cov",
+          "Add coverage reporting to CI",
+          "Upload coverage to Codecov",
+          "Add badge to README"
+        ]
+      },
+      {
+        "id": "GPG-006",
+        "title": "Add linting (black, flake8, mypy)",
+        "description": "Set up code quality tools and standards",
+        "type": "tooling",
+        "priority": "medium",
+        "points": 3,
+        "assignee": null,
+        "status": "todo",
+        "acceptance_criteria": [
+          "Black for formatting",
+          "Flake8 for linting",
+          "Mypy for type checking",
+          "All tools run in CI"
+        ],
+        "tasks": [
+          "Add black configuration",
+          "Add flake8 configuration",
+          "Add mypy configuration",
+          "Create lint workflow in CI"
+        ]
+      },
+      {
+        "id": "GPG-007",
+        "title": "Fix all existing linting errors",
+        "description": "Clean up codebase to pass all linting checks",
+        "type": "refactor",
+        "priority": "medium",
+        "points": 5,
+        "assignee": null,
+        "status": "todo",
+        "acceptance_criteria": [
+          "Zero black violations",
+          "Zero flake8 violations",
+          "Zero mypy errors",
+          "Code passes all quality gates"
+        ],
+        "tasks": [
+          "Run black on all Python files",
+          "Fix flake8 violations",
+          "Add type hints for mypy",
+          "Fix indentation in policy_auto_updater.py"
+        ]
+      },
+      {
+        "id": "GPG-008",
+        "title": "Set up pre-commit hooks",
+        "description": "Automate code quality checks before commits",
+        "type": "tooling",
+        "priority": "low",
+        "points": 2,
+        "assignee": null,
+        "status": "todo",
+        "acceptance_criteria": [
+          "Pre-commit hooks configured",
+          "Runs black, flake8, mypy",
+          "Prevents commits with issues",
+          "Documentation updated"
+        ],
+        "tasks": [
+          "Install pre-commit",
+          "Configure .pre-commit-config.yaml",
+          "Add to CONTRIBUTING.md",
+          "Test hooks work correctly"
+        ]
+      },
+      {
+        "id": "GPG-009",
+        "title": "Document test running procedures",
+        "description": "Create testing documentation for contributors",
+        "type": "documentation",
+        "priority": "low",
+        "points": 1,
+        "assignee": null,
+        "status": "todo",
+        "acceptance_criteria": [
+          "Testing section in CONTRIBUTING.md",
+          "Examples of running tests",
+          "Coverage requirements documented",
+          "CI integration explained"
+        ],
+        "tasks": [
+          "Write testing guidelines",
+          "Add pytest examples",
+          "Document coverage requirements",
+          "Add troubleshooting tips"
+        ]
+      }
+    ],
+    "metrics": {
+      "planned_points": 40,
+      "completed_points": 0,
+      "completion_percentage": 0,
+      "stories_completed": 0,
+      "stories_total": 9,
+      "blocked_stories": 0
+    }
+  },
+  "sprint_2": {
+    "sprint_number": 2,
+    "start_date": "2026-01-29",
+    "end_date": "2026-02-11",
+    "goal": "Achieve 95% test coverage and establish performance baselines",
+    "capacity": 40,
+    "velocity_target": 40,
+    "status": "planned",
+    "stories": [
+      {
+        "id": "GPG-010",
+        "title": "Add edge case tests for all countries",
+        "description": "Comprehensive test coverage for all 15+ supported countries",
+        "type": "test",
+        "priority": "high",
+        "points": 13,
+        "assignee": null,
+        "status": "todo"
+      },
+      {
+        "id": "GPG-011",
+        "title": "Performance benchmarking suite",
+        "description": "Create automated performance testing and benchmarking",
+        "type": "test",
+        "priority": "high",
+        "points": 8,
+        "assignee": null,
+        "status": "todo"
+      },
+      {
+        "id": "GPG-012",
+        "title": "Load testing (1000 concurrent scans)",
+        "description": "Verify system handles production load levels",
+        "type": "test",
+        "priority": "high",
+        "points": 8,
+        "assignee": null,
+        "status": "todo"
+      },
+      {
+        "id": "GPG-013",
+        "title": "Memory profiling and optimization",
+        "description": "Profile memory usage and optimize hot paths",
+        "type": "performance",
+        "priority": "medium",
+        "points": 5,
+        "assignee": null,
+        "status": "todo"
+      },
+      {
+        "id": "GPG-014",
+        "title": "Test data generator for realistic scenarios",
+        "description": "Tool to generate realistic test data for compliance testing",
+        "type": "tooling",
+        "priority": "medium",
+        "points": 5,
+        "assignee": null,
+        "status": "todo"
+      },
+      {
+        "id": "GPG-015",
+        "title": "Regression test suite",
+        "description": "Automated regression testing for all releases",
+        "type": "test",
+        "priority": "low",
+        "points": 3,
+        "assignee": null,
+        "status": "todo"
+      }
+    ],
+    "metrics": {
+      "planned_points": 42,
+      "completed_points": 0,
+      "completion_percentage": 0,
+      "stories_completed": 0,
+      "stories_total": 6,
+      "blocked_stories": 0
+    }
+  },
+  "release_plan": {
+    "v1.1.0": {
+      "release_date": "2026-01-31",
+      "theme": "Testing & Quality Assurance",
+      "sprints": ["sprint_1", "sprint_2"],
+      "total_points": 82,
+      "status": "in_progress",
+      "key_deliverables": [
+        "95% test coverage",
+        "CI/CD pipeline operational",
+        "Performance benchmarks established",
+        "Code quality gates enforced"
+      ],
+      "risks": [
+        {
+          "description": "Test coverage may not reach 95% in time",
+          "mitigation": "Focus on critical paths first, defer edge cases to v1.2",
+          "probability": "medium",
+          "impact": "low"
+        }
+      ]
+    },
+    "v1.2.0": {
+      "release_date": "2026-02-14",
+      "theme": "Documentation & Developer Experience",
+      "sprints": ["sprint_3", "sprint_4"],
+      "total_points": 80,
+      "status": "planned",
+      "key_deliverables": [
+        "Complete API documentation",
+        "Developer getting started guide",
+        "Contributing guidelines",
+        "Video tutorials"
+      ]
+    },
+    "v1.5.0": {
+      "release_date": "2026-04-15",
+      "theme": "AI-Powered Policy Analysis",
+      "sprints": ["sprint_5", "sprint_6", "sprint_7", "sprint_8"],
+      "total_points": 160,
+      "status": "planned",
+      "key_deliverables": [
+        "LLM integration for policy analysis",
+        "Automated policy rule generation",
+        "Multi-language support",
+        "Legal review workflow UI"
+      ]
+    }
+  },
+  "team": {
+    "velocity_history": [
+      {"sprint": 0, "planned": 40, "completed": 0, "velocity": 0}
+    ],
+    "capacity": {
+      "developers": 2,
+      "points_per_developer": 20,
+      "total_capacity": 40
+    },
+    "working_agreements": [
+      "Daily standups at 10:00 AM UTC",
+      "Sprint planning every 2 weeks (Wednesday)",
+      "Sprint review and retro (Tuesday before planning)",
+      "Code review within 24 hours",
+      "Pair programming for complex features",
+      "Definition of Done: Tests pass, coverage >85%, documentation updated, PR approved"
+    ]
+  }
+}

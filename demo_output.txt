@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/workspaces/Glocal-Policy-Guardrail/main.py", line 2, in <module>
+    from src.analytics import generate_full_analytics_report, ComplianceAnalytics
+  File "/workspaces/Glocal-Policy-Guardrail/src/analytics.py", line 26
+    avg_violations = {
+IndentationError: unexpected indent
