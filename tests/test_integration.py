@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
 System Integration Test
-자동 규제 업데이트 시스템 통합 테스트
+Automated Regulatory Update System Integration Test
 
-전체 시스템이 정상적으로 작동하는지 확인합니다.
+Verifies that the entire system operates correctly.
 """
 
 import sys
@@ -13,7 +13,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 def test_imports():
-    """필수 모듈 임포트 테스트"""
+    """Test importing required modules"""
     print("=" * 70)
     print("Testing Module Imports...")
     print("=" * 70)
@@ -50,7 +50,7 @@ def test_imports():
 
 
 def test_dependencies():
-    """의존성 패키지 테스트"""
+    """Test dependency packages"""
     print("\n" + "=" * 70)
     print("Testing Dependencies...")
     print("=" * 70)
@@ -77,7 +77,7 @@ def test_dependencies():
 
 
 def test_configuration():
-    """설정 파일 테스트"""
+    """Test configuration files"""
     print("\n" + "=" * 70)
     print("Testing Configuration Files...")
     print("=" * 70)
