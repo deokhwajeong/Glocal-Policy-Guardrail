@@ -1,0 +1,292 @@
+
+╔══════════════════════════════════════════════════════════════════════╗
+║  🌍 GLOCAL POLICY GUARDRAIL - COMPLIANCE SCANNER                     ║
+║  Policy-as-Code Framework for Global OTT Platforms                   ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+✅ Policy Database Loaded Successfully
+   Supported Countries: Saudi_Arabia, Spain, South_Korea, United_States, Germany, China, India, Japan
+
+======================================================================
+🧪 Test Case: test_case_1
+======================================================================
+
+📋 Content Details:
+   Title: Vegas Nights
+   Genre: Reality TV
+   Country: Saudi_Arabia
+
+🔴 CRITICAL: Found 6 violation(s) in Saudi_Arabia
+  1. [CRITICAL] FORBIDDEN_KEYWORD: Forbidden keyword 'gambling' detected in description
+     └─ Detected: 'gambling'
+  2. [CRITICAL] FORBIDDEN_KEYWORD: Forbidden keyword 'casino' detected in description
+     └─ Detected: 'casino'
+  3. [CRITICAL] FORBIDDEN_KEYWORD: Forbidden keyword 'poker' detected in description
+     └─ Detected: 'poker'
+  4. [CRITICAL] FORBIDDEN_KEYWORD: Forbidden keyword 'gambling' detected in tags
+     └─ Detected: 'gambling'
+  5. [CRITICAL] FORBIDDEN_KEYWORD: Forbidden keyword 'casino' detected in tags
+     └─ Detected: 'casino'
+  6. [CRITICAL] FORBIDDEN_KEYWORD: Forbidden keyword 'poker' detected in tags
+     └─ Detected: 'poker'
+
+✅ TEST PASSED: Expected 'CRITICAL', Got 'CRITICAL'
+
+======================================================================
+🧪 Test Case: test_case_2
+======================================================================
+
+📋 Content Details:
+   Title:  
+   Genre: Drama
+   Country: South_Korea
+
+⚠️ WARNING: Found 3 violation(s) in South_Korea
+  1. [HIGH] MISSING_MANDATORY_FEATURE: Required feature 'real_name_verification' is missing
+     └─ Detected: 'Available: '
+  2. [HIGH] MISSING_MANDATORY_FEATURE: Required feature 'youth_protection_system' is missing
+     └─ Detected: 'Available: '
+  3. [HIGH] MISSING_MANDATORY_FEATURE: Required feature 'korean_subtitle_availability' is missing
+     └─ Detected: 'Available: '
+
+✅ TEST PASSED: Expected 'WARNING', Got 'WARNING'
+
+======================================================================
+🧪 Test Case: test_case_3
+======================================================================
+📅 Scheduled Time: 2026-01-13 15:00:00
+
+📋 Content Details:
+   Title: Sports Highlights
+   Genre: Sports
+   Country: Spain
+
+⚠️ WARNING: Found 1 violation(s) in Spain
+  1. [HIGH] AD_TIME_RESTRICTION: gambling_ads only allowed during 01:00-05:00. Current: 15:00
+     └─ Detected: 'Scheduled at 15:00'
+
+❌ TEST FAILED: Expected 'CRITICAL', Got 'WARNING'
+
+======================================================================
+🧪 Test Case: test_case_4
+======================================================================
+
+📋 Content Details:
+   Title: Family Comedy Show
+   Genre: Comedy
+   Country: United_States
+
+✅ PASS: Compliance check successful for United_States
+
+✅ TEST PASSED: Expected 'PASS', Got 'PASS'
+
+======================================================================
+🧪 Test Case: test_case_5
+======================================================================
+
+📋 Content Details:
+   Title: World War II Documentary
+   Genre: Documentary
+   Country: Germany
+
+🔴 CRITICAL: Found 2 violation(s) in Germany
+  1. [CRITICAL] FORBIDDEN_KEYWORD: Forbidden keyword 'nazi' detected in description
+     └─ Detected: 'nazi'
+  2. [CRITICAL] FORBIDDEN_KEYWORD: Forbidden keyword 'swastika' detected in description
+     └─ Detected: 'swastika'
+
+✅ TEST PASSED: Expected 'CRITICAL', Got 'CRITICAL'
+
+======================================================================
+🧪 Test Case: test_case_6
+======================================================================
+
+📋 Content Details:
+   Title: Hong Kong Story
+   Genre: Documentary
+   Country: China
+
+🔴 CRITICAL: Found 1 violation(s) in China
+  1. [CRITICAL] FORBIDDEN_KEYWORD: Forbidden keyword 'hong_kong_protest' detected in description
+     └─ Detected: 'hong_kong_protest'
+
+✅ TEST PASSED: Expected 'CRITICAL', Got 'CRITICAL'
+
+======================================================================
+🧪 Test Case: test_case_7
+======================================================================
+📅 Scheduled Time: 2026-01-13 20:00:00
+
+📋 Content Details:
+   Title:  
+   Genre: Drama
+   Country: South_Korea
+
+⚠️ WARNING: Found 1 violation(s) in South_Korea
+  1. [HIGH] AD_TIME_RESTRICTION: alcohol_ads forbidden during 07:00-22:00. Current: 20:00
+     └─ Detected: 'Scheduled at 20:00'
+
+❌ TEST FAILED: Expected 'CRITICAL', Got 'WARNING'
+
+======================================================================
+🧪 Test Case: test_case_8
+======================================================================
+
+📋 Content Details:
+   Title: アニメシリーズ
+   Genre: Animation
+   Country: Japan
+
+✅ PASS: Compliance check successful for Japan
+
+✅ TEST PASSED: Expected 'PASS', Got 'PASS'
+
+======================================================================
+🧪 Test Case: test_case_9
+======================================================================
+
+📋 Content Details:
+   Title: Food Culture
+   Genre: Food & Travel
+   Country: India
+
+⚠️ WARNING: Found 1 violation(s) in India
+  1. [HIGH] FORBIDDEN_KEYWORD: Forbidden keyword 'cow_slaughter' detected in description
+     └─ Detected: 'cow_slaughter'
+
+❌ TEST FAILED: Expected 'CRITICAL', Got 'WARNING'
+
+======================================================================
+🧪 Test Case: test_case_10
+======================================================================
+
+📋 Content Details:
+   Title: Global Music Festival
+   Genre: Music
+   Country: United_States
+
+✅ PASS: Compliance check successful for United_States
+
+✅ TEST PASSED: Expected 'PASS', Got 'PASS'
+
+
+======================================================================
+📊 FINAL TEST SUMMARY
+======================================================================
+Total Tests: 10
+✅ Passed: 7
+❌ Failed: 3
+Success Rate: 70.0%
+======================================================================
+
+
+📈 VIOLATION STATISTICS BY COUNTRY:
+======================================================================
+
+China:
+  Total Checks: 1
+  Violations Found: 1
+  🔴 Critical: 1
+  ⚠️  Warnings: 0
+
+Germany:
+  Total Checks: 1
+  Violations Found: 2
+  🔴 Critical: 1
+  ⚠️  Warnings: 0
+
+India:
+  Total Checks: 1
+  Violations Found: 1
+  🔴 Critical: 0
+  ⚠️  Warnings: 1
+
+Japan:
+  Total Checks: 1
+  Violations Found: 0
+  🔴 Critical: 0
+  ⚠️  Warnings: 0
+
+Saudi_Arabia:
+  Total Checks: 1
+  Violations Found: 6
+  🔴 Critical: 1
+  ⚠️  Warnings: 0
+
+South_Korea:
+  Total Checks: 2
+  Violations Found: 4
+  🔴 Critical: 0
+  ⚠️  Warnings: 2
+
+Spain:
+  Total Checks: 1
+  Violations Found: 1
+  🔴 Critical: 0
+  ⚠️  Warnings: 1
+
+United_States:
+  Total Checks: 2
+  Violations Found: 0
+  🔴 Critical: 0
+  ⚠️  Warnings: 0
+
+======================================================================
+✨ Testing Complete!
+
+
+
+🎨 Generating Advanced Analytics Report...
+======================================================================
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃               EXECUTIVE COMPLIANCE SUMMARY                         ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+📅 Report Generated: 2026-01-15 05:05:33
+
+📈 KEY METRICS:
+   • Total Deployments Reviewed: 10
+   • Compliance Pass Rate: 30.0%
+   • Critical Violations: 3
+   • Total Violations Found: 15
+
+🎯 RISK ASSESSMENT:
+   • Highest Risk Market: Saudi_Arabia
+   • Average Violations per Deployment: 1.50
+
+💡 RECOMMENDATIONS:
+   • Review and update policies for high-risk markets
+   • Implement additional content filtering for CRITICAL violations
+   • Schedule compliance training for content teams
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🌍 GLOBAL COMPLIANCE RISK HEATMAP
+======================================================================
+🔴 Saudi_Arabia         │████████████████████████████████████████│ 6.00 avg violations
+🟡 South_Korea          │█████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░│ 2.00 avg violations
+🟡 Germany              │█████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░│ 2.00 avg violations
+🟡 Spain                │██████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│ 1.00 avg violations
+🟡 China                │██████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│ 1.00 avg violations
+🟡 India                │██████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│ 1.00 avg violations
+🟢 United_States        │░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│ 0.00 avg violations
+🟢 Japan                │░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░│ 0.00 avg violations
+======================================================================
+
+📊 VIOLATION TYPE BREAKDOWN
+======================================================================
+FORBIDDEN_KEYWORD              │██████████████████████████              │  10 ( 66.7%)
+MISSING_MANDATORY_FEATURE      │████████                                │   3 ( 20.0%)
+AD_TIME_RESTRICTION            │█████                                   │   2 ( 13.3%)
+======================================================================
+Total Violations: 15
+
+⚠️  SEVERITY DISTRIBUTION
+======================================================================
+🔴 CRITICAL   │████████████████████████                │   9 ( 60.0%)
+🟠 HIGH       │████████████████                        │   6 ( 40.0%)
+======================================================================
+
+✅ Report exported to reports/compliance_report.json
+======================================================================

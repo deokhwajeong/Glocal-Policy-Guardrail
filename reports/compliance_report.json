@@ -1,443 +1,188 @@
 {
-  "generated_at": "2026-01-15T01:03:37.927814",
-  "summary": {
-    "total_countries": 15,
-    "compliant_countries": 13,
-    "partial_compliance": 2,
-    "non_compliant": 0,
-    "total_checks": 539,
-    "violations_found": 15
-  },
-  "country_details": {
-    "South_Korea": {
-      "compliance_status": "non_compliant",
-      "total_checks": 28,
-      "passed_checks": 25,
-      "violations": 3,
-      "compliance_rate": 89.29,
-      "last_checked": "2026-01-15T01:03:37.927839",
-      "critical_issues": [
+  "generated_at": "2026-01-15T05:05:33.713794",
+  "total_deployments": 10,
+  "results": [
+    {
+      "status": "CRITICAL",
+      "country": "Saudi_Arabia",
+      "timestamp": "2026-01-15T05:05:33.706709",
+      "violation_count": 6,
+      "violations": [
         {
-          "type": "Required metadata missing",
-          "severity": "high",
-          "description": "Compliance issue detected in South_Korea",
-          "remediation": "Update content metadata and implement required features"
-        }
-      ],
-      "warnings": [
-        {
-          "type": "Local content quota not met",
-          "severity": "medium",
-          "description": "Compliance issue detected in South_Korea",
-          "remediation": "Update content metadata and implement required features"
+          "type": "FORBIDDEN_KEYWORD",
+          "message": "Forbidden keyword 'gambling' detected in description",
+          "severity": "CRITICAL",
+          "detected_content": "gambling",
+          "timestamp": "2026-01-15T05:05:33.707231"
         },
         {
-          "type": "Missing required subtitles",
-          "severity": "low",
-          "description": "Compliance issue detected in South_Korea",
-          "remediation": "Update content metadata and implement required features"
+          "type": "FORBIDDEN_KEYWORD",
+          "message": "Forbidden keyword 'casino' detected in description",
+          "severity": "CRITICAL",
+          "detected_content": "casino",
+          "timestamp": "2026-01-15T05:05:33.707242"
+        },
+        {
+          "type": "FORBIDDEN_KEYWORD",
+          "message": "Forbidden keyword 'poker' detected in description",
+          "severity": "CRITICAL",
+          "detected_content": "poker",
+          "timestamp": "2026-01-15T05:05:33.707247"
+        },
+        {
+          "type": "FORBIDDEN_KEYWORD",
+          "message": "Forbidden keyword 'gambling' detected in tags",
+          "severity": "CRITICAL",
+          "detected_content": "gambling",
+          "timestamp": "2026-01-15T05:05:33.707274"
+        },
+        {
+          "type": "FORBIDDEN_KEYWORD",
+          "message": "Forbidden keyword 'casino' detected in tags",
+          "severity": "CRITICAL",
+          "detected_content": "casino",
+          "timestamp": "2026-01-15T05:05:33.707279"
+        },
+        {
+          "type": "FORBIDDEN_KEYWORD",
+          "message": "Forbidden keyword 'poker' detected in tags",
+          "severity": "CRITICAL",
+          "detected_content": "poker",
+          "timestamp": "2026-01-15T05:05:33.707282"
         }
       ]
     },
-    "United_States": {
-      "compliance_status": "non_compliant",
-      "total_checks": 41,
-      "passed_checks": 36,
-      "violations": 5,
-      "compliance_rate": 87.8,
-      "last_checked": "2026-01-15T01:03:37.927869",
-      "critical_issues": [
+    {
+      "status": "WARNING",
+      "country": "South_Korea",
+      "timestamp": "2026-01-15T05:05:33.707351",
+      "violation_count": 3,
+      "violations": [
         {
-          "type": "Non-compliant privacy policy",
-          "severity": "high",
-          "description": "Compliance issue detected in United_States",
-          "remediation": "Update content metadata and implement required features"
+          "type": "MISSING_MANDATORY_FEATURE",
+          "message": "Required feature 'real_name_verification' is missing",
+          "severity": "HIGH",
+          "detected_content": "Available: ",
+          "timestamp": "2026-01-15T05:05:33.707498"
         },
         {
-          "type": "Inadequate parental controls",
-          "severity": "high",
-          "description": "Compliance issue detected in United_States",
-          "remediation": "Update content metadata and implement required features"
-        }
-      ],
-      "warnings": [
-        {
-          "type": "Inadequate parental controls",
-          "severity": "medium",
-          "description": "Compliance issue detected in United_States",
-          "remediation": "Update content metadata and implement required features"
+          "type": "MISSING_MANDATORY_FEATURE",
+          "message": "Required feature 'youth_protection_system' is missing",
+          "severity": "HIGH",
+          "detected_content": "Available: ",
+          "timestamp": "2026-01-15T05:05:33.707502"
         },
         {
-          "type": "Geographic restriction violation",
-          "severity": "low",
-          "description": "Compliance issue detected in United_States",
-          "remediation": "Update content metadata and implement required features"
-        },
-        {
-          "type": "Incorrect content rating",
-          "severity": "low",
-          "description": "Compliance issue detected in United_States",
-          "remediation": "Update content metadata and implement required features"
+          "type": "MISSING_MANDATORY_FEATURE",
+          "message": "Required feature 'korean_subtitle_availability' is missing",
+          "severity": "HIGH",
+          "detected_content": "Available: ",
+          "timestamp": "2026-01-15T05:05:33.707504"
         }
       ]
     },
-    "United_Kingdom": {
-      "compliance_status": "non_compliant",
-      "total_checks": 27,
-      "passed_checks": 24,
-      "violations": 3,
-      "compliance_rate": 88.89,
-      "last_checked": "2026-01-10T01:03:37.927895",
-      "critical_issues": [
+    {
+      "status": "WARNING",
+      "country": "Spain",
+      "timestamp": "2026-01-15T05:05:33.707543",
+      "violation_count": 1,
+      "violations": [
         {
-          "type": "Geographic restriction violation",
-          "severity": "high",
-          "description": "Compliance issue detected in United_Kingdom",
-          "remediation": "Update content metadata and implement required features"
-        }
-      ],
-      "warnings": [
-        {
-          "type": "Local content quota not met",
-          "severity": "low",
-          "description": "Compliance issue detected in United_Kingdom",
-          "remediation": "Update content metadata and implement required features"
-        },
-        {
-          "type": "Missing required subtitles",
-          "severity": "low",
-          "description": "Compliance issue detected in United_Kingdom",
-          "remediation": "Update content metadata and implement required features"
+          "type": "AD_TIME_RESTRICTION",
+          "message": "gambling_ads only allowed during 01:00-05:00. Current: 15:00",
+          "severity": "HIGH",
+          "detected_content": "Scheduled at 15:00",
+          "timestamp": "2026-01-15T05:05:33.712087"
         }
       ]
     },
-    "Germany": {
-      "compliance_status": "non_compliant",
-      "total_checks": 43,
-      "passed_checks": 39,
-      "violations": 4,
-      "compliance_rate": 90.7,
-      "last_checked": "2026-01-12T01:03:37.927913",
-      "critical_issues": [
+    {
+      "status": "PASS",
+      "country": "United_States",
+      "timestamp": "2026-01-15T05:05:33.712128",
+      "violation_count": 0,
+      "violations": []
+    },
+    {
+      "status": "CRITICAL",
+      "country": "Germany",
+      "timestamp": "2026-01-15T05:05:33.712250",
+      "violation_count": 2,
+      "violations": [
         {
-          "type": "Incorrect content rating",
-          "severity": "high",
-          "description": "Compliance issue detected in Germany",
-          "remediation": "Update content metadata and implement required features"
+          "type": "FORBIDDEN_KEYWORD",
+          "message": "Forbidden keyword 'nazi' detected in description",
+          "severity": "CRITICAL",
+          "detected_content": "nazi",
+          "timestamp": "2026-01-15T05:05:33.712452"
         },
         {
-          "type": "Local content quota not met",
-          "severity": "high",
-          "description": "Compliance issue detected in Germany",
-          "remediation": "Update content metadata and implement required features"
-        }
-      ],
-      "warnings": [
-        {
-          "type": "Missing required subtitles",
-          "severity": "medium",
-          "description": "Compliance issue detected in Germany",
-          "remediation": "Update content metadata and implement required features"
-        },
-        {
-          "type": "Non-compliant privacy policy",
-          "severity": "medium",
-          "description": "Compliance issue detected in Germany",
-          "remediation": "Update content metadata and implement required features"
+          "type": "FORBIDDEN_KEYWORD",
+          "message": "Forbidden keyword 'swastika' detected in description",
+          "severity": "CRITICAL",
+          "detected_content": "swastika",
+          "timestamp": "2026-01-15T05:05:33.712465"
         }
       ]
     },
-    "France": {
-      "compliance_status": "compliant",
-      "total_checks": 38,
-      "passed_checks": 38,
-      "violations": 0,
-      "compliance_rate": 100.0,
-      "last_checked": "2026-01-08T01:03:37.927931",
-      "critical_issues": [],
-      "warnings": []
-    },
-    "Japan": {
-      "compliance_status": "partial",
-      "total_checks": 26,
-      "passed_checks": 24,
-      "violations": 2,
-      "compliance_rate": 92.31,
-      "last_checked": "2026-01-14T01:03:37.927938",
-      "critical_issues": [],
-      "warnings": [
+    {
+      "status": "CRITICAL",
+      "country": "China",
+      "timestamp": "2026-01-15T05:05:33.712544",
+      "violation_count": 1,
+      "violations": [
         {
-          "type": "Incorrect content rating",
-          "severity": "low",
-          "description": "Compliance issue detected in Japan",
-          "remediation": "Update content metadata and implement required features"
-        },
-        {
-          "type": "Missing required subtitles",
-          "severity": "medium",
-          "description": "Compliance issue detected in Japan",
-          "remediation": "Update content metadata and implement required features"
+          "type": "FORBIDDEN_KEYWORD",
+          "message": "Forbidden keyword 'hong_kong_protest' detected in description",
+          "severity": "CRITICAL",
+          "detected_content": "hong_kong_protest",
+          "timestamp": "2026-01-15T05:05:33.712945"
         }
       ]
     },
-    "India": {
-      "compliance_status": "non_compliant",
-      "total_checks": 43,
-      "passed_checks": 39,
-      "violations": 4,
-      "compliance_rate": 90.7,
-      "last_checked": "2026-01-08T01:03:37.927952",
-      "critical_issues": [
+    {
+      "status": "WARNING",
+      "country": "South_Korea",
+      "timestamp": "2026-01-15T05:05:33.713088",
+      "violation_count": 1,
+      "violations": [
         {
-          "type": "Age verification not implemented",
-          "severity": "high",
-          "description": "Compliance issue detected in India",
-          "remediation": "Update content metadata and implement required features"
-        },
-        {
-          "type": "Local content quota not met",
-          "severity": "high",
-          "description": "Compliance issue detected in India",
-          "remediation": "Update content metadata and implement required features"
-        },
-        {
-          "type": "Missing accessibility features",
-          "severity": "high",
-          "description": "Compliance issue detected in India",
-          "remediation": "Update content metadata and implement required features"
-        }
-      ],
-      "warnings": [
-        {
-          "type": "Age verification not implemented",
-          "severity": "medium",
-          "description": "Compliance issue detected in India",
-          "remediation": "Update content metadata and implement required features"
+          "type": "AD_TIME_RESTRICTION",
+          "message": "alcohol_ads forbidden during 07:00-22:00. Current: 20:00",
+          "severity": "HIGH",
+          "detected_content": "Scheduled at 20:00",
+          "timestamp": "2026-01-15T05:05:33.713231"
         }
       ]
     },
-    "Brazil": {
-      "compliance_status": "non_compliant",
-      "total_checks": 43,
-      "passed_checks": 39,
-      "violations": 4,
-      "compliance_rate": 90.7,
-      "last_checked": "2026-01-14T01:03:37.927975",
-      "critical_issues": [
+    {
+      "status": "PASS",
+      "country": "Japan",
+      "timestamp": "2026-01-15T05:05:33.713260",
+      "violation_count": 0,
+      "violations": []
+    },
+    {
+      "status": "WARNING",
+      "country": "India",
+      "timestamp": "2026-01-15T05:05:33.713276",
+      "violation_count": 1,
+      "violations": [
         {
-          "type": "Advertisement time exceeded",
-          "severity": "high",
-          "description": "Compliance issue detected in Brazil",
-          "remediation": "Update content metadata and implement required features"
-        },
-        {
-          "type": "Inadequate parental controls",
-          "severity": "high",
-          "description": "Compliance issue detected in Brazil",
-          "remediation": "Update content metadata and implement required features"
-        }
-      ],
-      "warnings": [
-        {
-          "type": "Geographic restriction violation",
-          "severity": "medium",
-          "description": "Compliance issue detected in Brazil",
-          "remediation": "Update content metadata and implement required features"
-        },
-        {
-          "type": "Required metadata missing",
-          "severity": "medium",
-          "description": "Compliance issue detected in Brazil",
-          "remediation": "Update content metadata and implement required features"
+          "type": "FORBIDDEN_KEYWORD",
+          "message": "Forbidden keyword 'cow_slaughter' detected in description",
+          "severity": "HIGH",
+          "detected_content": "cow_slaughter",
+          "timestamp": "2026-01-15T05:05:33.713501"
         }
       ]
     },
-    "Australia": {
-      "compliance_status": "non_compliant",
-      "total_checks": 33,
-      "passed_checks": 29,
-      "violations": 4,
-      "compliance_rate": 87.88,
-      "last_checked": "2026-01-14T01:03:37.927991",
-      "critical_issues": [
-        {
-          "type": "Age verification not implemented",
-          "severity": "high",
-          "description": "Compliance issue detected in Australia",
-          "remediation": "Update content metadata and implement required features"
-        }
-      ],
-      "warnings": [
-        {
-          "type": "Age verification not implemented",
-          "severity": "medium",
-          "description": "Compliance issue detected in Australia",
-          "remediation": "Update content metadata and implement required features"
-        },
-        {
-          "type": "Required metadata missing",
-          "severity": "low",
-          "description": "Compliance issue detected in Australia",
-          "remediation": "Update content metadata and implement required features"
-        },
-        {
-          "type": "Required metadata missing",
-          "severity": "medium",
-          "description": "Compliance issue detected in Australia",
-          "remediation": "Update content metadata and implement required features"
-        }
-      ]
-    },
-    "Canada": {
-      "compliance_status": "non_compliant",
-      "total_checks": 45,
-      "passed_checks": 40,
-      "violations": 5,
-      "compliance_rate": 88.89,
-      "last_checked": "2026-01-11T01:03:37.928006",
-      "critical_issues": [
-        {
-          "type": "Non-compliant privacy policy",
-          "severity": "high",
-          "description": "Compliance issue detected in Canada",
-          "remediation": "Update content metadata and implement required features"
-        }
-      ],
-      "warnings": [
-        {
-          "type": "Advertisement time exceeded",
-          "severity": "low",
-          "description": "Compliance issue detected in Canada",
-          "remediation": "Update content metadata and implement required features"
-        },
-        {
-          "type": "Incorrect content rating",
-          "severity": "medium",
-          "description": "Compliance issue detected in Canada",
-          "remediation": "Update content metadata and implement required features"
-        },
-        {
-          "type": "Inadequate parental controls",
-          "severity": "medium",
-          "description": "Compliance issue detected in Canada",
-          "remediation": "Update content metadata and implement required features"
-        },
-        {
-          "type": "Incorrect content rating",
-          "severity": "medium",
-          "description": "Compliance issue detected in Canada",
-          "remediation": "Update content metadata and implement required features"
-        }
-      ]
-    },
-    "Singapore": {
-      "compliance_status": "non_compliant",
-      "total_checks": 45,
-      "passed_checks": 42,
-      "violations": 3,
-      "compliance_rate": 93.33,
-      "last_checked": "2026-01-10T01:03:37.928023",
-      "critical_issues": [
-        {
-          "type": "Geographic restriction violation",
-          "severity": "high",
-          "description": "Compliance issue detected in Singapore",
-          "remediation": "Update content metadata and implement required features"
-        },
-        {
-          "type": "Inadequate parental controls",
-          "severity": "high",
-          "description": "Compliance issue detected in Singapore",
-          "remediation": "Update content metadata and implement required features"
-        }
-      ],
-      "warnings": [
-        {
-          "type": "Advertisement time exceeded",
-          "severity": "medium",
-          "description": "Compliance issue detected in Singapore",
-          "remediation": "Update content metadata and implement required features"
-        }
-      ]
-    },
-    "Netherlands": {
-      "compliance_status": "compliant",
-      "total_checks": 31,
-      "passed_checks": 31,
-      "violations": 0,
-      "compliance_rate": 100.0,
-      "last_checked": "2026-01-13T01:03:37.928038",
-      "critical_issues": [],
-      "warnings": []
-    },
-    "Spain": {
-      "compliance_status": "partial",
-      "total_checks": 35,
-      "passed_checks": 34,
-      "violations": 1,
-      "compliance_rate": 97.14,
-      "last_checked": "2026-01-11T01:03:37.928045",
-      "critical_issues": [],
-      "warnings": [
-        {
-          "type": "Inadequate parental controls",
-          "severity": "medium",
-          "description": "Compliance issue detected in Spain",
-          "remediation": "Update content metadata and implement required features"
-        }
-      ]
-    },
-    "Italy": {
-      "compliance_status": "compliant",
-      "total_checks": 26,
-      "passed_checks": 26,
-      "violations": 0,
-      "compliance_rate": 100.0,
-      "last_checked": "2026-01-15T01:03:37.928056",
-      "critical_issues": [],
-      "warnings": []
-    },
-    "Mexico": {
-      "compliance_status": "non_compliant",
-      "total_checks": 44,
-      "passed_checks": 39,
-      "violations": 5,
-      "compliance_rate": 88.64,
-      "last_checked": "2026-01-12T01:03:37.928064",
-      "critical_issues": [
-        {
-          "type": "Missing accessibility features",
-          "severity": "high",
-          "description": "Compliance issue detected in Mexico",
-          "remediation": "Update content metadata and implement required features"
-        }
-      ],
-      "warnings": [
-        {
-          "type": "Non-compliant privacy policy",
-          "severity": "low",
-          "description": "Compliance issue detected in Mexico",
-          "remediation": "Update content metadata and implement required features"
-        },
-        {
-          "type": "Geographic restriction violation",
-          "severity": "low",
-          "description": "Compliance issue detected in Mexico",
-          "remediation": "Update content metadata and implement required features"
-        },
-        {
-          "type": "Required metadata missing",
-          "severity": "low",
-          "description": "Compliance issue detected in Mexico",
-          "remediation": "Update content metadata and implement required features"
-        },
-        {
-          "type": "Inadequate parental controls",
-          "severity": "medium",
-          "description": "Compliance issue detected in Mexico",
-          "remediation": "Update content metadata and implement required features"
-        }
-      ]
+    {
+      "status": "PASS",
+      "country": "United_States",
+      "timestamp": "2026-01-15T05:05:33.713541",
+      "violation_count": 0,
+      "violations": []
     }
-  }
+  ]
 }
