@@ -125,14 +125,15 @@ def get_status():
         init_globals()
         if monitor is None or tracker is None:
             return jsonify({"error": "System not initialized"}), 500
-        # 최근 업데이트 로그 읽기
+        
+        # Read recent update logs
         log_file = Path("reports/policy_updates.json")
+        recent_log = None
         if log_file.exists():
             with open(log_file, 'r') as f:
                 logs = json.load(f)
-                recent_log = logs[-1] if logs else None
-        else:
-            recent_log = None
+                if logs and len(logs) > 0:
+                    recent_log = logs[-1]
         
         # Pending changes
         pending_changes = tracker.get_pending_changes()

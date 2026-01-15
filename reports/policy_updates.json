@@ -1,0 +1,4331 @@
+[
+  {
+    "timestamp": "2025-10-17T01:03:37.917510",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "Netherlands",
+        "source": "ANCINE",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/netherlands/regulation-8726",
+        "confidence": "medium",
+        "detected_at": "2025-10-17T01:03:37.917510",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "Bundesnetzagentur",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/netherlands/regulation-9642",
+        "confidence": "high",
+        "detected_at": "2025-10-17T01:03:37.917510",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "Federal Communications Commission",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/netherlands/regulation-9413",
+        "confidence": "medium",
+        "detected_at": "2025-10-17T01:03:37.917510",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/netherlands/regulation-4287",
+        "confidence": "high",
+        "detected_at": "2025-10-17T01:03:37.917510",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-10-18T01:03:37.917569",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "Canada",
+        "source": "CRTC",
+        "title": "Bill C-11 implementation guidelines",
+        "url": "https://example.gov/canada/regulation-3255",
+        "confidence": "high",
+        "detected_at": "2025-10-18T01:03:37.917569",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-10-19T01:03:37.917586",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "Germany",
+        "source": "CRTC",
+        "title": "Advertising restrictions during children's programming",
+        "url": "https://example.gov/germany/regulation-2766",
+        "confidence": "medium",
+        "detected_at": "2025-10-19T01:03:37.917586",
+        "status": "pending_review"
+      },
+      {
+        "country": "Germany",
+        "source": "European Commission",
+        "title": "Staatsvertrag obligations for VOD platforms",
+        "url": "https://example.gov/germany/regulation-5552",
+        "confidence": "high",
+        "detected_at": "2025-10-19T01:03:37.917586",
+        "status": "pending_review"
+      },
+      {
+        "country": "Germany",
+        "source": "Ofcom",
+        "title": "Advertising restrictions during children's programming",
+        "url": "https://example.gov/germany/regulation-2756",
+        "confidence": "high",
+        "detected_at": "2025-10-19T01:03:37.917586",
+        "status": "pending_review"
+      },
+      {
+        "country": "Germany",
+        "source": "ANCINE",
+        "title": "Staatsvertrag obligations for VOD platforms",
+        "url": "https://example.gov/germany/regulation-1082",
+        "confidence": "high",
+        "detected_at": "2025-10-19T01:03:37.917586",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-10-20T01:03:37.917614",
+    "updates_count": 5,
+    "updates": [
+      {
+        "country": "India",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Parental control features mandatory",
+        "url": "https://example.gov/india/regulation-4492",
+        "confidence": "high",
+        "detected_at": "2025-10-20T01:03:37.917614",
+        "status": "pending_review"
+      },
+      {
+        "country": "India",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "Regional language content requirements",
+        "url": "https://example.gov/india/regulation-6239",
+        "confidence": "high",
+        "detected_at": "2025-10-20T01:03:37.917614",
+        "status": "pending_review"
+      },
+      {
+        "country": "India",
+        "source": "ANCINE",
+        "title": "Regional language content requirements",
+        "url": "https://example.gov/india/regulation-4158",
+        "confidence": "high",
+        "detected_at": "2025-10-20T01:03:37.917614",
+        "status": "pending_review"
+      },
+      {
+        "country": "India",
+        "source": "Federal Communications Commission",
+        "title": "Parental control features mandatory",
+        "url": "https://example.gov/india/regulation-4486",
+        "confidence": "medium",
+        "detected_at": "2025-10-20T01:03:37.917614",
+        "status": "pending_review"
+      },
+      {
+        "country": "India",
+        "source": "ANCINE",
+        "title": "Self-classification system for content rating",
+        "url": "https://example.gov/india/regulation-2323",
+        "confidence": "medium",
+        "detected_at": "2025-10-20T01:03:37.917614",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-10-20T01:03:37.917614",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "Canada",
+        "source": "Bundesnetzagentur",
+        "title": "CRTC online streaming regulations finalized",
+        "url": "https://example.gov/canada/regulation-4972",
+        "confidence": "medium",
+        "detected_at": "2025-10-20T01:03:37.917614",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-10-21T01:03:37.917655",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "France",
+        "source": "Bundesnetzagentur",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/france/regulation-4459",
+        "confidence": "medium",
+        "detected_at": "2025-10-21T01:03:37.917655",
+        "status": "pending_review"
+      },
+      {
+        "country": "France",
+        "source": "Ofcom",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/france/regulation-1386",
+        "confidence": "high",
+        "detected_at": "2025-10-21T01:03:37.917655",
+        "status": "pending_review"
+      },
+      {
+        "country": "France",
+        "source": "ANCINE",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/france/regulation-7204",
+        "confidence": "high",
+        "detected_at": "2025-10-21T01:03:37.917655",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-10-21T01:03:37.917655",
+    "updates_count": 2,
+    "updates": [
+      {
+        "country": "Brazil",
+        "source": "European Commission",
+        "title": "Accessibility features for hearing impaired required",
+        "url": "https://example.gov/brazil/regulation-7544",
+        "confidence": "high",
+        "detected_at": "2025-10-21T01:03:37.917655",
+        "status": "pending_review"
+      },
+      {
+        "country": "Brazil",
+        "source": "ANCINE",
+        "title": "ANCINE registration requirements updated",
+        "url": "https://example.gov/brazil/regulation-9610",
+        "confidence": "medium",
+        "detected_at": "2025-10-21T01:03:37.917655",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-10-22T01:03:37.917699",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "Canada",
+        "source": "Ofcom",
+        "title": "CRTC online streaming regulations finalized",
+        "url": "https://example.gov/canada/regulation-5572",
+        "confidence": "high",
+        "detected_at": "2025-10-22T01:03:37.917699",
+        "status": "pending_review"
+      },
+      {
+        "country": "Canada",
+        "source": "ANCINE",
+        "title": "Bill C-11 implementation guidelines",
+        "url": "https://example.gov/canada/regulation-4428",
+        "confidence": "high",
+        "detected_at": "2025-10-22T01:03:37.917699",
+        "status": "pending_review"
+      },
+      {
+        "country": "Canada",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "CRTC online streaming regulations finalized",
+        "url": "https://example.gov/canada/regulation-6217",
+        "confidence": "high",
+        "detected_at": "2025-10-22T01:03:37.917699",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-10-23T01:03:37.917732",
+    "updates_count": 5,
+    "updates": [
+      {
+        "country": "Japan",
+        "source": "ACMA",
+        "title": "Privacy protection law compliance deadline",
+        "url": "https://example.gov/japan/regulation-5955",
+        "confidence": "high",
+        "detected_at": "2025-10-23T01:03:37.917732",
+        "status": "pending_review"
+      },
+      {
+        "country": "Japan",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Disaster warning system integration required",
+        "url": "https://example.gov/japan/regulation-6839",
+        "confidence": "high",
+        "detected_at": "2025-10-23T01:03:37.917732",
+        "status": "pending_review"
+      },
+      {
+        "country": "Japan",
+        "source": "Federal Communications Commission",
+        "title": "Disaster warning system integration required",
+        "url": "https://example.gov/japan/regulation-7995",
+        "confidence": "high",
+        "detected_at": "2025-10-23T01:03:37.917732",
+        "status": "pending_review"
+      },
+      {
+        "country": "Japan",
+        "source": "CRTC",
+        "title": "Broadcasting Ethics regulations for streaming updated",
+        "url": "https://example.gov/japan/regulation-4216",
+        "confidence": "high",
+        "detected_at": "2025-10-23T01:03:37.917732",
+        "status": "pending_review"
+      },
+      {
+        "country": "Japan",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "Local content promotion guidelines",
+        "url": "https://example.gov/japan/regulation-7442",
+        "confidence": "high",
+        "detected_at": "2025-10-23T01:03:37.917732",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-10-23T01:03:37.917732",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "Italy",
+        "source": "European Commission",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/italy/regulation-8739",
+        "confidence": "high",
+        "detected_at": "2025-10-23T01:03:37.917732",
+        "status": "pending_review"
+      },
+      {
+        "country": "Italy",
+        "source": "CRTC",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/italy/regulation-7974",
+        "confidence": "high",
+        "detected_at": "2025-10-23T01:03:37.917732",
+        "status": "pending_review"
+      },
+      {
+        "country": "Italy",
+        "source": "ACMA",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/italy/regulation-2300",
+        "confidence": "high",
+        "detected_at": "2025-10-23T01:03:37.917732",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-10-24T01:03:37.917790",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "Italy",
+        "source": "Federal Communications Commission",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/italy/regulation-7674",
+        "confidence": "medium",
+        "detected_at": "2025-10-24T01:03:37.917790",
+        "status": "pending_review"
+      },
+      {
+        "country": "Italy",
+        "source": "ANCINE",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/italy/regulation-7107",
+        "confidence": "high",
+        "detected_at": "2025-10-24T01:03:37.917790",
+        "status": "pending_review"
+      },
+      {
+        "country": "Italy",
+        "source": "Ofcom",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/italy/regulation-3176",
+        "confidence": "high",
+        "detected_at": "2025-10-24T01:03:37.917790",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-10-24T01:03:37.917790",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "South_Korea",
+        "source": "ANCINE",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/south_korea/regulation-3726",
+        "confidence": "high",
+        "detected_at": "2025-10-24T01:03:37.917790",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-10-25T01:03:37.917826",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "India",
+        "source": "ANCINE",
+        "title": "Regional language content requirements",
+        "url": "https://example.gov/india/regulation-4681",
+        "confidence": "high",
+        "detected_at": "2025-10-25T01:03:37.917826",
+        "status": "pending_review"
+      },
+      {
+        "country": "India",
+        "source": "CRTC",
+        "title": "Information Technology Rules for OTT platforms",
+        "url": "https://example.gov/india/regulation-4444",
+        "confidence": "high",
+        "detected_at": "2025-10-25T01:03:37.917826",
+        "status": "pending_review"
+      },
+      {
+        "country": "India",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "Intermediary guidelines compliance required",
+        "url": "https://example.gov/india/regulation-7841",
+        "confidence": "high",
+        "detected_at": "2025-10-25T01:03:37.917826",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-10-26T01:03:37.917853",
+    "updates_count": 5,
+    "updates": [
+      {
+        "country": "Brazil",
+        "source": "Ofcom",
+        "title": "ANCINE registration requirements updated",
+        "url": "https://example.gov/brazil/regulation-6263",
+        "confidence": "high",
+        "detected_at": "2025-10-26T01:03:37.917853",
+        "status": "pending_review"
+      },
+      {
+        "country": "Brazil",
+        "source": "CRTC",
+        "title": "Accessibility features for hearing impaired required",
+        "url": "https://example.gov/brazil/regulation-3241",
+        "confidence": "high",
+        "detected_at": "2025-10-26T01:03:37.917853",
+        "status": "pending_review"
+      },
+      {
+        "country": "Brazil",
+        "source": "Ofcom",
+        "title": "Portuguese subtitles mandatory for foreign content",
+        "url": "https://example.gov/brazil/regulation-2054",
+        "confidence": "high",
+        "detected_at": "2025-10-26T01:03:37.917853",
+        "status": "pending_review"
+      },
+      {
+        "country": "Brazil",
+        "source": "Ofcom",
+        "title": "Tax obligations for streaming services clarified",
+        "url": "https://example.gov/brazil/regulation-2638",
+        "confidence": "high",
+        "detected_at": "2025-10-26T01:03:37.917853",
+        "status": "pending_review"
+      },
+      {
+        "country": "Brazil",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "ANCINE registration requirements updated",
+        "url": "https://example.gov/brazil/regulation-3102",
+        "confidence": "high",
+        "detected_at": "2025-10-26T01:03:37.917853",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-10-27T01:03:37.917893",
+    "updates_count": 2,
+    "updates": [
+      {
+        "country": "Spain",
+        "source": "ACMA",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/spain/regulation-6045",
+        "confidence": "high",
+        "detected_at": "2025-10-27T01:03:37.917893",
+        "status": "pending_review"
+      },
+      {
+        "country": "Spain",
+        "source": "ANCINE",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/spain/regulation-4468",
+        "confidence": "high",
+        "detected_at": "2025-10-27T01:03:37.917893",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-10-28T01:03:37.917912",
+    "updates_count": 2,
+    "updates": [
+      {
+        "country": "South_Korea",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/south_korea/regulation-4597",
+        "confidence": "medium",
+        "detected_at": "2025-10-28T01:03:37.917912",
+        "status": "pending_review"
+      },
+      {
+        "country": "South_Korea",
+        "source": "Ofcom",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/south_korea/regulation-4228",
+        "confidence": "high",
+        "detected_at": "2025-10-28T01:03:37.917912",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-10-28T01:03:37.917912",
+    "updates_count": 2,
+    "updates": [
+      {
+        "country": "Australia",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Privacy Act compliance for data collection",
+        "url": "https://example.gov/australia/regulation-5807",
+        "confidence": "high",
+        "detected_at": "2025-10-28T01:03:37.917912",
+        "status": "pending_review"
+      },
+      {
+        "country": "Australia",
+        "source": "CRTC",
+        "title": "Classification requirements for VOD content",
+        "url": "https://example.gov/australia/regulation-1687",
+        "confidence": "high",
+        "detected_at": "2025-10-28T01:03:37.917912",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-10-29T01:03:37.917945",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "South_Korea",
+        "source": "Bundesnetzagentur",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/south_korea/regulation-7295",
+        "confidence": "high",
+        "detected_at": "2025-10-29T01:03:37.917945",
+        "status": "pending_review"
+      },
+      {
+        "country": "South_Korea",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/south_korea/regulation-8260",
+        "confidence": "medium",
+        "detected_at": "2025-10-29T01:03:37.917945",
+        "status": "pending_review"
+      },
+      {
+        "country": "South_Korea",
+        "source": "European Commission",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/south_korea/regulation-8538",
+        "confidence": "high",
+        "detected_at": "2025-10-29T01:03:37.917945",
+        "status": "pending_review"
+      },
+      {
+        "country": "South_Korea",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/south_korea/regulation-6243",
+        "confidence": "high",
+        "detected_at": "2025-10-29T01:03:37.917945",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-10-29T01:03:37.917945",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "South_Korea",
+        "source": "Federal Communications Commission",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/south_korea/regulation-4906",
+        "confidence": "high",
+        "detected_at": "2025-10-29T01:03:37.917945",
+        "status": "pending_review"
+      },
+      {
+        "country": "South_Korea",
+        "source": "Bundesnetzagentur",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/south_korea/regulation-3065",
+        "confidence": "high",
+        "detected_at": "2025-10-29T01:03:37.917945",
+        "status": "pending_review"
+      },
+      {
+        "country": "South_Korea",
+        "source": "ANCINE",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/south_korea/regulation-6084",
+        "confidence": "high",
+        "detected_at": "2025-10-29T01:03:37.917945",
+        "status": "pending_review"
+      },
+      {
+        "country": "South_Korea",
+        "source": "Ofcom",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/south_korea/regulation-2824",
+        "confidence": "high",
+        "detected_at": "2025-10-29T01:03:37.917945",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-10-30T01:03:37.918000",
+    "updates_count": 5,
+    "updates": [
+      {
+        "country": "Australia",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Privacy Act compliance for data collection",
+        "url": "https://example.gov/australia/regulation-8213",
+        "confidence": "high",
+        "detected_at": "2025-10-30T01:03:37.918000",
+        "status": "pending_review"
+      },
+      {
+        "country": "Australia",
+        "source": "European Commission",
+        "title": "Closed captioning standards updated",
+        "url": "https://example.gov/australia/regulation-9331",
+        "confidence": "high",
+        "detected_at": "2025-10-30T01:03:37.918000",
+        "status": "pending_review"
+      },
+      {
+        "country": "Australia",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "ACMA streaming service licensing framework",
+        "url": "https://example.gov/australia/regulation-5940",
+        "confidence": "medium",
+        "detected_at": "2025-10-30T01:03:37.918000",
+        "status": "pending_review"
+      },
+      {
+        "country": "Australia",
+        "source": "CRTC",
+        "title": "Privacy Act compliance for data collection",
+        "url": "https://example.gov/australia/regulation-1773",
+        "confidence": "medium",
+        "detected_at": "2025-10-30T01:03:37.918000",
+        "status": "pending_review"
+      },
+      {
+        "country": "Australia",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Classification requirements for VOD content",
+        "url": "https://example.gov/australia/regulation-9656",
+        "confidence": "high",
+        "detected_at": "2025-10-30T01:03:37.918000",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-10-30T01:03:37.918000",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "France",
+        "source": "Bundesnetzagentur",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/france/regulation-4280",
+        "confidence": "high",
+        "detected_at": "2025-10-30T01:03:37.918000",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-10-31T01:03:37.918054",
+    "updates_count": 2,
+    "updates": [
+      {
+        "country": "United_Kingdom",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Product placement disclosure rules revised",
+        "url": "https://example.gov/united_kingdom/regulation-6074",
+        "confidence": "high",
+        "detected_at": "2025-10-31T01:03:37.918054",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "Bundesnetzagentur",
+        "title": "Harmful content regulation framework published",
+        "url": "https://example.gov/united_kingdom/regulation-3834",
+        "confidence": "high",
+        "detected_at": "2025-10-31T01:03:37.918054",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-10-31T01:03:37.918054",
+    "updates_count": 5,
+    "updates": [
+      {
+        "country": "Netherlands",
+        "source": "European Commission",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/netherlands/regulation-4083",
+        "confidence": "high",
+        "detected_at": "2025-10-31T01:03:37.918054",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/netherlands/regulation-4919",
+        "confidence": "medium",
+        "detected_at": "2025-10-31T01:03:37.918054",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "ACMA",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/netherlands/regulation-3357",
+        "confidence": "medium",
+        "detected_at": "2025-10-31T01:03:37.918054",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "Ofcom",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/netherlands/regulation-7513",
+        "confidence": "high",
+        "detected_at": "2025-10-31T01:03:37.918054",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "Bundesnetzagentur",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/netherlands/regulation-3771",
+        "confidence": "high",
+        "detected_at": "2025-10-31T01:03:37.918054",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-01T01:03:37.918148",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "Netherlands",
+        "source": "Bundesnetzagentur",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/netherlands/regulation-5410",
+        "confidence": "medium",
+        "detected_at": "2025-11-01T01:03:37.918148",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "ACMA",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/netherlands/regulation-9905",
+        "confidence": "medium",
+        "detected_at": "2025-11-01T01:03:37.918148",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "ACMA",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/netherlands/regulation-7062",
+        "confidence": "high",
+        "detected_at": "2025-11-01T01:03:37.918148",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/netherlands/regulation-4119",
+        "confidence": "medium",
+        "detected_at": "2025-11-01T01:03:37.918148",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-01T01:03:37.918148",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "South_Korea",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/south_korea/regulation-8784",
+        "confidence": "medium",
+        "detected_at": "2025-11-01T01:03:37.918148",
+        "status": "pending_review"
+      },
+      {
+        "country": "South_Korea",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/south_korea/regulation-4941",
+        "confidence": "high",
+        "detected_at": "2025-11-01T01:03:37.918148",
+        "status": "pending_review"
+      },
+      {
+        "country": "South_Korea",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/south_korea/regulation-5055",
+        "confidence": "medium",
+        "detected_at": "2025-11-01T01:03:37.918148",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-02T01:03:37.918206",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "Italy",
+        "source": "Ofcom",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/italy/regulation-5219",
+        "confidence": "high",
+        "detected_at": "2025-11-02T01:03:37.918206",
+        "status": "pending_review"
+      },
+      {
+        "country": "Italy",
+        "source": "ANCINE",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/italy/regulation-4496",
+        "confidence": "high",
+        "detected_at": "2025-11-02T01:03:37.918206",
+        "status": "pending_review"
+      },
+      {
+        "country": "Italy",
+        "source": "Ofcom",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/italy/regulation-3649",
+        "confidence": "high",
+        "detected_at": "2025-11-02T01:03:37.918206",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-03T01:03:37.918234",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "Japan",
+        "source": "ACMA",
+        "title": "Disaster warning system integration required",
+        "url": "https://example.gov/japan/regulation-8489",
+        "confidence": "high",
+        "detected_at": "2025-11-03T01:03:37.918234",
+        "status": "pending_review"
+      },
+      {
+        "country": "Japan",
+        "source": "Ofcom",
+        "title": "Content rating system alignment with EIRIN",
+        "url": "https://example.gov/japan/regulation-9169",
+        "confidence": "medium",
+        "detected_at": "2025-11-03T01:03:37.918234",
+        "status": "pending_review"
+      },
+      {
+        "country": "Japan",
+        "source": "Federal Communications Commission",
+        "title": "Disaster warning system integration required",
+        "url": "https://example.gov/japan/regulation-9180",
+        "confidence": "high",
+        "detected_at": "2025-11-03T01:03:37.918234",
+        "status": "pending_review"
+      },
+      {
+        "country": "Japan",
+        "source": "ANCINE",
+        "title": "Privacy protection law compliance deadline",
+        "url": "https://example.gov/japan/regulation-4979",
+        "confidence": "high",
+        "detected_at": "2025-11-03T01:03:37.918234",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-04T01:03:37.918263",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "Canada",
+        "source": "CRTC",
+        "title": "CRTC online streaming regulations finalized",
+        "url": "https://example.gov/canada/regulation-1397",
+        "confidence": "high",
+        "detected_at": "2025-11-04T01:03:37.918263",
+        "status": "pending_review"
+      },
+      {
+        "country": "Canada",
+        "source": "European Commission",
+        "title": "Accessibility standards for broadcasting",
+        "url": "https://example.gov/canada/regulation-7194",
+        "confidence": "medium",
+        "detected_at": "2025-11-04T01:03:37.918263",
+        "status": "pending_review"
+      },
+      {
+        "country": "Canada",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Bill C-11 implementation guidelines",
+        "url": "https://example.gov/canada/regulation-4068",
+        "confidence": "medium",
+        "detected_at": "2025-11-04T01:03:37.918263",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-04T01:03:37.918263",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "United_Kingdom",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "Brexit-related content licensing changes",
+        "url": "https://example.gov/united_kingdom/regulation-5671",
+        "confidence": "high",
+        "detected_at": "2025-11-04T01:03:37.918263",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "CRTC",
+        "title": "Ofcom streaming service regulations updated",
+        "url": "https://example.gov/united_kingdom/regulation-6469",
+        "confidence": "high",
+        "detected_at": "2025-11-04T01:03:37.918263",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "Ofcom",
+        "title": "Brexit-related content licensing changes",
+        "url": "https://example.gov/united_kingdom/regulation-1667",
+        "confidence": "medium",
+        "detected_at": "2025-11-04T01:03:37.918263",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "Ofcom streaming service regulations updated",
+        "url": "https://example.gov/united_kingdom/regulation-1204",
+        "confidence": "high",
+        "detected_at": "2025-11-04T01:03:37.918263",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-05T01:03:37.918306",
+    "updates_count": 2,
+    "updates": [
+      {
+        "country": "Singapore",
+        "source": "Federal Communications Commission",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/singapore/regulation-9791",
+        "confidence": "high",
+        "detected_at": "2025-11-05T01:03:37.918306",
+        "status": "pending_review"
+      },
+      {
+        "country": "Singapore",
+        "source": "ANCINE",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/singapore/regulation-3894",
+        "confidence": "high",
+        "detected_at": "2025-11-05T01:03:37.918306",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-05T01:03:37.918306",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "United_Kingdom",
+        "source": "Federal Communications Commission",
+        "title": "VOD accessibility requirements enhanced",
+        "url": "https://example.gov/united_kingdom/regulation-9194",
+        "confidence": "medium",
+        "detected_at": "2025-11-05T01:03:37.918306",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "Federal Communications Commission",
+        "title": "VOD accessibility requirements enhanced",
+        "url": "https://example.gov/united_kingdom/regulation-9009",
+        "confidence": "high",
+        "detected_at": "2025-11-05T01:03:37.918306",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Product placement disclosure rules revised",
+        "url": "https://example.gov/united_kingdom/regulation-1065",
+        "confidence": "medium",
+        "detected_at": "2025-11-05T01:03:37.918306",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "Bundesnetzagentur",
+        "title": "Brexit-related content licensing changes",
+        "url": "https://example.gov/united_kingdom/regulation-7562",
+        "confidence": "high",
+        "detected_at": "2025-11-05T01:03:37.918306",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-06T01:03:37.918350",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "United_States",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "State-level privacy regulations harmonization",
+        "url": "https://example.gov/united_states/regulation-5361",
+        "confidence": "medium",
+        "detected_at": "2025-11-06T01:03:37.918350",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_States",
+        "source": "Federal Communications Commission",
+        "title": "State-level privacy regulations harmonization",
+        "url": "https://example.gov/united_states/regulation-3272",
+        "confidence": "high",
+        "detected_at": "2025-11-06T01:03:37.918350",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_States",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "Closed captioning requirements for VOD services",
+        "url": "https://example.gov/united_states/regulation-5897",
+        "confidence": "medium",
+        "detected_at": "2025-11-06T01:03:37.918350",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-06T01:03:37.918350",
+    "updates_count": 2,
+    "updates": [
+      {
+        "country": "Spain",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/spain/regulation-8100",
+        "confidence": "high",
+        "detected_at": "2025-11-06T01:03:37.918350",
+        "status": "pending_review"
+      },
+      {
+        "country": "Spain",
+        "source": "Ofcom",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/spain/regulation-1933",
+        "confidence": "high",
+        "detected_at": "2025-11-06T01:03:37.918350",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-07T01:03:37.918399",
+    "updates_count": 5,
+    "updates": [
+      {
+        "country": "Germany",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "FSK rating system integration requirements",
+        "url": "https://example.gov/germany/regulation-7884",
+        "confidence": "high",
+        "detected_at": "2025-11-07T01:03:37.918399",
+        "status": "pending_review"
+      },
+      {
+        "country": "Germany",
+        "source": "ANCINE",
+        "title": "Staatsvertrag obligations for VOD platforms",
+        "url": "https://example.gov/germany/regulation-2849",
+        "confidence": "high",
+        "detected_at": "2025-11-07T01:03:37.918399",
+        "status": "pending_review"
+      },
+      {
+        "country": "Germany",
+        "source": "Federal Communications Commission",
+        "title": "FSK rating system integration requirements",
+        "url": "https://example.gov/germany/regulation-7512",
+        "confidence": "high",
+        "detected_at": "2025-11-07T01:03:37.918399",
+        "status": "pending_review"
+      },
+      {
+        "country": "Germany",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Youth Protection Act amendments for streaming",
+        "url": "https://example.gov/germany/regulation-9263",
+        "confidence": "high",
+        "detected_at": "2025-11-07T01:03:37.918399",
+        "status": "pending_review"
+      },
+      {
+        "country": "Germany",
+        "source": "Ofcom",
+        "title": "Advertising restrictions during children's programming",
+        "url": "https://example.gov/germany/regulation-6169",
+        "confidence": "high",
+        "detected_at": "2025-11-07T01:03:37.918399",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-08T01:03:37.918442",
+    "updates_count": 5,
+    "updates": [
+      {
+        "country": "France",
+        "source": "CRTC",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/france/regulation-6572",
+        "confidence": "medium",
+        "detected_at": "2025-11-08T01:03:37.918442",
+        "status": "pending_review"
+      },
+      {
+        "country": "France",
+        "source": "European Commission",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/france/regulation-8447",
+        "confidence": "medium",
+        "detected_at": "2025-11-08T01:03:37.918442",
+        "status": "pending_review"
+      },
+      {
+        "country": "France",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/france/regulation-2330",
+        "confidence": "high",
+        "detected_at": "2025-11-08T01:03:37.918442",
+        "status": "pending_review"
+      },
+      {
+        "country": "France",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/france/regulation-5276",
+        "confidence": "medium",
+        "detected_at": "2025-11-08T01:03:37.918442",
+        "status": "pending_review"
+      },
+      {
+        "country": "France",
+        "source": "ANCINE",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/france/regulation-8707",
+        "confidence": "high",
+        "detected_at": "2025-11-08T01:03:37.918442",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-09T01:03:37.918481",
+    "updates_count": 2,
+    "updates": [
+      {
+        "country": "Spain",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/spain/regulation-5184",
+        "confidence": "high",
+        "detected_at": "2025-11-09T01:03:37.918481",
+        "status": "pending_review"
+      },
+      {
+        "country": "Spain",
+        "source": "Bundesnetzagentur",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/spain/regulation-2784",
+        "confidence": "high",
+        "detected_at": "2025-11-09T01:03:37.918481",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-10T01:03:37.918500",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "Australia",
+        "source": "Ofcom",
+        "title": "ACMA streaming service licensing framework",
+        "url": "https://example.gov/australia/regulation-2959",
+        "confidence": "high",
+        "detected_at": "2025-11-10T01:03:37.918500",
+        "status": "pending_review"
+      },
+      {
+        "country": "Australia",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Classification requirements for VOD content",
+        "url": "https://example.gov/australia/regulation-8100",
+        "confidence": "medium",
+        "detected_at": "2025-11-10T01:03:37.918500",
+        "status": "pending_review"
+      },
+      {
+        "country": "Australia",
+        "source": "European Commission",
+        "title": "Privacy Act compliance for data collection",
+        "url": "https://example.gov/australia/regulation-1824",
+        "confidence": "high",
+        "detected_at": "2025-11-10T01:03:37.918500",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-11T01:03:37.918529",
+    "updates_count": 5,
+    "updates": [
+      {
+        "country": "Italy",
+        "source": "Ofcom",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/italy/regulation-3800",
+        "confidence": "high",
+        "detected_at": "2025-11-11T01:03:37.918529",
+        "status": "pending_review"
+      },
+      {
+        "country": "Italy",
+        "source": "CRTC",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/italy/regulation-7741",
+        "confidence": "medium",
+        "detected_at": "2025-11-11T01:03:37.918529",
+        "status": "pending_review"
+      },
+      {
+        "country": "Italy",
+        "source": "Bundesnetzagentur",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/italy/regulation-8163",
+        "confidence": "high",
+        "detected_at": "2025-11-11T01:03:37.918529",
+        "status": "pending_review"
+      },
+      {
+        "country": "Italy",
+        "source": "CRTC",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/italy/regulation-6705",
+        "confidence": "high",
+        "detected_at": "2025-11-11T01:03:37.918529",
+        "status": "pending_review"
+      },
+      {
+        "country": "Italy",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/italy/regulation-9402",
+        "confidence": "high",
+        "detected_at": "2025-11-11T01:03:37.918529",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-12T01:03:37.918569",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "Canada",
+        "source": "Federal Communications Commission",
+        "title": "Accessibility standards for broadcasting",
+        "url": "https://example.gov/canada/regulation-7618",
+        "confidence": "high",
+        "detected_at": "2025-11-12T01:03:37.918569",
+        "status": "pending_review"
+      },
+      {
+        "country": "Canada",
+        "source": "Bundesnetzagentur",
+        "title": "Accessibility standards for broadcasting",
+        "url": "https://example.gov/canada/regulation-3707",
+        "confidence": "high",
+        "detected_at": "2025-11-12T01:03:37.918569",
+        "status": "pending_review"
+      },
+      {
+        "country": "Canada",
+        "source": "Federal Communications Commission",
+        "title": "French language content quotas in Quebec",
+        "url": "https://example.gov/canada/regulation-4916",
+        "confidence": "high",
+        "detected_at": "2025-11-12T01:03:37.918569",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-13T01:03:37.918595",
+    "updates_count": 5,
+    "updates": [
+      {
+        "country": "Italy",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/italy/regulation-5037",
+        "confidence": "high",
+        "detected_at": "2025-11-13T01:03:37.918595",
+        "status": "pending_review"
+      },
+      {
+        "country": "Italy",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/italy/regulation-5159",
+        "confidence": "high",
+        "detected_at": "2025-11-13T01:03:37.918595",
+        "status": "pending_review"
+      },
+      {
+        "country": "Italy",
+        "source": "ACMA",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/italy/regulation-7160",
+        "confidence": "high",
+        "detected_at": "2025-11-13T01:03:37.918595",
+        "status": "pending_review"
+      },
+      {
+        "country": "Italy",
+        "source": "ACMA",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/italy/regulation-1809",
+        "confidence": "medium",
+        "detected_at": "2025-11-13T01:03:37.918595",
+        "status": "pending_review"
+      },
+      {
+        "country": "Italy",
+        "source": "ANCINE",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/italy/regulation-5074",
+        "confidence": "high",
+        "detected_at": "2025-11-13T01:03:37.918595",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-13T01:03:37.918595",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "United_States",
+        "source": "European Commission",
+        "title": "FCC accessibility guidelines updated",
+        "url": "https://example.gov/united_states/regulation-9658",
+        "confidence": "medium",
+        "detected_at": "2025-11-13T01:03:37.918595",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_States",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Closed captioning requirements for VOD services",
+        "url": "https://example.gov/united_states/regulation-6010",
+        "confidence": "high",
+        "detected_at": "2025-11-13T01:03:37.918595",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_States",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "FCC accessibility guidelines updated",
+        "url": "https://example.gov/united_states/regulation-9301",
+        "confidence": "high",
+        "detected_at": "2025-11-13T01:03:37.918595",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-14T01:03:37.918655",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "France",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/france/regulation-4365",
+        "confidence": "high",
+        "detected_at": "2025-11-14T01:03:37.918655",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-15T01:03:37.918668",
+    "updates_count": 5,
+    "updates": [
+      {
+        "country": "Japan",
+        "source": "ACMA",
+        "title": "Content rating system alignment with EIRIN",
+        "url": "https://example.gov/japan/regulation-7301",
+        "confidence": "high",
+        "detected_at": "2025-11-15T01:03:37.918668",
+        "status": "pending_review"
+      },
+      {
+        "country": "Japan",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "Broadcasting Ethics regulations for streaming updated",
+        "url": "https://example.gov/japan/regulation-5471",
+        "confidence": "high",
+        "detected_at": "2025-11-15T01:03:37.918668",
+        "status": "pending_review"
+      },
+      {
+        "country": "Japan",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Content rating system alignment with EIRIN",
+        "url": "https://example.gov/japan/regulation-9811",
+        "confidence": "high",
+        "detected_at": "2025-11-15T01:03:37.918668",
+        "status": "pending_review"
+      },
+      {
+        "country": "Japan",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Disaster warning system integration required",
+        "url": "https://example.gov/japan/regulation-1731",
+        "confidence": "high",
+        "detected_at": "2025-11-15T01:03:37.918668",
+        "status": "pending_review"
+      },
+      {
+        "country": "Japan",
+        "source": "European Commission",
+        "title": "Content rating system alignment with EIRIN",
+        "url": "https://example.gov/japan/regulation-6986",
+        "confidence": "high",
+        "detected_at": "2025-11-15T01:03:37.918668",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-16T01:03:37.918710",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "Canada",
+        "source": "European Commission",
+        "title": "Bill C-11 implementation guidelines",
+        "url": "https://example.gov/canada/regulation-2099",
+        "confidence": "high",
+        "detected_at": "2025-11-16T01:03:37.918710",
+        "status": "pending_review"
+      },
+      {
+        "country": "Canada",
+        "source": "Bundesnetzagentur",
+        "title": "CRTC online streaming regulations finalized",
+        "url": "https://example.gov/canada/regulation-8086",
+        "confidence": "high",
+        "detected_at": "2025-11-16T01:03:37.918710",
+        "status": "pending_review"
+      },
+      {
+        "country": "Canada",
+        "source": "CRTC",
+        "title": "French language content quotas in Quebec",
+        "url": "https://example.gov/canada/regulation-7888",
+        "confidence": "high",
+        "detected_at": "2025-11-16T01:03:37.918710",
+        "status": "pending_review"
+      },
+      {
+        "country": "Canada",
+        "source": "Bundesnetzagentur",
+        "title": "French language content quotas in Quebec",
+        "url": "https://example.gov/canada/regulation-9752",
+        "confidence": "medium",
+        "detected_at": "2025-11-16T01:03:37.918710",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-16T01:03:37.918710",
+    "updates_count": 5,
+    "updates": [
+      {
+        "country": "Canada",
+        "source": "CRTC",
+        "title": "Bill C-11 implementation guidelines",
+        "url": "https://example.gov/canada/regulation-2457",
+        "confidence": "high",
+        "detected_at": "2025-11-16T01:03:37.918710",
+        "status": "pending_review"
+      },
+      {
+        "country": "Canada",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "French language content quotas in Quebec",
+        "url": "https://example.gov/canada/regulation-4513",
+        "confidence": "high",
+        "detected_at": "2025-11-16T01:03:37.918710",
+        "status": "pending_review"
+      },
+      {
+        "country": "Canada",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "French language content quotas in Quebec",
+        "url": "https://example.gov/canada/regulation-2474",
+        "confidence": "high",
+        "detected_at": "2025-11-16T01:03:37.918710",
+        "status": "pending_review"
+      },
+      {
+        "country": "Canada",
+        "source": "Federal Communications Commission",
+        "title": "Bill C-11 implementation guidelines",
+        "url": "https://example.gov/canada/regulation-5482",
+        "confidence": "high",
+        "detected_at": "2025-11-16T01:03:37.918710",
+        "status": "pending_review"
+      },
+      {
+        "country": "Canada",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "French language content quotas in Quebec",
+        "url": "https://example.gov/canada/regulation-5317",
+        "confidence": "high",
+        "detected_at": "2025-11-16T01:03:37.918710",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-17T01:03:37.918774",
+    "updates_count": 5,
+    "updates": [
+      {
+        "country": "United_Kingdom",
+        "source": "ACMA",
+        "title": "Harmful content regulation framework published",
+        "url": "https://example.gov/united_kingdom/regulation-6792",
+        "confidence": "high",
+        "detected_at": "2025-11-17T01:03:37.918774",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "ANCINE",
+        "title": "Harmful content regulation framework published",
+        "url": "https://example.gov/united_kingdom/regulation-8117",
+        "confidence": "high",
+        "detected_at": "2025-11-17T01:03:37.918774",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "Product placement disclosure rules revised",
+        "url": "https://example.gov/united_kingdom/regulation-7131",
+        "confidence": "high",
+        "detected_at": "2025-11-17T01:03:37.918774",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "European Commission",
+        "title": "Ofcom streaming service regulations updated",
+        "url": "https://example.gov/united_kingdom/regulation-8840",
+        "confidence": "high",
+        "detected_at": "2025-11-17T01:03:37.918774",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "VOD accessibility requirements enhanced",
+        "url": "https://example.gov/united_kingdom/regulation-5780",
+        "confidence": "high",
+        "detected_at": "2025-11-17T01:03:37.918774",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-18T01:03:37.918814",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "Spain",
+        "source": "Ofcom",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/spain/regulation-7171",
+        "confidence": "medium",
+        "detected_at": "2025-11-18T01:03:37.918814",
+        "status": "pending_review"
+      },
+      {
+        "country": "Spain",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/spain/regulation-1209",
+        "confidence": "high",
+        "detected_at": "2025-11-18T01:03:37.918814",
+        "status": "pending_review"
+      },
+      {
+        "country": "Spain",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/spain/regulation-8284",
+        "confidence": "medium",
+        "detected_at": "2025-11-18T01:03:37.918814",
+        "status": "pending_review"
+      },
+      {
+        "country": "Spain",
+        "source": "ANCINE",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/spain/regulation-2665",
+        "confidence": "high",
+        "detected_at": "2025-11-18T01:03:37.918814",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-19T01:03:37.918852",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "Japan",
+        "source": "European Commission",
+        "title": "Disaster warning system integration required",
+        "url": "https://example.gov/japan/regulation-8121",
+        "confidence": "high",
+        "detected_at": "2025-11-19T01:03:37.918852",
+        "status": "pending_review"
+      },
+      {
+        "country": "Japan",
+        "source": "Bundesnetzagentur",
+        "title": "Privacy protection law compliance deadline",
+        "url": "https://example.gov/japan/regulation-2183",
+        "confidence": "high",
+        "detected_at": "2025-11-19T01:03:37.918852",
+        "status": "pending_review"
+      },
+      {
+        "country": "Japan",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Content rating system alignment with EIRIN",
+        "url": "https://example.gov/japan/regulation-7669",
+        "confidence": "high",
+        "detected_at": "2025-11-19T01:03:37.918852",
+        "status": "pending_review"
+      },
+      {
+        "country": "Japan",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Content rating system alignment with EIRIN",
+        "url": "https://example.gov/japan/regulation-7782",
+        "confidence": "high",
+        "detected_at": "2025-11-19T01:03:37.918852",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-19T01:03:37.918852",
+    "updates_count": 5,
+    "updates": [
+      {
+        "country": "Spain",
+        "source": "ANCINE",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/spain/regulation-3886",
+        "confidence": "high",
+        "detected_at": "2025-11-19T01:03:37.918852",
+        "status": "pending_review"
+      },
+      {
+        "country": "Spain",
+        "source": "Federal Communications Commission",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/spain/regulation-1129",
+        "confidence": "high",
+        "detected_at": "2025-11-19T01:03:37.918852",
+        "status": "pending_review"
+      },
+      {
+        "country": "Spain",
+        "source": "ANCINE",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/spain/regulation-2736",
+        "confidence": "high",
+        "detected_at": "2025-11-19T01:03:37.918852",
+        "status": "pending_review"
+      },
+      {
+        "country": "Spain",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/spain/regulation-1289",
+        "confidence": "high",
+        "detected_at": "2025-11-19T01:03:37.918852",
+        "status": "pending_review"
+      },
+      {
+        "country": "Spain",
+        "source": "Federal Communications Commission",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/spain/regulation-3937",
+        "confidence": "high",
+        "detected_at": "2025-11-19T01:03:37.918852",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-20T01:03:37.918917",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "Italy",
+        "source": "CRTC",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/italy/regulation-3141",
+        "confidence": "high",
+        "detected_at": "2025-11-20T01:03:37.918917",
+        "status": "pending_review"
+      },
+      {
+        "country": "Italy",
+        "source": "ANCINE",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/italy/regulation-7731",
+        "confidence": "high",
+        "detected_at": "2025-11-20T01:03:37.918917",
+        "status": "pending_review"
+      },
+      {
+        "country": "Italy",
+        "source": "Federal Communications Commission",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/italy/regulation-7275",
+        "confidence": "high",
+        "detected_at": "2025-11-20T01:03:37.918917",
+        "status": "pending_review"
+      },
+      {
+        "country": "Italy",
+        "source": "ANCINE",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/italy/regulation-5136",
+        "confidence": "high",
+        "detected_at": "2025-11-20T01:03:37.918917",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-20T01:03:37.918917",
+    "updates_count": 5,
+    "updates": [
+      {
+        "country": "Spain",
+        "source": "European Commission",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/spain/regulation-9785",
+        "confidence": "high",
+        "detected_at": "2025-11-20T01:03:37.918917",
+        "status": "pending_review"
+      },
+      {
+        "country": "Spain",
+        "source": "European Commission",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/spain/regulation-8663",
+        "confidence": "medium",
+        "detected_at": "2025-11-20T01:03:37.918917",
+        "status": "pending_review"
+      },
+      {
+        "country": "Spain",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/spain/regulation-9671",
+        "confidence": "high",
+        "detected_at": "2025-11-20T01:03:37.918917",
+        "status": "pending_review"
+      },
+      {
+        "country": "Spain",
+        "source": "Ofcom",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/spain/regulation-3050",
+        "confidence": "high",
+        "detected_at": "2025-11-20T01:03:37.918917",
+        "status": "pending_review"
+      },
+      {
+        "country": "Spain",
+        "source": "CRTC",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/spain/regulation-9673",
+        "confidence": "high",
+        "detected_at": "2025-11-20T01:03:37.918917",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-21T01:03:37.918973",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "Singapore",
+        "source": "ACMA",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/singapore/regulation-4134",
+        "confidence": "high",
+        "detected_at": "2025-11-21T01:03:37.918973",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-21T01:03:37.918973",
+    "updates_count": 2,
+    "updates": [
+      {
+        "country": "Japan",
+        "source": "European Commission",
+        "title": "Broadcasting Ethics regulations for streaming updated",
+        "url": "https://example.gov/japan/regulation-9430",
+        "confidence": "high",
+        "detected_at": "2025-11-21T01:03:37.918973",
+        "status": "pending_review"
+      },
+      {
+        "country": "Japan",
+        "source": "European Commission",
+        "title": "Privacy protection law compliance deadline",
+        "url": "https://example.gov/japan/regulation-1373",
+        "confidence": "high",
+        "detected_at": "2025-11-21T01:03:37.918973",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-22T01:03:37.919007",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "Germany",
+        "source": "Federal Communications Commission",
+        "title": "FSK rating system integration requirements",
+        "url": "https://example.gov/germany/regulation-6207",
+        "confidence": "high",
+        "detected_at": "2025-11-22T01:03:37.919007",
+        "status": "pending_review"
+      },
+      {
+        "country": "Germany",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Youth Protection Act amendments for streaming",
+        "url": "https://example.gov/germany/regulation-9502",
+        "confidence": "high",
+        "detected_at": "2025-11-22T01:03:37.919007",
+        "status": "pending_review"
+      },
+      {
+        "country": "Germany",
+        "source": "Ofcom",
+        "title": "Youth Protection Act amendments for streaming",
+        "url": "https://example.gov/germany/regulation-6202",
+        "confidence": "high",
+        "detected_at": "2025-11-22T01:03:37.919007",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-22T01:03:37.919007",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "Brazil",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Accessibility features for hearing impaired required",
+        "url": "https://example.gov/brazil/regulation-9170",
+        "confidence": "medium",
+        "detected_at": "2025-11-22T01:03:37.919007",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-23T01:03:37.919040",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "Spain",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/spain/regulation-3849",
+        "confidence": "medium",
+        "detected_at": "2025-11-23T01:03:37.919040",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-24T01:03:37.919054",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "South_Korea",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/south_korea/regulation-7445",
+        "confidence": "medium",
+        "detected_at": "2025-11-24T01:03:37.919054",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-25T01:03:37.919068",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "South_Korea",
+        "source": "ACMA",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/south_korea/regulation-9937",
+        "confidence": "high",
+        "detected_at": "2025-11-25T01:03:37.919068",
+        "status": "pending_review"
+      },
+      {
+        "country": "South_Korea",
+        "source": "Ofcom",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/south_korea/regulation-7395",
+        "confidence": "high",
+        "detected_at": "2025-11-25T01:03:37.919068",
+        "status": "pending_review"
+      },
+      {
+        "country": "South_Korea",
+        "source": "Federal Communications Commission",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/south_korea/regulation-4906",
+        "confidence": "high",
+        "detected_at": "2025-11-25T01:03:37.919068",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-25T01:03:37.919068",
+    "updates_count": 5,
+    "updates": [
+      {
+        "country": "India",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Intermediary guidelines compliance required",
+        "url": "https://example.gov/india/regulation-8043",
+        "confidence": "high",
+        "detected_at": "2025-11-25T01:03:37.919068",
+        "status": "pending_review"
+      },
+      {
+        "country": "India",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Information Technology Rules for OTT platforms",
+        "url": "https://example.gov/india/regulation-5903",
+        "confidence": "medium",
+        "detected_at": "2025-11-25T01:03:37.919068",
+        "status": "pending_review"
+      },
+      {
+        "country": "India",
+        "source": "Ofcom",
+        "title": "Self-classification system for content rating",
+        "url": "https://example.gov/india/regulation-2227",
+        "confidence": "high",
+        "detected_at": "2025-11-25T01:03:37.919068",
+        "status": "pending_review"
+      },
+      {
+        "country": "India",
+        "source": "ANCINE",
+        "title": "Information Technology Rules for OTT platforms",
+        "url": "https://example.gov/india/regulation-5037",
+        "confidence": "high",
+        "detected_at": "2025-11-25T01:03:37.919068",
+        "status": "pending_review"
+      },
+      {
+        "country": "India",
+        "source": "Bundesnetzagentur",
+        "title": "Regional language content requirements",
+        "url": "https://example.gov/india/regulation-3269",
+        "confidence": "medium",
+        "detected_at": "2025-11-25T01:03:37.919068",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-26T01:03:37.919163",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "India",
+        "source": "Bundesnetzagentur",
+        "title": "Regional language content requirements",
+        "url": "https://example.gov/india/regulation-4027",
+        "confidence": "medium",
+        "detected_at": "2025-11-26T01:03:37.919163",
+        "status": "pending_review"
+      },
+      {
+        "country": "India",
+        "source": "Ofcom",
+        "title": "Self-classification system for content rating",
+        "url": "https://example.gov/india/regulation-1655",
+        "confidence": "high",
+        "detected_at": "2025-11-26T01:03:37.919163",
+        "status": "pending_review"
+      },
+      {
+        "country": "India",
+        "source": "ACMA",
+        "title": "Information Technology Rules for OTT platforms",
+        "url": "https://example.gov/india/regulation-1166",
+        "confidence": "medium",
+        "detected_at": "2025-11-26T01:03:37.919163",
+        "status": "pending_review"
+      },
+      {
+        "country": "India",
+        "source": "Federal Communications Commission",
+        "title": "Regional language content requirements",
+        "url": "https://example.gov/india/regulation-6601",
+        "confidence": "high",
+        "detected_at": "2025-11-26T01:03:37.919163",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-26T01:03:37.919163",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "Mexico",
+        "source": "Federal Communications Commission",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/mexico/regulation-4430",
+        "confidence": "high",
+        "detected_at": "2025-11-26T01:03:37.919163",
+        "status": "pending_review"
+      },
+      {
+        "country": "Mexico",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/mexico/regulation-7049",
+        "confidence": "high",
+        "detected_at": "2025-11-26T01:03:37.919163",
+        "status": "pending_review"
+      },
+      {
+        "country": "Mexico",
+        "source": "ANCINE",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/mexico/regulation-4233",
+        "confidence": "high",
+        "detected_at": "2025-11-26T01:03:37.919163",
+        "status": "pending_review"
+      },
+      {
+        "country": "Mexico",
+        "source": "CRTC",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/mexico/regulation-3884",
+        "confidence": "high",
+        "detected_at": "2025-11-26T01:03:37.919163",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-27T01:03:37.919218",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "South_Korea",
+        "source": "Bundesnetzagentur",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/south_korea/regulation-4726",
+        "confidence": "medium",
+        "detected_at": "2025-11-27T01:03:37.919218",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-27T01:03:37.919218",
+    "updates_count": 5,
+    "updates": [
+      {
+        "country": "Netherlands",
+        "source": "ANCINE",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/netherlands/regulation-1898",
+        "confidence": "medium",
+        "detected_at": "2025-11-27T01:03:37.919218",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/netherlands/regulation-3354",
+        "confidence": "medium",
+        "detected_at": "2025-11-27T01:03:37.919218",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "ANCINE",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/netherlands/regulation-7120",
+        "confidence": "high",
+        "detected_at": "2025-11-27T01:03:37.919218",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/netherlands/regulation-7787",
+        "confidence": "high",
+        "detected_at": "2025-11-27T01:03:37.919218",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "Ofcom",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/netherlands/regulation-8225",
+        "confidence": "medium",
+        "detected_at": "2025-11-27T01:03:37.919218",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-28T01:03:37.919257",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "United_States",
+        "source": "ACMA",
+        "title": "COPPA compliance requirements updated for children's content",
+        "url": "https://example.gov/united_states/regulation-6412",
+        "confidence": "high",
+        "detected_at": "2025-11-28T01:03:37.919257",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_States",
+        "source": "Ofcom",
+        "title": "COPPA compliance requirements updated for children's content",
+        "url": "https://example.gov/united_states/regulation-1663",
+        "confidence": "medium",
+        "detected_at": "2025-11-28T01:03:37.919257",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_States",
+        "source": "ANCINE",
+        "title": "Content rating system aligned with MPAA standards",
+        "url": "https://example.gov/united_states/regulation-2943",
+        "confidence": "high",
+        "detected_at": "2025-11-28T01:03:37.919257",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_States",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "State-level privacy regulations harmonization",
+        "url": "https://example.gov/united_states/regulation-5758",
+        "confidence": "high",
+        "detected_at": "2025-11-28T01:03:37.919257",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-29T01:03:37.919282",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "Germany",
+        "source": "ANCINE",
+        "title": "Advertising restrictions during children's programming",
+        "url": "https://example.gov/germany/regulation-9105",
+        "confidence": "high",
+        "detected_at": "2025-11-29T01:03:37.919282",
+        "status": "pending_review"
+      },
+      {
+        "country": "Germany",
+        "source": "European Commission",
+        "title": "Local language audio track requirements",
+        "url": "https://example.gov/germany/regulation-5807",
+        "confidence": "high",
+        "detected_at": "2025-11-29T01:03:37.919282",
+        "status": "pending_review"
+      },
+      {
+        "country": "Germany",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Staatsvertrag obligations for VOD platforms",
+        "url": "https://example.gov/germany/regulation-7629",
+        "confidence": "high",
+        "detected_at": "2025-11-29T01:03:37.919282",
+        "status": "pending_review"
+      },
+      {
+        "country": "Germany",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Youth Protection Act amendments for streaming",
+        "url": "https://example.gov/germany/regulation-7802",
+        "confidence": "high",
+        "detected_at": "2025-11-29T01:03:37.919282",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-29T01:03:37.919282",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "Brazil",
+        "source": "Ofcom",
+        "title": "Tax obligations for streaming services clarified",
+        "url": "https://example.gov/brazil/regulation-5770",
+        "confidence": "high",
+        "detected_at": "2025-11-29T01:03:37.919282",
+        "status": "pending_review"
+      },
+      {
+        "country": "Brazil",
+        "source": "CRTC",
+        "title": "ANCINE registration requirements updated",
+        "url": "https://example.gov/brazil/regulation-8994",
+        "confidence": "medium",
+        "detected_at": "2025-11-29T01:03:37.919282",
+        "status": "pending_review"
+      },
+      {
+        "country": "Brazil",
+        "source": "Ofcom",
+        "title": "Accessibility features for hearing impaired required",
+        "url": "https://example.gov/brazil/regulation-8671",
+        "confidence": "high",
+        "detected_at": "2025-11-29T01:03:37.919282",
+        "status": "pending_review"
+      },
+      {
+        "country": "Brazil",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Accessibility features for hearing impaired required",
+        "url": "https://example.gov/brazil/regulation-6493",
+        "confidence": "high",
+        "detected_at": "2025-11-29T01:03:37.919282",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-11-30T01:03:37.919341",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "United_States",
+        "source": "Bundesnetzagentur",
+        "title": "Closed captioning requirements for VOD services",
+        "url": "https://example.gov/united_states/regulation-4057",
+        "confidence": "high",
+        "detected_at": "2025-11-30T01:03:37.919341",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-01T01:03:37.919354",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "United_Kingdom",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "VOD accessibility requirements enhanced",
+        "url": "https://example.gov/united_kingdom/regulation-8443",
+        "confidence": "medium",
+        "detected_at": "2025-12-01T01:03:37.919354",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-02T01:03:37.919366",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "Netherlands",
+        "source": "Bundesnetzagentur",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/netherlands/regulation-6330",
+        "confidence": "high",
+        "detected_at": "2025-12-02T01:03:37.919366",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/netherlands/regulation-8265",
+        "confidence": "medium",
+        "detected_at": "2025-12-02T01:03:37.919366",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "Bundesnetzagentur",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/netherlands/regulation-9893",
+        "confidence": "medium",
+        "detected_at": "2025-12-02T01:03:37.919366",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "Federal Communications Commission",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/netherlands/regulation-1650",
+        "confidence": "high",
+        "detected_at": "2025-12-02T01:03:37.919366",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-03T01:03:37.919393",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "Germany",
+        "source": "Federal Communications Commission",
+        "title": "FSK rating system integration requirements",
+        "url": "https://example.gov/germany/regulation-8062",
+        "confidence": "high",
+        "detected_at": "2025-12-03T01:03:37.919393",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-03T01:03:37.919393",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "South_Korea",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/south_korea/regulation-7469",
+        "confidence": "high",
+        "detected_at": "2025-12-03T01:03:37.919393",
+        "status": "pending_review"
+      },
+      {
+        "country": "South_Korea",
+        "source": "ANCINE",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/south_korea/regulation-3599",
+        "confidence": "medium",
+        "detected_at": "2025-12-03T01:03:37.919393",
+        "status": "pending_review"
+      },
+      {
+        "country": "South_Korea",
+        "source": "ANCINE",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/south_korea/regulation-3556",
+        "confidence": "high",
+        "detected_at": "2025-12-03T01:03:37.919393",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-04T01:03:37.919423",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "United_Kingdom",
+        "source": "Ofcom",
+        "title": "Product placement disclosure rules revised",
+        "url": "https://example.gov/united_kingdom/regulation-3051",
+        "confidence": "medium",
+        "detected_at": "2025-12-04T01:03:37.919423",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-05T01:03:37.919438",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "Japan",
+        "source": "ACMA",
+        "title": "Disaster warning system integration required",
+        "url": "https://example.gov/japan/regulation-4339",
+        "confidence": "high",
+        "detected_at": "2025-12-05T01:03:37.919438",
+        "status": "pending_review"
+      },
+      {
+        "country": "Japan",
+        "source": "CRTC",
+        "title": "Disaster warning system integration required",
+        "url": "https://example.gov/japan/regulation-7704",
+        "confidence": "high",
+        "detected_at": "2025-12-05T01:03:37.919438",
+        "status": "pending_review"
+      },
+      {
+        "country": "Japan",
+        "source": "ANCINE",
+        "title": "Privacy protection law compliance deadline",
+        "url": "https://example.gov/japan/regulation-9133",
+        "confidence": "high",
+        "detected_at": "2025-12-05T01:03:37.919438",
+        "status": "pending_review"
+      },
+      {
+        "country": "Japan",
+        "source": "CRTC",
+        "title": "Content rating system alignment with EIRIN",
+        "url": "https://example.gov/japan/regulation-3640",
+        "confidence": "medium",
+        "detected_at": "2025-12-05T01:03:37.919438",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-06T01:03:37.919520",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "Japan",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "Local content promotion guidelines",
+        "url": "https://example.gov/japan/regulation-3444",
+        "confidence": "medium",
+        "detected_at": "2025-12-06T01:03:37.919520",
+        "status": "pending_review"
+      },
+      {
+        "country": "Japan",
+        "source": "Bundesnetzagentur",
+        "title": "Disaster warning system integration required",
+        "url": "https://example.gov/japan/regulation-9046",
+        "confidence": "high",
+        "detected_at": "2025-12-06T01:03:37.919520",
+        "status": "pending_review"
+      },
+      {
+        "country": "Japan",
+        "source": "Ofcom",
+        "title": "Disaster warning system integration required",
+        "url": "https://example.gov/japan/regulation-1243",
+        "confidence": "high",
+        "detected_at": "2025-12-06T01:03:37.919520",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-07T01:03:37.919549",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "South_Korea",
+        "source": "Federal Communications Commission",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/south_korea/regulation-9820",
+        "confidence": "high",
+        "detected_at": "2025-12-07T01:03:37.919549",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-07T01:03:37.919549",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "Spain",
+        "source": "CRTC",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/spain/regulation-6935",
+        "confidence": "high",
+        "detected_at": "2025-12-07T01:03:37.919549",
+        "status": "pending_review"
+      },
+      {
+        "country": "Spain",
+        "source": "ANCINE",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/spain/regulation-4918",
+        "confidence": "high",
+        "detected_at": "2025-12-07T01:03:37.919549",
+        "status": "pending_review"
+      },
+      {
+        "country": "Spain",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/spain/regulation-1166",
+        "confidence": "high",
+        "detected_at": "2025-12-07T01:03:37.919549",
+        "status": "pending_review"
+      },
+      {
+        "country": "Spain",
+        "source": "Bundesnetzagentur",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/spain/regulation-4870",
+        "confidence": "high",
+        "detected_at": "2025-12-07T01:03:37.919549",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-08T01:03:37.919583",
+    "updates_count": 5,
+    "updates": [
+      {
+        "country": "Netherlands",
+        "source": "ANCINE",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/netherlands/regulation-2701",
+        "confidence": "high",
+        "detected_at": "2025-12-08T01:03:37.919583",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/netherlands/regulation-9810",
+        "confidence": "medium",
+        "detected_at": "2025-12-08T01:03:37.919583",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "Ofcom",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/netherlands/regulation-9744",
+        "confidence": "medium",
+        "detected_at": "2025-12-08T01:03:37.919583",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "Ofcom",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/netherlands/regulation-7450",
+        "confidence": "high",
+        "detected_at": "2025-12-08T01:03:37.919583",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "CRTC",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/netherlands/regulation-1364",
+        "confidence": "high",
+        "detected_at": "2025-12-08T01:03:37.919583",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-08T01:03:37.919583",
+    "updates_count": 5,
+    "updates": [
+      {
+        "country": "Mexico",
+        "source": "CRTC",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/mexico/regulation-3269",
+        "confidence": "high",
+        "detected_at": "2025-12-08T01:03:37.919583",
+        "status": "pending_review"
+      },
+      {
+        "country": "Mexico",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/mexico/regulation-2780",
+        "confidence": "high",
+        "detected_at": "2025-12-08T01:03:37.919583",
+        "status": "pending_review"
+      },
+      {
+        "country": "Mexico",
+        "source": "Ofcom",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/mexico/regulation-8485",
+        "confidence": "high",
+        "detected_at": "2025-12-08T01:03:37.919583",
+        "status": "pending_review"
+      },
+      {
+        "country": "Mexico",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/mexico/regulation-6261",
+        "confidence": "high",
+        "detected_at": "2025-12-08T01:03:37.919583",
+        "status": "pending_review"
+      },
+      {
+        "country": "Mexico",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/mexico/regulation-7804",
+        "confidence": "high",
+        "detected_at": "2025-12-08T01:03:37.919583",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-09T01:03:37.919647",
+    "updates_count": 2,
+    "updates": [
+      {
+        "country": "Italy",
+        "source": "Bundesnetzagentur",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/italy/regulation-5670",
+        "confidence": "medium",
+        "detected_at": "2025-12-09T01:03:37.919647",
+        "status": "pending_review"
+      },
+      {
+        "country": "Italy",
+        "source": "CRTC",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/italy/regulation-3157",
+        "confidence": "medium",
+        "detected_at": "2025-12-09T01:03:37.919647",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-09T01:03:37.919647",
+    "updates_count": 2,
+    "updates": [
+      {
+        "country": "Australia",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Privacy Act compliance for data collection",
+        "url": "https://example.gov/australia/regulation-4017",
+        "confidence": "medium",
+        "detected_at": "2025-12-09T01:03:37.919647",
+        "status": "pending_review"
+      },
+      {
+        "country": "Australia",
+        "source": "Ofcom",
+        "title": "Classification requirements for VOD content",
+        "url": "https://example.gov/australia/regulation-7223",
+        "confidence": "high",
+        "detected_at": "2025-12-09T01:03:37.919647",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-10T01:03:37.919683",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "Singapore",
+        "source": "Federal Communications Commission",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/singapore/regulation-7498",
+        "confidence": "high",
+        "detected_at": "2025-12-10T01:03:37.919683",
+        "status": "pending_review"
+      },
+      {
+        "country": "Singapore",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/singapore/regulation-2993",
+        "confidence": "high",
+        "detected_at": "2025-12-10T01:03:37.919683",
+        "status": "pending_review"
+      },
+      {
+        "country": "Singapore",
+        "source": "Federal Communications Commission",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/singapore/regulation-6057",
+        "confidence": "medium",
+        "detected_at": "2025-12-10T01:03:37.919683",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-11T01:03:37.919705",
+    "updates_count": 2,
+    "updates": [
+      {
+        "country": "India",
+        "source": "CRTC",
+        "title": "Regional language content requirements",
+        "url": "https://example.gov/india/regulation-8023",
+        "confidence": "medium",
+        "detected_at": "2025-12-11T01:03:37.919705",
+        "status": "pending_review"
+      },
+      {
+        "country": "India",
+        "source": "CRTC",
+        "title": "Parental control features mandatory",
+        "url": "https://example.gov/india/regulation-3426",
+        "confidence": "high",
+        "detected_at": "2025-12-11T01:03:37.919705",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-12T01:03:37.919722",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "Netherlands",
+        "source": "Federal Communications Commission",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/netherlands/regulation-8429",
+        "confidence": "high",
+        "detected_at": "2025-12-12T01:03:37.919722",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-12T01:03:37.919722",
+    "updates_count": 5,
+    "updates": [
+      {
+        "country": "India",
+        "source": "Ofcom",
+        "title": "Regional language content requirements",
+        "url": "https://example.gov/india/regulation-4887",
+        "confidence": "high",
+        "detected_at": "2025-12-12T01:03:37.919722",
+        "status": "pending_review"
+      },
+      {
+        "country": "India",
+        "source": "ACMA",
+        "title": "Regional language content requirements",
+        "url": "https://example.gov/india/regulation-5448",
+        "confidence": "high",
+        "detected_at": "2025-12-12T01:03:37.919722",
+        "status": "pending_review"
+      },
+      {
+        "country": "India",
+        "source": "Federal Communications Commission",
+        "title": "Self-classification system for content rating",
+        "url": "https://example.gov/india/regulation-3631",
+        "confidence": "high",
+        "detected_at": "2025-12-12T01:03:37.919722",
+        "status": "pending_review"
+      },
+      {
+        "country": "India",
+        "source": "CRTC",
+        "title": "Information Technology Rules for OTT platforms",
+        "url": "https://example.gov/india/regulation-5779",
+        "confidence": "high",
+        "detected_at": "2025-12-12T01:03:37.919722",
+        "status": "pending_review"
+      },
+      {
+        "country": "India",
+        "source": "European Commission",
+        "title": "Regional language content requirements",
+        "url": "https://example.gov/india/regulation-8329",
+        "confidence": "high",
+        "detected_at": "2025-12-12T01:03:37.919722",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-13T01:03:37.919766",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "South_Korea",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/south_korea/regulation-2375",
+        "confidence": "high",
+        "detected_at": "2025-12-13T01:03:37.919766",
+        "status": "pending_review"
+      },
+      {
+        "country": "South_Korea",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/south_korea/regulation-4638",
+        "confidence": "high",
+        "detected_at": "2025-12-13T01:03:37.919766",
+        "status": "pending_review"
+      },
+      {
+        "country": "South_Korea",
+        "source": "Federal Communications Commission",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/south_korea/regulation-5757",
+        "confidence": "high",
+        "detected_at": "2025-12-13T01:03:37.919766",
+        "status": "pending_review"
+      },
+      {
+        "country": "South_Korea",
+        "source": "Bundesnetzagentur",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/south_korea/regulation-2159",
+        "confidence": "high",
+        "detected_at": "2025-12-13T01:03:37.919766",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-13T01:03:37.919766",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "India",
+        "source": "ANCINE",
+        "title": "Parental control features mandatory",
+        "url": "https://example.gov/india/regulation-3039",
+        "confidence": "high",
+        "detected_at": "2025-12-13T01:03:37.919766",
+        "status": "pending_review"
+      },
+      {
+        "country": "India",
+        "source": "Ofcom",
+        "title": "Regional language content requirements",
+        "url": "https://example.gov/india/regulation-4454",
+        "confidence": "high",
+        "detected_at": "2025-12-13T01:03:37.919766",
+        "status": "pending_review"
+      },
+      {
+        "country": "India",
+        "source": "European Commission",
+        "title": "Intermediary guidelines compliance required",
+        "url": "https://example.gov/india/regulation-5330",
+        "confidence": "high",
+        "detected_at": "2025-12-13T01:03:37.919766",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-14T01:03:37.919809",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "Spain",
+        "source": "ANCINE",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/spain/regulation-1719",
+        "confidence": "high",
+        "detected_at": "2025-12-14T01:03:37.919809",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-15T01:03:37.919823",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "France",
+        "source": "Ofcom",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/france/regulation-4844",
+        "confidence": "high",
+        "detected_at": "2025-12-15T01:03:37.919823",
+        "status": "pending_review"
+      },
+      {
+        "country": "France",
+        "source": "ACMA",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/france/regulation-3432",
+        "confidence": "high",
+        "detected_at": "2025-12-15T01:03:37.919823",
+        "status": "pending_review"
+      },
+      {
+        "country": "France",
+        "source": "Federal Communications Commission",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/france/regulation-5471",
+        "confidence": "high",
+        "detected_at": "2025-12-15T01:03:37.919823",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-16T01:03:37.919846",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "United_States",
+        "source": "Federal Communications Commission",
+        "title": "Closed captioning requirements for VOD services",
+        "url": "https://example.gov/united_states/regulation-4853",
+        "confidence": "high",
+        "detected_at": "2025-12-16T01:03:37.919846",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_States",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "COPPA compliance requirements updated for children's content",
+        "url": "https://example.gov/united_states/regulation-3368",
+        "confidence": "medium",
+        "detected_at": "2025-12-16T01:03:37.919846",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_States",
+        "source": "ANCINE",
+        "title": "FCC accessibility guidelines updated",
+        "url": "https://example.gov/united_states/regulation-5780",
+        "confidence": "high",
+        "detected_at": "2025-12-16T01:03:37.919846",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-17T01:03:37.919867",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "Netherlands",
+        "source": "ANCINE",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/netherlands/regulation-3371",
+        "confidence": "high",
+        "detected_at": "2025-12-17T01:03:37.919867",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "Federal Communications Commission",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/netherlands/regulation-3421",
+        "confidence": "high",
+        "detected_at": "2025-12-17T01:03:37.919867",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/netherlands/regulation-6633",
+        "confidence": "high",
+        "detected_at": "2025-12-17T01:03:37.919867",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-17T01:03:37.919867",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "United_Kingdom",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "Brexit-related content licensing changes",
+        "url": "https://example.gov/united_kingdom/regulation-5851",
+        "confidence": "high",
+        "detected_at": "2025-12-17T01:03:37.919867",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Ofcom streaming service regulations updated",
+        "url": "https://example.gov/united_kingdom/regulation-8205",
+        "confidence": "high",
+        "detected_at": "2025-12-17T01:03:37.919867",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "CRTC",
+        "title": "Harmful content regulation framework published",
+        "url": "https://example.gov/united_kingdom/regulation-3809",
+        "confidence": "medium",
+        "detected_at": "2025-12-17T01:03:37.919867",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "ANCINE",
+        "title": "Brexit-related content licensing changes",
+        "url": "https://example.gov/united_kingdom/regulation-4637",
+        "confidence": "medium",
+        "detected_at": "2025-12-17T01:03:37.919867",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-18T01:03:37.919912",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "South_Korea",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/south_korea/regulation-8401",
+        "confidence": "high",
+        "detected_at": "2025-12-18T01:03:37.919912",
+        "status": "pending_review"
+      },
+      {
+        "country": "South_Korea",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/south_korea/regulation-3409",
+        "confidence": "high",
+        "detected_at": "2025-12-18T01:03:37.919912",
+        "status": "pending_review"
+      },
+      {
+        "country": "South_Korea",
+        "source": "Ofcom",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/south_korea/regulation-3438",
+        "confidence": "high",
+        "detected_at": "2025-12-18T01:03:37.919912",
+        "status": "pending_review"
+      },
+      {
+        "country": "South_Korea",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/south_korea/regulation-2288",
+        "confidence": "high",
+        "detected_at": "2025-12-18T01:03:37.919912",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-18T01:03:37.919912",
+    "updates_count": 2,
+    "updates": [
+      {
+        "country": "Australia",
+        "source": "European Commission",
+        "title": "Classification requirements for VOD content",
+        "url": "https://example.gov/australia/regulation-7888",
+        "confidence": "medium",
+        "detected_at": "2025-12-18T01:03:37.919912",
+        "status": "pending_review"
+      },
+      {
+        "country": "Australia",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Classification requirements for VOD content",
+        "url": "https://example.gov/australia/regulation-4974",
+        "confidence": "high",
+        "detected_at": "2025-12-18T01:03:37.919912",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-19T01:03:37.919953",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "Mexico",
+        "source": "Federal Communications Commission",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/mexico/regulation-6346",
+        "confidence": "high",
+        "detected_at": "2025-12-19T01:03:37.919953",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-20T01:03:37.919967",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "Germany",
+        "source": "ANCINE",
+        "title": "Advertising restrictions during children's programming",
+        "url": "https://example.gov/germany/regulation-6572",
+        "confidence": "medium",
+        "detected_at": "2025-12-20T01:03:37.919967",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-21T01:03:37.919978",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "United_States",
+        "source": "European Commission",
+        "title": "COPPA compliance requirements updated for children's content",
+        "url": "https://example.gov/united_states/regulation-8667",
+        "confidence": "high",
+        "detected_at": "2025-12-21T01:03:37.919978",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-22T01:03:37.919990",
+    "updates_count": 2,
+    "updates": [
+      {
+        "country": "Brazil",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "ANCINE registration requirements updated",
+        "url": "https://example.gov/brazil/regulation-2556",
+        "confidence": "high",
+        "detected_at": "2025-12-22T01:03:37.919990",
+        "status": "pending_review"
+      },
+      {
+        "country": "Brazil",
+        "source": "Bundesnetzagentur",
+        "title": "Content rating (Classifica\u00e7\u00e3o Indicativa) revised",
+        "url": "https://example.gov/brazil/regulation-7809",
+        "confidence": "high",
+        "detected_at": "2025-12-22T01:03:37.919990",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-22T01:03:37.919990",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "United_Kingdom",
+        "source": "European Commission",
+        "title": "Ofcom streaming service regulations updated",
+        "url": "https://example.gov/united_kingdom/regulation-8580",
+        "confidence": "high",
+        "detected_at": "2025-12-22T01:03:37.919990",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-23T01:03:37.920013",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "Canada",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "French language content quotas in Quebec",
+        "url": "https://example.gov/canada/regulation-8234",
+        "confidence": "medium",
+        "detected_at": "2025-12-23T01:03:37.920013",
+        "status": "pending_review"
+      },
+      {
+        "country": "Canada",
+        "source": "Federal Communications Commission",
+        "title": "Bill C-11 implementation guidelines",
+        "url": "https://example.gov/canada/regulation-3842",
+        "confidence": "medium",
+        "detected_at": "2025-12-23T01:03:37.920013",
+        "status": "pending_review"
+      },
+      {
+        "country": "Canada",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Bill C-11 implementation guidelines",
+        "url": "https://example.gov/canada/regulation-2053",
+        "confidence": "high",
+        "detected_at": "2025-12-23T01:03:37.920013",
+        "status": "pending_review"
+      },
+      {
+        "country": "Canada",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "CRTC online streaming regulations finalized",
+        "url": "https://example.gov/canada/regulation-5549",
+        "confidence": "medium",
+        "detected_at": "2025-12-23T01:03:37.920013",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-23T01:03:37.920013",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "Japan",
+        "source": "ANCINE",
+        "title": "Local content promotion guidelines",
+        "url": "https://example.gov/japan/regulation-7302",
+        "confidence": "high",
+        "detected_at": "2025-12-23T01:03:37.920013",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-24T01:03:37.920049",
+    "updates_count": 2,
+    "updates": [
+      {
+        "country": "South_Korea",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/south_korea/regulation-7055",
+        "confidence": "high",
+        "detected_at": "2025-12-24T01:03:37.920049",
+        "status": "pending_review"
+      },
+      {
+        "country": "South_Korea",
+        "source": "CRTC",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/south_korea/regulation-7147",
+        "confidence": "high",
+        "detected_at": "2025-12-24T01:03:37.920049",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-24T01:03:37.920049",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "India",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Intermediary guidelines compliance required",
+        "url": "https://example.gov/india/regulation-3581",
+        "confidence": "high",
+        "detected_at": "2025-12-24T01:03:37.920049",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-25T01:03:37.920073",
+    "updates_count": 5,
+    "updates": [
+      {
+        "country": "France",
+        "source": "CRTC",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/france/regulation-8500",
+        "confidence": "high",
+        "detected_at": "2025-12-25T01:03:37.920073",
+        "status": "pending_review"
+      },
+      {
+        "country": "France",
+        "source": "CRTC",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/france/regulation-6470",
+        "confidence": "high",
+        "detected_at": "2025-12-25T01:03:37.920073",
+        "status": "pending_review"
+      },
+      {
+        "country": "France",
+        "source": "European Commission",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/france/regulation-1270",
+        "confidence": "medium",
+        "detected_at": "2025-12-25T01:03:37.920073",
+        "status": "pending_review"
+      },
+      {
+        "country": "France",
+        "source": "Ofcom",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/france/regulation-1235",
+        "confidence": "high",
+        "detected_at": "2025-12-25T01:03:37.920073",
+        "status": "pending_review"
+      },
+      {
+        "country": "France",
+        "source": "ANCINE",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/france/regulation-3235",
+        "confidence": "high",
+        "detected_at": "2025-12-25T01:03:37.920073",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-25T01:03:37.920073",
+    "updates_count": 5,
+    "updates": [
+      {
+        "country": "United_Kingdom",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Harmful content regulation framework published",
+        "url": "https://example.gov/united_kingdom/regulation-8251",
+        "confidence": "high",
+        "detected_at": "2025-12-25T01:03:37.920073",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "European Commission",
+        "title": "Brexit-related content licensing changes",
+        "url": "https://example.gov/united_kingdom/regulation-5401",
+        "confidence": "high",
+        "detected_at": "2025-12-25T01:03:37.920073",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Product placement disclosure rules revised",
+        "url": "https://example.gov/united_kingdom/regulation-7412",
+        "confidence": "high",
+        "detected_at": "2025-12-25T01:03:37.920073",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "European Commission",
+        "title": "Ofcom streaming service regulations updated",
+        "url": "https://example.gov/united_kingdom/regulation-7453",
+        "confidence": "high",
+        "detected_at": "2025-12-25T01:03:37.920073",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Ofcom streaming service regulations updated",
+        "url": "https://example.gov/united_kingdom/regulation-7920",
+        "confidence": "medium",
+        "detected_at": "2025-12-25T01:03:37.920073",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-26T01:03:37.920160",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "United_Kingdom",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "VOD accessibility requirements enhanced",
+        "url": "https://example.gov/united_kingdom/regulation-5961",
+        "confidence": "high",
+        "detected_at": "2025-12-26T01:03:37.920160",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Product placement disclosure rules revised",
+        "url": "https://example.gov/united_kingdom/regulation-2837",
+        "confidence": "high",
+        "detected_at": "2025-12-26T01:03:37.920160",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Ofcom streaming service regulations updated",
+        "url": "https://example.gov/united_kingdom/regulation-5481",
+        "confidence": "high",
+        "detected_at": "2025-12-26T01:03:37.920160",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "Product placement disclosure rules revised",
+        "url": "https://example.gov/united_kingdom/regulation-7094",
+        "confidence": "high",
+        "detected_at": "2025-12-26T01:03:37.920160",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-27T01:03:37.920192",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "Netherlands",
+        "source": "CRTC",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/netherlands/regulation-4486",
+        "confidence": "high",
+        "detected_at": "2025-12-27T01:03:37.920192",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "Federal Communications Commission",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/netherlands/regulation-4231",
+        "confidence": "high",
+        "detected_at": "2025-12-27T01:03:37.920192",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "European Commission",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/netherlands/regulation-9115",
+        "confidence": "medium",
+        "detected_at": "2025-12-27T01:03:37.920192",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-27T01:03:37.920192",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "Italy",
+        "source": "Ofcom",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/italy/regulation-6331",
+        "confidence": "high",
+        "detected_at": "2025-12-27T01:03:37.920192",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-28T01:03:37.920224",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "United_Kingdom",
+        "source": "Federal Communications Commission",
+        "title": "Product placement disclosure rules revised",
+        "url": "https://example.gov/united_kingdom/regulation-2663",
+        "confidence": "high",
+        "detected_at": "2025-12-28T01:03:37.920224",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-28T01:03:37.920224",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "Australia",
+        "source": "European Commission",
+        "title": "Australian content quota for SVOD services",
+        "url": "https://example.gov/australia/regulation-4376",
+        "confidence": "high",
+        "detected_at": "2025-12-28T01:03:37.920224",
+        "status": "pending_review"
+      },
+      {
+        "country": "Australia",
+        "source": "Bundesnetzagentur",
+        "title": "Classification requirements for VOD content",
+        "url": "https://example.gov/australia/regulation-6936",
+        "confidence": "high",
+        "detected_at": "2025-12-28T01:03:37.920224",
+        "status": "pending_review"
+      },
+      {
+        "country": "Australia",
+        "source": "CRTC",
+        "title": "ACMA streaming service licensing framework",
+        "url": "https://example.gov/australia/regulation-8456",
+        "confidence": "high",
+        "detected_at": "2025-12-28T01:03:37.920224",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-29T01:03:37.920259",
+    "updates_count": 2,
+    "updates": [
+      {
+        "country": "Brazil",
+        "source": "Federal Communications Commission",
+        "title": "Accessibility features for hearing impaired required",
+        "url": "https://example.gov/brazil/regulation-8068",
+        "confidence": "medium",
+        "detected_at": "2025-12-29T01:03:37.920259",
+        "status": "pending_review"
+      },
+      {
+        "country": "Brazil",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Accessibility features for hearing impaired required",
+        "url": "https://example.gov/brazil/regulation-1698",
+        "confidence": "high",
+        "detected_at": "2025-12-29T01:03:37.920259",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-29T01:03:37.920259",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "France",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/france/regulation-6277",
+        "confidence": "high",
+        "detected_at": "2025-12-29T01:03:37.920259",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-30T01:03:37.920285",
+    "updates_count": 2,
+    "updates": [
+      {
+        "country": "Singapore",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/singapore/regulation-7222",
+        "confidence": "high",
+        "detected_at": "2025-12-30T01:03:37.920285",
+        "status": "pending_review"
+      },
+      {
+        "country": "Singapore",
+        "source": "European Commission",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/singapore/regulation-9060",
+        "confidence": "high",
+        "detected_at": "2025-12-30T01:03:37.920285",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2025-12-31T01:03:37.920306",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "South_Korea",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/south_korea/regulation-8911",
+        "confidence": "high",
+        "detected_at": "2025-12-31T01:03:37.920306",
+        "status": "pending_review"
+      },
+      {
+        "country": "South_Korea",
+        "source": "Federal Communications Commission",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/south_korea/regulation-2661",
+        "confidence": "medium",
+        "detected_at": "2025-12-31T01:03:37.920306",
+        "status": "pending_review"
+      },
+      {
+        "country": "South_Korea",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/south_korea/regulation-6908",
+        "confidence": "high",
+        "detected_at": "2025-12-31T01:03:37.920306",
+        "status": "pending_review"
+      },
+      {
+        "country": "South_Korea",
+        "source": "Federal Communications Commission",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/south_korea/regulation-6403",
+        "confidence": "high",
+        "detected_at": "2025-12-31T01:03:37.920306",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-01T01:03:37.920333",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "Singapore",
+        "source": "Federal Communications Commission",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/singapore/regulation-6738",
+        "confidence": "high",
+        "detected_at": "2026-01-01T01:03:37.920333",
+        "status": "pending_review"
+      },
+      {
+        "country": "Singapore",
+        "source": "ANCINE",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/singapore/regulation-2491",
+        "confidence": "high",
+        "detected_at": "2026-01-01T01:03:37.920333",
+        "status": "pending_review"
+      },
+      {
+        "country": "Singapore",
+        "source": "European Commission",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/singapore/regulation-8965",
+        "confidence": "high",
+        "detected_at": "2026-01-01T01:03:37.920333",
+        "status": "pending_review"
+      },
+      {
+        "country": "Singapore",
+        "source": "CRTC",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/singapore/regulation-8274",
+        "confidence": "medium",
+        "detected_at": "2026-01-01T01:03:37.920333",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-02T01:03:37.920360",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "Canada",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "Accessibility standards for broadcasting",
+        "url": "https://example.gov/canada/regulation-2471",
+        "confidence": "high",
+        "detected_at": "2026-01-02T01:03:37.920360",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-03T01:03:37.920371",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "France",
+        "source": "Ofcom",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/france/regulation-7965",
+        "confidence": "medium",
+        "detected_at": "2026-01-03T01:03:37.920371",
+        "status": "pending_review"
+      },
+      {
+        "country": "France",
+        "source": "Bundesnetzagentur",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/france/regulation-6153",
+        "confidence": "medium",
+        "detected_at": "2026-01-03T01:03:37.920371",
+        "status": "pending_review"
+      },
+      {
+        "country": "France",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/france/regulation-3161",
+        "confidence": "high",
+        "detected_at": "2026-01-03T01:03:37.920371",
+        "status": "pending_review"
+      },
+      {
+        "country": "France",
+        "source": "ACMA",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/france/regulation-9471",
+        "confidence": "high",
+        "detected_at": "2026-01-03T01:03:37.920371",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-04T01:03:37.920399",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "Netherlands",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/netherlands/regulation-5146",
+        "confidence": "medium",
+        "detected_at": "2026-01-04T01:03:37.920399",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "CRTC",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/netherlands/regulation-6255",
+        "confidence": "high",
+        "detected_at": "2026-01-04T01:03:37.920399",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "Federal Communications Commission",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/netherlands/regulation-5613",
+        "confidence": "medium",
+        "detected_at": "2026-01-04T01:03:37.920399",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "CRTC",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/netherlands/regulation-4174",
+        "confidence": "medium",
+        "detected_at": "2026-01-04T01:03:37.920399",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-05T01:03:37.920428",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "Japan",
+        "source": "Ofcom",
+        "title": "Local content promotion guidelines",
+        "url": "https://example.gov/japan/regulation-6204",
+        "confidence": "high",
+        "detected_at": "2026-01-05T01:03:37.920428",
+        "status": "pending_review"
+      },
+      {
+        "country": "Japan",
+        "source": "Bundesnetzagentur",
+        "title": "Disaster warning system integration required",
+        "url": "https://example.gov/japan/regulation-7463",
+        "confidence": "high",
+        "detected_at": "2026-01-05T01:03:37.920428",
+        "status": "pending_review"
+      },
+      {
+        "country": "Japan",
+        "source": "Federal Communications Commission",
+        "title": "Broadcasting Ethics regulations for streaming updated",
+        "url": "https://example.gov/japan/regulation-3262",
+        "confidence": "high",
+        "detected_at": "2026-01-05T01:03:37.920428",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-06T01:03:37.920458",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "India",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "Parental control features mandatory",
+        "url": "https://example.gov/india/regulation-8791",
+        "confidence": "high",
+        "detected_at": "2026-01-06T01:03:37.920458",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-07T01:03:37.920472",
+    "updates_count": 2,
+    "updates": [
+      {
+        "country": "India",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Information Technology Rules for OTT platforms",
+        "url": "https://example.gov/india/regulation-2921",
+        "confidence": "medium",
+        "detected_at": "2026-01-07T01:03:37.920472",
+        "status": "pending_review"
+      },
+      {
+        "country": "India",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Intermediary guidelines compliance required",
+        "url": "https://example.gov/india/regulation-5742",
+        "confidence": "high",
+        "detected_at": "2026-01-07T01:03:37.920472",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-08T01:03:37.920489",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "United_Kingdom",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Product placement disclosure rules revised",
+        "url": "https://example.gov/united_kingdom/regulation-7947",
+        "confidence": "high",
+        "detected_at": "2026-01-08T01:03:37.920489",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "European Commission",
+        "title": "Ofcom streaming service regulations updated",
+        "url": "https://example.gov/united_kingdom/regulation-5312",
+        "confidence": "high",
+        "detected_at": "2026-01-08T01:03:37.920489",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Ofcom streaming service regulations updated",
+        "url": "https://example.gov/united_kingdom/regulation-4423",
+        "confidence": "medium",
+        "detected_at": "2026-01-08T01:03:37.920489",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-08T01:03:37.920489",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "South_Korea",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/south_korea/regulation-7672",
+        "confidence": "medium",
+        "detected_at": "2026-01-08T01:03:37.920489",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-09T01:03:37.920523",
+    "updates_count": 4,
+    "updates": [
+      {
+        "country": "Netherlands",
+        "source": "ANCINE",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/netherlands/regulation-7676",
+        "confidence": "medium",
+        "detected_at": "2026-01-09T01:03:37.920523",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "CRTC",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/netherlands/regulation-6539",
+        "confidence": "high",
+        "detected_at": "2026-01-09T01:03:37.920523",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "K-Content mandatory subtitle requirements updated",
+        "url": "https://example.gov/netherlands/regulation-6047",
+        "confidence": "high",
+        "detected_at": "2026-01-09T01:03:37.920523",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "European Commission",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/netherlands/regulation-6761",
+        "confidence": "high",
+        "detected_at": "2026-01-09T01:03:37.920523",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-09T01:03:37.920523",
+    "updates_count": 2,
+    "updates": [
+      {
+        "country": "Japan",
+        "source": "ACMA",
+        "title": "Local content promotion guidelines",
+        "url": "https://example.gov/japan/regulation-8347",
+        "confidence": "medium",
+        "detected_at": "2026-01-09T01:03:37.920523",
+        "status": "pending_review"
+      },
+      {
+        "country": "Japan",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Disaster warning system integration required",
+        "url": "https://example.gov/japan/regulation-3509",
+        "confidence": "medium",
+        "detected_at": "2026-01-09T01:03:37.920523",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-10T01:03:37.920573",
+    "updates_count": 5,
+    "updates": [
+      {
+        "country": "Canada",
+        "source": "CRTC",
+        "title": "Accessibility standards for broadcasting",
+        "url": "https://example.gov/canada/regulation-4340",
+        "confidence": "high",
+        "detected_at": "2026-01-10T01:03:37.920573",
+        "status": "pending_review"
+      },
+      {
+        "country": "Canada",
+        "source": "Bundesnetzagentur",
+        "title": "French language content quotas in Quebec",
+        "url": "https://example.gov/canada/regulation-4387",
+        "confidence": "medium",
+        "detected_at": "2026-01-10T01:03:37.920573",
+        "status": "pending_review"
+      },
+      {
+        "country": "Canada",
+        "source": "ACMA",
+        "title": "Bill C-11 implementation guidelines",
+        "url": "https://example.gov/canada/regulation-2122",
+        "confidence": "medium",
+        "detected_at": "2026-01-10T01:03:37.920573",
+        "status": "pending_review"
+      },
+      {
+        "country": "Canada",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "French language content quotas in Quebec",
+        "url": "https://example.gov/canada/regulation-8164",
+        "confidence": "high",
+        "detected_at": "2026-01-10T01:03:37.920573",
+        "status": "pending_review"
+      },
+      {
+        "country": "Canada",
+        "source": "Ministry of Information and Broadcasting",
+        "title": "Accessibility standards for broadcasting",
+        "url": "https://example.gov/canada/regulation-4481",
+        "confidence": "high",
+        "detected_at": "2026-01-10T01:03:37.920573",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-10T01:03:37.920573",
+    "updates_count": 5,
+    "updates": [
+      {
+        "country": "France",
+        "source": "Federal Communications Commission",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/france/regulation-1079",
+        "confidence": "medium",
+        "detected_at": "2026-01-10T01:03:37.920573",
+        "status": "pending_review"
+      },
+      {
+        "country": "France",
+        "source": "Bundesnetzagentur",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/france/regulation-4096",
+        "confidence": "high",
+        "detected_at": "2026-01-10T01:03:37.920573",
+        "status": "pending_review"
+      },
+      {
+        "country": "France",
+        "source": "Bundesnetzagentur",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/france/regulation-8004",
+        "confidence": "high",
+        "detected_at": "2026-01-10T01:03:37.920573",
+        "status": "pending_review"
+      },
+      {
+        "country": "France",
+        "source": "CRTC",
+        "title": "Local content quota increased to 30%",
+        "url": "https://example.gov/france/regulation-9665",
+        "confidence": "medium",
+        "detected_at": "2026-01-10T01:03:37.920573",
+        "status": "pending_review"
+      },
+      {
+        "country": "France",
+        "source": "CRTC",
+        "title": "New content rating guidelines for streaming platforms",
+        "url": "https://example.gov/france/regulation-4053",
+        "confidence": "high",
+        "detected_at": "2026-01-10T01:03:37.920573",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-11T01:03:37.920641",
+    "updates_count": 1,
+    "updates": [
+      {
+        "country": "United_Kingdom",
+        "source": "ACMA",
+        "title": "Ofcom streaming service regulations updated",
+        "url": "https://example.gov/united_kingdom/regulation-8054",
+        "confidence": "high",
+        "detected_at": "2026-01-11T01:03:37.920641",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-11T01:03:37.920641",
+    "updates_count": 5,
+    "updates": [
+      {
+        "country": "United_Kingdom",
+        "source": "Federal Communications Commission",
+        "title": "VOD accessibility requirements enhanced",
+        "url": "https://example.gov/united_kingdom/regulation-7324",
+        "confidence": "high",
+        "detected_at": "2026-01-11T01:03:37.920641",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "Bundesnetzagentur",
+        "title": "Brexit-related content licensing changes",
+        "url": "https://example.gov/united_kingdom/regulation-5016",
+        "confidence": "high",
+        "detected_at": "2026-01-11T01:03:37.920641",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "Brexit-related content licensing changes",
+        "url": "https://example.gov/united_kingdom/regulation-3737",
+        "confidence": "high",
+        "detected_at": "2026-01-11T01:03:37.920641",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Ofcom streaming service regulations updated",
+        "url": "https://example.gov/united_kingdom/regulation-2501",
+        "confidence": "high",
+        "detected_at": "2026-01-11T01:03:37.920641",
+        "status": "pending_review"
+      },
+      {
+        "country": "United_Kingdom",
+        "source": "Ofcom",
+        "title": "VOD accessibility requirements enhanced",
+        "url": "https://example.gov/united_kingdom/regulation-2588",
+        "confidence": "high",
+        "detected_at": "2026-01-11T01:03:37.920641",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-12T01:03:37.920685",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "Canada",
+        "source": "Federal Communications Commission",
+        "title": "Bill C-11 implementation guidelines",
+        "url": "https://example.gov/canada/regulation-9051",
+        "confidence": "high",
+        "detected_at": "2026-01-12T01:03:37.920685",
+        "status": "pending_review"
+      },
+      {
+        "country": "Canada",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "French language content quotas in Quebec",
+        "url": "https://example.gov/canada/regulation-7051",
+        "confidence": "high",
+        "detected_at": "2026-01-12T01:03:37.920685",
+        "status": "pending_review"
+      },
+      {
+        "country": "Canada",
+        "source": "ANCINE",
+        "title": "CanCon requirements for streaming platforms",
+        "url": "https://example.gov/canada/regulation-6612",
+        "confidence": "high",
+        "detected_at": "2026-01-12T01:03:37.920685",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-13T01:03:37.920710",
+    "updates_count": 2,
+    "updates": [
+      {
+        "country": "Japan",
+        "source": "Ministry of Culture, Sports and Tourism",
+        "title": "Disaster warning system integration required",
+        "url": "https://example.gov/japan/regulation-2787",
+        "confidence": "high",
+        "detected_at": "2026-01-13T01:03:37.920710",
+        "status": "pending_review"
+      },
+      {
+        "country": "Japan",
+        "source": "Bundesnetzagentur",
+        "title": "Disaster warning system integration required",
+        "url": "https://example.gov/japan/regulation-1540",
+        "confidence": "medium",
+        "detected_at": "2026-01-13T01:03:37.920710",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-14T01:03:37.920728",
+    "updates_count": 2,
+    "updates": [
+      {
+        "country": "Netherlands",
+        "source": "Federal Communications Commission",
+        "title": "Advertisement time restrictions modified",
+        "url": "https://example.gov/netherlands/regulation-6390",
+        "confidence": "high",
+        "detected_at": "2026-01-14T01:03:37.920728",
+        "status": "pending_review"
+      },
+      {
+        "country": "Netherlands",
+        "source": "ACMA",
+        "title": "Platform registration requirements revised",
+        "url": "https://example.gov/netherlands/regulation-3283",
+        "confidence": "high",
+        "detected_at": "2026-01-14T01:03:37.920728",
+        "status": "pending_review"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-01-14T01:03:37.920728",
+    "updates_count": 3,
+    "updates": [
+      {
+        "country": "Brazil",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "Accessibility features for hearing impaired required",
+        "url": "https://example.gov/brazil/regulation-5650",
+        "confidence": "high",
+        "detected_at": "2026-01-14T01:03:37.920728",
+        "status": "pending_review"
+      },
+      {
+        "country": "Brazil",
+        "source": "CRTC",
+        "title": "Tax obligations for streaming services clarified",
+        "url": "https://example.gov/brazil/regulation-4923",
+        "confidence": "high",
+        "detected_at": "2026-01-14T01:03:37.920728",
+        "status": "pending_review"
+      },
+      {
+        "country": "Brazil",
+        "source": "Ministry of Internal Affairs and Communications",
+        "title": "ANCINE registration requirements updated",
+        "url": "https://example.gov/brazil/regulation-9213",
+        "confidence": "high",
+        "detected_at": "2026-01-14T01:03:37.920728",
+        "status": "pending_review"
+      }
+    ]
+  }
+]

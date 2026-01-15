@@ -53,14 +53,24 @@ class ChangeTracker:
         """변경 기록 로드"""
         if self.changes_file.exists():
             with open(self.changes_file, 'r', encoding='utf-8') as f:
-                return json.load(f)
+                data = json.load(f)
+                # Handle both old format (list) and new format (dict with 'changes' key)
+                if isinstance(data, dict) and 'changes' in data:
+                    return data['changes']
+                elif isinstance(data, list):
+                    return data
         return []
     
     def _load_versions(self) -> List[Dict]:
         """버전 히스토리 로드"""
         if self.versions_file.exists():
             with open(self.versions_file, 'r', encoding='utf-8') as f:
-                return json.load(f)
+                data = json.load(f)
+                # Handle both old format (list) and new format (dict with 'versions' key)
+                if isinstance(data, dict) and 'versions' in data:
+                    return data['versions']
+                elif isinstance(data, list):
+                    return data
         return []
     
     def record_change(self, change: PolicyChange):
