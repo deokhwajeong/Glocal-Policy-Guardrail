@@ -256,7 +256,7 @@ class DiscordNotifier:
         }
         embeds.append(main_embed)
         
-        # 각 업데이트별 embed (최대 10개)
+        # Individual embeds per update (max 10)
         for update in updates[:10]:
             country = update.get('country', 'Unknown')
             source = update.get('source', 'Unknown')
@@ -266,7 +266,7 @@ class DiscordNotifier:
             embed = {
                 "title": f"{country} - {source}",
                 "description": title,
-                "color": 0x4ECDC4,  # 청록색
+                "color": 0x4ECDC4,  # Teal color
             }
             
             if link:
@@ -274,7 +274,7 @@ class DiscordNotifier:
             
             embeds.append(embed)
             
-            # Discord는 최대 10개의 embed만 허용
+            # Discord allows max 10 embeds
             if len(embeds) >= 10:
                 break
         
