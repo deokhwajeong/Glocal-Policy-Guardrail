@@ -12,7 +12,25 @@
 [![Last Commit](https://img.shields.io/github/last-commit/deokhwajeong/Glocal-Policy-Guardrail)](https://github.com/deokhwajeong/Glocal-Policy-Guardrail/commits/main)
 [![Issues](https://img.shields.io/github/issues/deokhwajeong/Glocal-Policy-Guardrail)](https://github.com/deokhwajeong/Glocal-Policy-Guardrail/issues)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/deokhwajeong/Glocal-Policy-Guardrail/pulls)
+
 ---
+
+## 📸 Demo
+
+### Web Dashboard
+![Web Dashboard](https://via.placeholder.com/800x450/1a1b26/7aa2f7?text=Glocal+Policy+Guardrail+Dashboard)
+*Real-time compliance monitoring dashboard with multi-country statistics and regulatory update tracking*
+
+### API Documentation (Swagger)
+![Swagger API](https://via.placeholder.com/800x450/1a1b26/bb9af7?text=Interactive+API+Documentation)
+*Interactive API documentation with live endpoint testing*
+
+### Compliance Report
+![Compliance Report](https://via.placeholder.com/800x450/1a1b26/9ece6a?text=Automated+Compliance+Report)
+*Automated compliance validation report with violation severity analysis*
+
+---
+
 ## Overview
 Glocal Policy Guardrail is an automated governance framework designed to address regulatory friction in global content distribution. The system validates content deployments against country-specific legal requirements and cultural constraints, reducing manual compliance review time by 99.9% while maintaining accuracy.
 ### Problem Statement
