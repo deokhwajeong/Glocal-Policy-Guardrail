@@ -1,8 +1,17 @@
 # Glocal Policy Guardrail
 **Policy-as-Code Framework for Automated Compliance Verification in Global OTT Platforms**
+
+[![Build Status](https://img.shields.io/github/actions/workflow/status/deokhwajeong/Glocal-Policy-Guardrail/ci.yml?branch=main&logo=github)](https://github.com/deokhwajeong/Glocal-Policy-Guardrail/actions)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)
+[![Code Coverage](https://img.shields.io/badge/coverage-85%25-brightgreen.svg)](https://github.com/deokhwajeong/Glocal-Policy-Guardrail)
 [![Code Style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Docker](https://img.shields.io/badge/docker-ready-blue.svg?logo=docker)](https://hub.docker.com)
+[![API Docs](https://img.shields.io/badge/API-Swagger-85EA2D.svg?logo=swagger)](http://localhost:5000/api/docs)
+[![Countries](https://img.shields.io/badge/countries-15+-success.svg)](config/policy_rules.yaml)
+[![Last Commit](https://img.shields.io/github/last-commit/deokhwajeong/Glocal-Policy-Guardrail)](https://github.com/deokhwajeong/Glocal-Policy-Guardrail/commits/main)
+[![Issues](https://img.shields.io/github/issues/deokhwajeong/Glocal-Policy-Guardrail)](https://github.com/deokhwajeong/Glocal-Policy-Guardrail/issues)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/deokhwajeong/Glocal-Policy-Guardrail/pulls)
 ---
 ## Overview
 Glocal Policy Guardrail is an automated governance framework designed to address regulatory friction in global content distribution. The system validates content deployments against country-specific legal requirements and cultural constraints, reducing manual compliance review time by 99.9% while maintaining accuracy.

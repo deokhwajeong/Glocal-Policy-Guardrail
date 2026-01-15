@@ -1,0 +1,308 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Glocal Policy Guardrail API",
+    "description": "Policy-as-Code Framework for Automated Compliance Verification in Global OTT Platforms",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Deokhwa Jeong",
+      "url": "https://github.com/deokhwajeong/Glocal-Policy-Guardrail"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "basePath": "/api",
+  "schemes": ["http", "https"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/status": {
+      "get": {
+        "summary": "Get system status",
+        "description": "Returns the current status of the regulatory monitoring system",
+        "responses": {
+          "200": {
+            "description": "System status",
+            "schema": {
+              "$ref": "#/definitions/Status"
+            }
+          }
+        },
+        "tags": ["System"]
+      }
+    },
+    "/updates": {
+      "get": {
+        "summary": "Get regulatory updates",
+        "description": "Returns recent regulatory updates across all monitored countries",
+        "parameters": [
+          {
+            "name": "days",
+            "in": "query",
+            "description": "Number of days to look back (default: 30)",
+            "required": false,
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "name": "country",
+            "in": "query",
+            "description": "Filter by country name",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of regulatory updates",
+            "schema": {
+              "$ref": "#/definitions/UpdatesResponse"
+            }
+          }
+        },
+        "tags": ["Regulations"]
+      }
+    },
+    "/country/{name}": {
+      "get": {
+        "summary": "Get country-specific information",
+        "description": "Returns detailed regulatory information for a specific country",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "description": "Country name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Country information",
+            "schema": {
+              "$ref": "#/definitions/CountryInfo"
+            }
+          },
+          "404": {
+            "description": "Country not found"
+          }
+        },
+        "tags": ["Regulations"]
+      }
+    },
+    "/compliance/scan": {
+      "post": {
+        "summary": "Scan content for compliance",
+        "description": "Validates content against country-specific regulatory rules",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ComplianceScanRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Compliance scan results",
+            "schema": {
+              "$ref": "#/definitions/ComplianceScanResponse"
+            }
+          },
+          "400": {
+            "description": "Invalid request"
+          }
+        },
+        "tags": ["Compliance"]
+      }
+    }
+  },
+  "definitions": {
+    "Status": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "example": "operational"
+        },
+        "version": {
+          "type": "string",
+          "example": "1.0.0"
+        },
+        "countries_monitored": {
+          "type": "integer",
+          "example": 15
+        },
+        "last_update": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "UpdatesResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "count": {
+          "type": "integer"
+        },
+        "total": {
+          "type": "integer"
+        },
+        "updates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RegulatoryUpdate"
+          }
+        }
+      }
+    },
+    "RegulatoryUpdate": {
+      "type": "object",
+      "properties": {
+        "country": {
+          "type": "string",
+          "example": "South Korea"
+        },
+        "source": {
+          "type": "string",
+          "example": "Korea Communications Commission"
+        },
+        "title": {
+          "type": "string",
+          "example": "New content rating guidelines"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "time": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "string",
+          "enum": ["high", "medium", "low"]
+        },
+        "status": {
+          "type": "string",
+          "enum": ["pending_review", "approved", "implemented", "rejected"]
+        }
+      }
+    },
+    "CountryInfo": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "regulations": {
+          "type": "object"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "last_update": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "ComplianceScanRequest": {
+      "type": "object",
+      "required": ["content", "countries"],
+      "properties": {
+        "content": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "age_rating": {
+              "type": "string"
+            }
+          }
+        },
+        "countries": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "example": ["USA", "South Korea", "Germany"]
+        }
+      }
+    },
+    "ComplianceScanResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "country": {
+                "type": "string"
+              },
+              "compliant": {
+                "type": "boolean"
+              },
+              "violations": {
+                "type": "array",
+                "items": {
+                  "type": "object"
+                }
+              },
+              "warnings": {
+                "type": "array",
+                "items": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "System",
+      "description": "System status and health checks"
+    },
+    {
+      "name": "Regulations",
+      "description": "Regulatory updates and country information"
+    },
+    {
+      "name": "Compliance",
+      "description": "Content compliance validation"
+    }
+  ]
+}

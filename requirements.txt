@@ -7,3 +7,27 @@ lxml>=4.9.0
 apscheduler>=3.10.0
 python-dotenv>=1.0.0
 flask>=3.0.0
+flask-swagger-ui>=4.11.1
+flask-cors>=4.0.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+pytest-mock>=3.12.0
+
+# Code Quality
+flake8>=6.1.0
+black>=23.12.0
+mypy>=1.7.0
+bandit>=1.7.5
+safety>=2.3.5
+
+# Performance
+redis>=5.0.0
+gunicorn>=21.2.0
+
+# Monitoring
+prometheus-client>=0.19.0
+python-json-logger>=2.0.7
+
+sqlalchemy>=2.0.0
