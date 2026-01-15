@@ -65,15 +65,37 @@ def index():
         # Country list
         countries = sorted(set(s.country for s in monitor.sources)) if monitor else []
         
-        # Monitoring data (status by country)
+        # Monitoring data (status by country) - Load from compliance report
         monitoring = {}
-        if monitor:
+        compliance_file = Path("reports/compliance_report.json")
+        if compliance_file.exists():
+            try:
+                with open(compliance_file, 'r') as f:
+                    compliance_data = json.load(f)
+                    for country, data in compliance_data.get('country_details', {}).items():
+                        monitoring[country] = {
+                            'status': data['compliance_status'],
+                            'checks': data['total_checks'],
+                            'violations': data['violations'],
+                            'pass_rate': data['compliance_rate'],
+                            'critical_issues': len(data.get('critical_issues', [])),
+                            'warnings': len(data.get('warnings', [])),
+                            'last_checked': data.get('last_checked', '')
+                        }
+            except:
+                pass
+        
+        # Fallback if no compliance data
+        if not monitoring and monitor:
             for country in countries:
                 monitoring[country] = {
                     'status': 'active',
                     'checks': 0,
                     'violations': 0,
-                    'pass_rate': 100
+                    'pass_rate': 100,
+                    'critical_issues': 0,
+                    'warnings': 0,
+                    'last_checked': datetime.now().isoformat()
                 }
         
         # Recent updates
@@ -303,7 +325,8 @@ def get_stats():
         init_globals()
         if monitor is None:
             return jsonify({"error": "System not initialized"}), 500
-        # 국가별 소스 수
+        
+        # Source count by country
         countries = {}
         for source in monitor.sources:
             country = source.country
@@ -328,6 +351,64 @@ def get_stats():
             "countries": countries,
             "daily_updates": daily_updates,
             "total_countries": len(countries)
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route('/api/country/<country_name>')
+def get_country_details(country_name):
+    """Get detailed information for a specific country"""
+    try:
+        init_globals()
+        
+        # Load compliance report
+        compliance_file = Path("reports/compliance_report.json")
+        country_data = None
+        
+        if compliance_file.exists():
+            with open(compliance_file, 'r') as f:
+                compliance_data = json.load(f)
+                country_data = compliance_data.get('country_details', {}).get(country_name)
+        
+        if not country_data:
+            return jsonify({"error": "Country not found"}), 404
+        
+        # Get recent updates for this country
+        recent_updates = []
+        log_file = Path("reports/policy_updates.json")
+        if log_file.exists():
+            with open(log_file, 'r') as f:
+                logs = json.load(f)
+                for log in logs[-30:]:  # Last 30 days
+                    for update in log.get('updates', []):
+                        if update.get('country') == country_name:
+                            recent_updates.append({
+                                'date': log['timestamp'][:10],
+                                'title': update.get('title', ''),
+                                'source': update.get('source', ''),
+                                'confidence': update.get('confidence', '')
+                            })
+        
+        # Get sources monitoring this country
+        sources = []
+        if monitor:
+            sources = [
+                {
+                    'name': s.name,
+                    'url': s.url,
+                    'frequency': s.check_frequency,
+                    'method': s.method
+                }
+                for s in monitor.sources if s.country == country_name
+            ]
+        
+        return jsonify({
+            "country": country_name,
+            "compliance": country_data,
+            "recent_updates": recent_updates[:10],
+            "sources": sources,
+            "update_count": len(recent_updates)
         })
     except Exception as e:
         return jsonify({"error": str(e)}), 500

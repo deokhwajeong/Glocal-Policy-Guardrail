@@ -134,46 +134,89 @@
                 </div>
             </section>
 
-            <!-- Monitoring Dashboard 탭 -->
+            <!-- Monitoring Dashboard Tab -->
             <section id="monitor" class="tab-content">
                 <div class="card">
                     <h2 class="card-title">
                         <span class="icon">📊</span>
-                        Real-time Compliance Monitoring
+                        Global Compliance Monitoring
                     </h2>
+                    
+                    <div class="monitoring-filters">
+                        <button class="filter-btn active" onclick="filterMonitoring('all')">All Countries</button>
+                        <button class="filter-btn" onclick="filterMonitoring('compliant')">✓ Compliant</button>
+                        <button class="filter-btn" onclick="filterMonitoring('partial')">⚠ Partial</button>
+                        <button class="filter-btn" onclick="filterMonitoring('non_compliant')">✗ Non-Compliant</button>
+                    </div>
+                    
                     <div class="monitoring-grid">
                         {% for country, data in monitoring.items() %}
-                        <div class="monitor-card">
+                        <div class="monitor-card" data-status="{{ data.status }}" onclick="showCountryDetails('{{ country }}')">
                             <div class="monitor-header">
-                                <h3>{{ country.replace('_', ' ') }}</h3>
-                                <span class="status-badge status-{{ data.status }}">{{ data.status }}</span>
+                                <div class="country-info">
+                                    <h3>{{ country.replace('_', ' ') }}</h3>
+                                    <span class="last-checked">Last: {{ data.last_checked[:10] if data.last_checked else 'N/A' }}</span>
+                                </div>
+                                <span class="status-badge status-{{ data.status }}">
+                                    {% if data.status == 'compliant' %}✓ Compliant
+                                    {% elif data.status == 'partial' %}⚠ Partial
+                                    {% else %}✗ Non-Compliant{% endif %}
+                                </span>
                             </div>
                             <div class="monitor-stats">
                                 <div class="monitor-stat">
-                                    <span class="label">검사 횟수</span>
+                                    <span class="label">Checks</span>
                                     <span class="value">{{ data.checks }}</span>
                                 </div>
                                 <div class="monitor-stat">
-                                    <span class="label">위반 건수</span>
-                                    <span class="value critical">{{ data.violations }}</span>
+                                    <span class="label">Violations</span>
+                                    <span class="value {% if data.violations > 0 %}critical{% endif %}">{{ data.violations }}</span>
                                 </div>
                                 <div class="monitor-stat">
-                                    <span class="label">Pass Rate</span>
-                                    <span class="value">{{ data.pass_rate }}%</span>
+                                    <span class="label">Compliance Rate</span>
+                                    <span class="value {% if data.pass_rate < 80 %}critical{% elif data.pass_rate < 95 %}warning{% else %}success{% endif %}">
+                                        {{ data.pass_rate }}%
+                                    </span>
                                 </div>
+                            </div>
+                            {% if data.critical_issues > 0 or data.warnings > 0 %}
+                            <div class="monitor-alerts">
+                                {% if data.critical_issues > 0 %}
+                                <span class="alert alert-critical">🚨 {{ data.critical_issues }} Critical</span>
+                                {% endif %}
+                                {% if data.warnings > 0 %}
+                                <span class="alert alert-warning">⚠️ {{ data.warnings }} Warnings</span>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                            <div class="monitor-footer">
+                                <span class="view-details">View Details →</span>
                             </div>
                         </div>
                         {% endfor %}
                     </div>
                 </div>
+                
+                <!-- Country Detail Modal -->
+                <div id="countryModal" class="modal" style="display: none;">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 id="modalCountryName">Country Details</h2>
+                            <button class="modal-close" onclick="closeCountryModal()">&times;</button>
+                        </div>
+                        <div id="modalBody" class="modal-body">
+                            <div class="loading">Loading...</div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
-            <!-- Regulatory Updates 탭 -->
+            <!-- Regulatory Updates Tab -->
             <section id="updates" class="tab-content">
                 <div class="card">
                     <h2 class="card-title">
                         <span class="icon">🔔</span>
-                        최근 Regulatory Updates
+                        Recent Regulatory Updates
                     </h2>
                     <div class="updates-list">
                         {% for update in recent_updates %}

@@ -241,3 +241,158 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Monitoring Filter Functions
+function filterMonitoring(status) {
+    const cards = document.querySelectorAll('.monitor-card');
+    const buttons = document.querySelectorAll('.filter-btn');
+    
+    // Update active button
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    
+    // Filter cards
+    cards.forEach(card => {
+        if (status === 'all') {
+            card.style.display = 'block';
+        } else {
+            const cardStatus = card.getAttribute('data-status');
+            card.style.display = cardStatus === status ? 'block' : 'none';
+        }
+    });
+}
+
+// Show Country Details Modal
+async function showCountryDetails(country) {
+    const modal = document.getElementById('countryModal');
+    const modalBody = document.getElementById('modalBody');
+    const modalTitle = document.getElementById('modalCountryName');
+    
+    // Show modal with loading state
+    modal.style.display = 'flex';
+    modalTitle.textContent = country.replace(/_/g, ' ');
+    modalBody.innerHTML = '<div class="loading">Loading country details...</div>';
+    
+    try {
+        const response = await fetch(`/api/country/${country}`);
+        const data = await response.json();
+        
+        if (data.error) {
+            modalBody.innerHTML = `<div class="error">Error: ${data.error}</div>`;
+            return;
+        }
+        
+        // Build detailed view
+        let html = '<div class="country-details">';
+        
+        // Compliance Overview
+        html += '<div class="detail-section">';
+        html += '<h3>📊 Compliance Overview</h3>';
+        html += '<div class="compliance-metrics">';
+        html += `<div class="metric">
+                    <span class="metric-label">Total Checks</span>
+                    <span class="metric-value">${data.compliance.total_checks}</span>
+                 </div>`;
+        html += `<div class="metric">
+                    <span class="metric-label">Passed</span>
+                    <span class="metric-value success">${data.compliance.passed_checks}</span>
+                 </div>`;
+        html += `<div class="metric">
+                    <span class="metric-label">Violations</span>
+                    <span class="metric-value critical">${data.compliance.violations}</span>
+                 </div>`;
+        html += `<div class="metric">
+                    <span class="metric-label">Compliance Rate</span>
+                    <span class="metric-value ${data.compliance.compliance_rate >= 95 ? 'success' : data.compliance.compliance_rate >= 80 ? 'warning' : 'critical'}">
+                        ${data.compliance.compliance_rate}%
+                    </span>
+                 </div>`;
+        html += '</div></div>';
+        
+        // Critical Issues
+        if (data.compliance.critical_issues && data.compliance.critical_issues.length > 0) {
+            html += '<div class="detail-section">';
+            html += '<h3>🚨 Critical Issues</h3>';
+            html += '<div class="issues-list">';
+            data.compliance.critical_issues.forEach(issue => {
+                html += `<div class="issue-item critical">
+                            <div class="issue-type">${issue.type}</div>
+                            <div class="issue-desc">${issue.description}</div>
+                            <div class="issue-fix"><strong>Fix:</strong> ${issue.remediation}</div>
+                         </div>`;
+            });
+            html += '</div></div>';
+        }
+        
+        // Warnings
+        if (data.compliance.warnings && data.compliance.warnings.length > 0) {
+            html += '<div class="detail-section">';
+            html += '<h3>⚠️ Warnings</h3>';
+            html += '<div class="issues-list">';
+            data.compliance.warnings.forEach(warning => {
+                html += `<div class="issue-item warning">
+                            <div class="issue-type">${warning.type}</div>
+                            <div class="issue-desc">${warning.description}</div>
+                         </div>`;
+            });
+            html += '</div></div>';
+        }
+        
+        // Recent Updates
+        if (data.recent_updates && data.recent_updates.length > 0) {
+            html += '<div class="detail-section">';
+            html += `<h3>📝 Recent Updates (${data.update_count} total)</h3>`;
+            html += '<div class="updates-timeline">';
+            data.recent_updates.forEach(update => {
+                html += `<div class="timeline-item">
+                            <div class="timeline-date">${update.date}</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">${update.title}</div>
+                                <div class="timeline-meta">
+                                    <span class="source">${update.source}</span>
+                                    <span class="confidence badge-${update.confidence}">${update.confidence}</span>
+                                </div>
+                            </div>
+                         </div>`;
+            });
+            html += '</div></div>';
+        }
+        
+        // Monitoring Sources
+        if (data.sources && data.sources.length > 0) {
+            html += '<div class="detail-section">';
+            html += '<h3>📡 Monitoring Sources</h3>';
+            html += '<div class="sources-grid">';
+            data.sources.forEach(source => {
+                html += `<div class="source-card">
+                            <div class="source-name">${source.name}</div>
+                            <div class="source-meta">
+                                <span class="badge">${source.method}</span>
+                                <span class="badge">${source.frequency}</span>
+                            </div>
+                         </div>`;
+            });
+            html += '</div></div>';
+        }
+        
+        html += '</div>';
+        modalBody.innerHTML = html;
+        
+    } catch (error) {
+        modalBody.innerHTML = `<div class="error">Failed to load country details: ${error.message}</div>`;
+    }
+}
+
+// Close Country Modal
+function closeCountryModal() {
+    const modal = document.getElementById('countryModal');
+    modal.style.display = 'none';
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('countryModal');
+    if (event.target === modal) {
+        closeCountryModal();
+    }
+}
