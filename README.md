@@ -17,17 +17,71 @@
 
 ## 📸 Demo
 
-### Web Dashboard
-![Web Dashboard](https://via.placeholder.com/800x450/1a1b26/7aa2f7?text=Glocal+Policy+Guardrail+Dashboard)
-*Real-time compliance monitoring dashboard with multi-country statistics and regulatory update tracking*
+### System Architecture & Data Flow
+```mermaid
+graph TB
+    A[Content Deployment Request] --> B{Compliance Scanner}
+    B --> C[Load Country Rules]
+    C --> D[Forbidden Keywords Check]
+    C --> E[Time Restrictions Check]
+    C --> F[Platform Features Check]
+    D --> G{Violations Found?}
+    E --> G
+    F --> G
+    G -->|Yes| H[Generate Report]
+    G -->|No| I[Approved]
+    H --> J[Block Deployment]
+    I --> K[Allow Deployment]
+    
+    L[Regulatory Sources] --> M[Auto Monitor]
+    M --> N{Changes Detected?}
+    N -->|Yes| O[Alert Team]
+    N -->|No| P[Continue Monitoring]
+    O --> Q[Update Policy Rules]
+    
+    style B fill:#7aa2f7
+    style G fill:#bb9af7
+    style H fill:#f7768e
+    style I fill:#9ece6a
+```
 
-### API Documentation (Swagger)
-![Swagger API](https://via.placeholder.com/800x450/1a1b26/bb9af7?text=Interactive+API+Documentation)
-*Interactive API documentation with live endpoint testing*
+### Live API Example
 
-### Compliance Report
-![Compliance Report](https://via.placeholder.com/800x450/1a1b26/9ece6a?text=Automated+Compliance+Report)
-*Automated compliance validation report with violation severity analysis*
+**Endpoint**: `GET /api/status`
+```json
+{
+  "status": "healthy",
+  "countries_monitored": 15,
+  "last_update_check": "2026-01-15T14:30:00Z",
+  "active_rules": 127,
+  "monitored_sources": 24
+}
+```
+
+**Endpoint**: `POST /api/compliance/scan`
+```json
+{
+  "deployment": {
+    "content_id": "SHOW-2024-001",
+    "title": "Example Series",
+    "countries": ["USA", "Saudi Arabia", "South Korea"]
+  },
+  "results": {
+    "USA": {"compliant": true, "violations": []},
+    "Saudi Arabia": {"compliant": false, "violations": [
+      {"type": "forbidden_keyword", "severity": "CRITICAL", "detail": "Religious content violation"}
+    ]},
+    "South Korea": {"compliant": true, "violations": []}
+  }
+}
+```
+
+### Interactive Features
+- 🌐 **Web Dashboard**: Real-time compliance status at `http://localhost:5000`
+- 📚 **API Docs**: Interactive Swagger UI at `http://localhost:5000/api/docs`
+- 📊 **Reports**: JSON/HTML compliance reports in `reports/`
+- 🔔 **Alerts**: Email, Slack, Discord notifications
+- 📈 **Metrics**: Prometheus monitoring at `/metrics`
 
 ---
 
