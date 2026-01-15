@@ -282,7 +282,7 @@ class DiscordNotifier:
 
 
 class NotificationManager:
-    """통합 알림 관리자"""
+    """Integrated Notification Manager"""
     
     def __init__(self, config_file: str = "config/notifications.yaml"):
         config = NotificationConfig(config_file).config
@@ -292,7 +292,7 @@ class NotificationManager:
         self.discord = DiscordNotifier(config.get("discord", {}))
     
     def notify_updates(self, updates: List[Dict]) -> Dict[str, bool]:
-        """모든 채널로 업데이트 알림 전송"""
+        """Send update notifications to all channels"""
         results = {}
         
         if not updates:
