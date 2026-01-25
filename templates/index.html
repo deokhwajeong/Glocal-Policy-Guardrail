@@ -17,19 +17,28 @@
  Glocal Policy Guardrail
  </h1>
  <p class="subtitle">Policy-as-Code Framework for Global OTT Platforms</p>
+ <p class="description">Real-time regulatory compliance monitoring and automated policy updates for content distribution across global markets</p>
  </div>
  <div class="header-stats">
  <div class="stat-card">
  <div class="stat-value">{{ stats.countries }}</div>
- <div class="stat-label">Countries</div>
+ <div class="stat-label">Countries Monitored</div>
+ <div class="stat-sublabel">Global Coverage</div>
  </div>
  <div class="stat-card">
  <div class="stat-value">{{ stats.total_checks }}</div>
  <div class="stat-label">Checks Completed</div>
+ <div class="stat-sublabel">Total Validations</div>
  </div>
  <div class="stat-card">
  <div class="stat-value">{{ stats.success_rate }}%</div>
- <div class="stat-label">Pass Rate</div>
+ <div class="stat-label">Compliance Rate</div>
+ <div class="stat-sublabel">Success Metrics</div>
+ </div>
+ <div class="stat-card">
+ <div class="stat-value">{{ monitoring|length }}</div>
+ <div class="stat-label">Active Regions</div>
+ <div class="stat-sublabel">Real-time Tracking</div>
  </div>
  </div>
  </header>
@@ -50,10 +59,33 @@
  <main>
  <!-- Compliance Checker Tab -->
  <section id="checker" class="tab-content active">
+ <div class="welcome-section">
+ <h2>Welcome to Glocal Policy Guardrail</h2>
+ <p>Ensure your content meets regulatory requirements across all target markets. Our automated compliance checker validates your content against local regulations in real-time.</p>
+ <div class="feature-grid">
+ <div class="feature-item">
+ <h3>Real-time Validation</h3>
+ <p>Instant compliance checking against current regulations</p>
+ </div>
+ <div class="feature-item">
+ <h3>Global Coverage</h3>
+ <p>Support for {{ stats.countries }}+ countries and regions</p>
+ </div>
+ <div class="feature-item">
+ <h3>Auto Updates</h3>
+ <p>Continuous monitoring of regulatory changes</p>
+ </div>
+ <div class="feature-item">
+ <h3>Detailed Reports</h3>
+ <p>Comprehensive compliance analysis and recommendations</p>
+ </div>
+ </div>
+ </div>
  <div class="card">
  <h2 class="card-title">
  Content Distribution Check
  </h2>
+ <p class="card-description">Enter your content details below to verify compliance with local regulations</p>
  <form id="checkForm" class="check-form">
  <div class="form-group">
  <label for="country">Deployment Countries</label>
