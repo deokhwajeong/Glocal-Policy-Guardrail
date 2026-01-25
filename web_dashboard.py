@@ -101,6 +101,16 @@ def index():
                     'warnings': 0,
                     'last_checked': datetime.now().isoformat()
                 }
+        # Calculate more detailed statistics
+        if compliance_file.exists():
+            try:
+                with open(compliance_file, 'r') as f:
+                    compliance_data = json.load(f)
+                    stats['total_checks'] = compliance_data.get('summary', {}).get('total_checks', 0)
+                    stats['success_rate'] = compliance_data.get('summary', {}).get('compliance_rate', 0)
+            except:
+                pass
+        
         # Recent updates - Load from policy_updates.json
         recent_updates = []
         log_file = Path("reports/policy_updates.json")
@@ -108,7 +118,7 @@ def index():
             try:
                 with open(log_file, 'r') as f:
                     logs = json.load(f)
-                if logs:
+                if logs and not stats['total_checks']:
                     stats['total_checks'] = len(logs)
                     stats['success_rate'] = 95
                     # Collect all updates with timestamps
@@ -142,11 +152,41 @@ def index():
             except Exception as e:
                 print(f"Error loading policy updates: {e}")
                 pass
+        
+        # Generate insights
+        insights = [
+            {
+                'title': 'Global Coverage',
+                'description': f'Monitoring {len(countries)} countries with comprehensive regulatory tracking',
+                'value': len(countries),
+                'trend': 'stable'
+            },
+            {
+                'title': 'Compliance Rate',
+                'description': f'{stats["success_rate"]}% compliance rate across all monitored regions',
+                'value': f'{stats["success_rate"]}%',
+                'trend': 'positive'
+            },
+            {
+                'title': 'Active Monitoring',
+                'description': f'{len([m for m in monitoring.values() if m.get("status") == "compliant"])} regions fully compliant',
+                'value': len([m for m in monitoring.values() if m.get('status') == 'compliant']),
+                'trend': 'positive'
+            },
+            {
+                'title': 'Recent Updates',
+                'description': f'{len(recent_updates)} regulatory updates detected in the last period',
+                'value': len(recent_updates),
+                'trend': 'neutral'
+            }
+        ]
+        
         return render_template('index.html',
                              stats=stats,
                              countries=countries,
                              monitoring=monitoring,
-                             recent_updates=recent_updates)
+                             recent_updates=recent_updates,
+                             insights=insights)
     except Exception as e:
         print(f"Error in index: {e}")
         import traceback
