@@ -100,10 +100,10 @@ class PolicyUpdateMonitor:
             feed = feedparser.parse(source.url)
             if not feed.entries:
                 return None
-                        latest = feed.entries[0]
-                        content = f"{latest.title}{latest.get('summary', '')}"
+            latest = feed.entries[0]
+            content = f"{latest.title}{latest.get('summary', '')}"
             current_hash = hashlib.md5(content.encode()).hexdigest()
-                        if source.last_hash and source.last_hash == current_hash:
+            if source.last_hash and source.last_hash == current_hash:
                 return None
             return {
                 "source": source.name,
@@ -161,25 +161,25 @@ class PolicyUpdateMonitor:
                     break
             if not main_content:
                 main_content = soup.body if soup.body else soup
-                        text_content = main_content.get_text(strip=True, separator=' ')
+            text_content = main_content.get_text(strip=True, separator=' ')
             current_hash = hashlib.md5(text_content.encode()).hexdigest()
-                        hash_dir = Path("reports/source_hashes")
+            hash_dir = Path("reports/source_hashes")
             hash_dir.mkdir(parents=True, exist_ok=True)
             hash_file = hash_dir / f"{source.country}_{source.name.replace(' ', '_')}.json"
-                        previous_hash = None
+            previous_hash = None
             if hash_file.exists():
                 with open(hash_file, 'r') as f:
                     data = json.load(f)
                     previous_hash = data.get('hash')
-                        with open(hash_file, 'w') as f:
+            with open(hash_file, 'w') as f:
                 json.dump({
                     'hash': current_hash,
                     'last_checked': datetime.now().isoformat(),
                     'url': source.url
                 }, f, indent=2)
-                        if previous_hash and previous_hash == current_hash:
+            if previous_hash and previous_hash == current_hash:
                 return None
-                        latest_title = "Content updated"
+            latest_title = "Content updated"
             latest_link = source.url
             #   /
             for tag in ['h1', 'h2', 'h3', 'h4']:
@@ -245,12 +245,12 @@ class PolicyUpdateMonitor:
             "updates_count": len(updates),
             "updates": updates
         }
-                try:
+        try:
             with open(filepath, 'r', encoding='utf-8') as f:
                 logs = json.load(f)
         except FileNotFoundError:
             logs = []
-                logs.append(log_entry)
+        logs.append(log_entry)
         #  ( 100 )
         with open(filepath, 'w', encoding='utf-8') as f:
             json.dump(logs[-100:], f, indent=2, ensure_ascii=False)
@@ -299,13 +299,13 @@ class PolicyAutoUpdater:
            (  )
         """
         if backup:
-                        backup_path = f"{self.policy_path}.backup.{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+            backup_path = f"{self.policy_path}.backup.{datetime.now().strftime('%Y%m%d_%H%M%S')}"
             with open(backup_path, 'w', encoding='utf-8') as f:
                 yaml.dump(self.policy_db, f, allow_unicode=True)
             logger.info(f"Backup created: {backup_path}")
-                if country in self.policy_db:
+        if country in self.policy_db:
             self.policy_db[country].update(changes)
-                        with open(self.policy_path, 'w', encoding='utf-8') as f:
+            with open(self.policy_path, 'w', encoding='utf-8') as f:
                 yaml.dump(self.policy_db, f, allow_unicode=True, sort_keys=False)
             logger.info(f"Policy updated for {country}")
         else:
@@ -316,23 +316,23 @@ def main():
     print("REGULATORY POLICY AUTO-UPDATE SYSTEM")
     print("=" * 70)
     print()
-        monitor = PolicyUpdateMonitor()
+    monitor = PolicyUpdateMonitor()
     print(f"Monitoring {len(monitor.sources)} regulatory sources...")
     print()
-        updates = monitor.check_for_updates()
-        report = monitor.generate_update_report(updates)
+    updates = monitor.check_for_updates()
+    report = monitor.generate_update_report(updates)
     print(report)
-        if updates:
+    if updates:
         monitor.save_update_log(updates)
         print()
         print("✅ Update log saved to reports/policy_updates.json")
-                updater = PolicyAutoUpdater()
-        print()
-        print("🤖 GENERATING POLICY UPDATE SUGGESTIONS...")
-        print("=" * 70)
-        for update in updates:
-            suggestion = updater.suggest_policy_update(update)
-            if suggestion:
+    updater = PolicyAutoUpdater()
+    print()
+    print("🤖 GENERATING POLICY UPDATE SUGGESTIONS...")
+    print("=" * 70)
+    for update in updates:
+        suggestion = updater.suggest_policy_update(update)
+        if suggestion:
                 print(f"\nCountry: {suggestion['country']}")
                 print(f"Confidence: {suggestion['confidence']}")
                 print("Suggested Changes:")
