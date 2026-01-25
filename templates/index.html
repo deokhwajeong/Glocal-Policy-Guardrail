@@ -8,6 +8,7 @@
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+ <link rel="stylesheet" href="{{ url_for('static', filename='advanced-ui.css') }}">
 </head>
 <body>
  <div class="container">
@@ -296,13 +297,43 @@
  <div class="insights-grid">
  {% for insight in insights %}
  <div class="insight-card">
- <div class="insight-icon">{{ insight.icon }}</div>
  <div class="insight-content">
  <h4>{{ insight.title }}</h4>
  <p>{{ insight.description }}</p>
  </div>
  </div>
  {% endfor %}
+ </div>
+ </div>
+ 
+ <!-- Activity Timeline -->
+ <div class="activity-timeline-section">
+ <h3>Recent Activity</h3>
+ <div class="timeline">
+ <div class="timeline-item">
+ <div class="timeline-marker"></div>
+ <div class="timeline-content">
+ <div class="timeline-time">2 hours ago</div>
+ <div class="timeline-title">Compliance Check Completed</div>
+ <div class="timeline-desc">South Korea content validation passed</div>
+ </div>
+ </div>
+ <div class="timeline-item">
+ <div class="timeline-marker"></div>
+ <div class="timeline-content">
+ <div class="timeline-time">5 hours ago</div>
+ <div class="timeline-title">Regulatory Update Detected</div>
+ <div class="timeline-desc">New policy changes in European Union</div>
+ </div>
+ </div>
+ <div class="timeline-item">
+ <div class="timeline-marker"></div>
+ <div class="timeline-content">
+ <div class="timeline-time">1 day ago</div>
+ <div class="timeline-title">System Scan Completed</div>
+ <div class="timeline-desc">All {{ stats.countries }} countries scanned successfully</div>
+ </div>
+ </div>
  </div>
  </div>
  </div>
@@ -312,7 +343,18 @@
  <p>&copy; 2026 Glocal Policy Guardrail | Policy-as-Code for Global OTT</p>
  </footer>
  </div>
+ 
+ <!-- Loading Overlay -->
+ <div id="loadingOverlay" class="loading-overlay">
+ <div class="loader-container">
+ <div class="loader"></div>
+ <p class="loading-text">Processing...</p>
+ </div>
+ </div>
+ 
+ <!-- Toast Container -->
+ <div id="toastContainer" class="toast-container"></div>
+ 
  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
  <script src="{{ url_for('static', filename='script.js') }}"></script>
-</body>
-</html>
+    <script src="{{ url_for('static', filename='advanced-features.js') }}"></script>
