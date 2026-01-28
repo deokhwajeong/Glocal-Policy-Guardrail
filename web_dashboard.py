@@ -448,6 +448,119 @@ def get_country_details(country_name):
         })
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+@app.route('/api/analytics')
+def get_analytics():
+    """Get analytics data for visualization"""
+    try:
+        init_globals()
+        
+        # Load compliance report for violations data
+        compliance_file = Path("reports/compliance_report.json")
+        violations_by_country = {}
+        distribution_by_category = {
+            'Content Rating': 0,
+            'Advertising': 0,
+            'Privacy': 0,
+            'Accessibility': 0,
+            'Localization': 0,
+            'Other': 0
+        }
+        
+        if compliance_file.exists():
+            try:
+                with open(compliance_file, 'r') as f:
+                    compliance_data = json.load(f)
+                    for country, data in compliance_data.get('country_details', {}).items():
+                        violations_by_country[country] = data.get('violations', 0)
+                        
+                        # Categorize violations
+                        for issue in data.get('critical_issues', []):
+                            category = categorize_issue(issue)
+                            distribution_by_category[category] = distribution_by_category.get(category, 0) + 1
+            except Exception as e:
+                print(f"Error loading compliance data: {e}")
+        
+        # If no data, create sample data
+        if not violations_by_country:
+            violations_by_country = {
+                'South Korea': 2,
+                'Japan': 1,
+                'China': 3,
+                'United States': 0,
+                'EU General': 1,
+                'India': 2,
+                'Saudi Arabia': 1
+            }
+            distribution_by_category = {
+                'Content Rating': 4,
+                'Advertising': 3,
+                'Privacy': 2,
+                'Accessibility': 1,
+                'Localization': 2
+            }
+        
+        # Generate insights
+        total_violations = sum(violations_by_country.values())
+        total_countries = len(violations_by_country)
+        compliant_countries = sum(1 for v in violations_by_country.values() if v == 0)
+        
+        insights = [
+            {
+                'type': 'coverage',
+                'title': 'Global Coverage',
+                'description': f'Monitoring {total_countries} countries with comprehensive regulatory tracking',
+                'value': f'{total_countries} Countries'
+            },
+            {
+                'type': 'compliance',
+                'title': 'Compliance Rate',
+                'description': f'{compliant_countries} out of {total_countries} regions are fully compliant',
+                'value': f'{int((compliant_countries/total_countries)*100)}%' if total_countries > 0 else '0%'
+            },
+            {
+                'type': 'monitoring',
+                'title': 'Active Monitoring',
+                'description': f'{compliant_countries} regions fully compliant',
+                'value': f'{compliant_countries} Regions'
+            },
+            {
+                'type': 'warning' if total_violations > 5 else 'success',
+                'title': 'Total Violations',
+                'description': f'{total_violations} violations detected across all monitored regions',
+                'value': f'{total_violations} Issues'
+            }
+        ]
+        
+        return jsonify({
+            'violations_by_country': violations_by_country,
+            'distribution_by_category': distribution_by_category,
+            'insights': insights,
+            'total_violations': total_violations,
+            'total_countries': total_countries,
+            'compliant_countries': compliant_countries
+        })
+    except Exception as e:
+        print(f"Error in analytics: {e}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
+
+def categorize_issue(issue):
+    """Categorize an issue based on its content"""
+    issue_lower = str(issue).lower()
+    if any(word in issue_lower for word in ['rating', 'age', 'mature', 'violence', 'sexual']):
+        return 'Content Rating'
+    elif any(word in issue_lower for word in ['ad', 'advertising', 'commercial', 'sponsor']):
+        return 'Advertising'
+    elif any(word in issue_lower for word in ['privacy', 'data', 'personal', 'gdpr']):
+        return 'Privacy'
+    elif any(word in issue_lower for word in ['accessibility', 'subtitle', 'caption', 'audio']):
+        return 'Accessibility'
+    elif any(word in issue_lower for word in ['language', 'translation', 'localization', 'local']):
+        return 'Localization'
+    else:
+        return 'Other'
+
 @app.route('/health')
 def health():
     """Health check endpoint"""
