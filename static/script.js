@@ -13,6 +13,12 @@ function showTab(tabName) {
  // Activate selected tab
  document.getElementById(tabName).classList.add('active');
  event.target.closest('.tab').classList.add('active');
+ 
+ // Initialize charts when analytics tab is shown
+ if (tabName === 'analytics') {
+     console.log('Analytics tab activated, initializing charts...');
+     setTimeout(initCharts, 200);
+ }
 }
 // Ad schedule toggle
 function toggleAdSchedule() {
@@ -443,3 +449,281 @@ async function refreshUpdates() {
  btn.disabled = false;
  }
 }
+
+// ==========================================
+// CHARTS AND VISUALIZATIONS
+// ==========================================
+
+let violationChart = null;
+let categoryChart = null;
+
+// Initialize charts when analytics tab is shown
+function initCharts() {
+    console.log('initCharts called');
+    
+    if (violationChart || categoryChart) {
+        console.log('Charts already initialized');
+        return; // Already initialized
+    }
+
+    console.log('Fetching analytics data...');
+    // Fetch analytics data
+    fetch('/api/analytics')
+        .then(response => {
+            console.log('Analytics response received:', response.status);
+            return response.json();
+        })
+        .then(data => {
+            console.log('Analytics data:', data);
+            createViolationChart(data);
+            createCategoryChart(data);
+            updateInsightsCards(data);
+        })
+        .catch(error => {
+            console.error('Error loading analytics:', error);
+            // Show error message in charts
+            const violationCanvas = document.getElementById('violationChart');
+            const categoryCanvas = document.getElementById('categoryChart');
+            if (violationCanvas) {
+                const ctx = violationCanvas.getContext('2d');
+                ctx.fillStyle = '#e53e3e';
+                ctx.font = '14px Inter';
+                ctx.fillText('Failed to load chart data', 10, 50);
+            }
+        });
+}
+
+// Create violation by country chart
+function createViolationChart(data) {
+    const ctx = document.getElementById('violationChart');
+    if (!ctx) {
+        console.error('violationChart canvas not found');
+        return;
+    }
+
+    console.log('Creating violation chart with data:', data.violations_by_country);
+    
+    const countries = data.violations_by_country || {};
+    const labels = Object.keys(countries);
+    const values = Object.values(countries);
+
+    if (labels.length === 0) {
+        console.warn('No violation data available');
+        labels.push('No Data');
+        values.push(0);
+    }
+
+    violationChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Violations',
+                data: values,
+                backgroundColor: [
+                    'rgba(244, 63, 94, 0.8)',
+                    'rgba(251, 146, 60, 0.8)',
+                    'rgba(250, 204, 21, 0.8)',
+                    'rgba(34, 197, 94, 0.8)',
+                    'rgba(59, 130, 246, 0.8)',
+                    'rgba(168, 85, 247, 0.8)',
+                    'rgba(236, 72, 153, 0.8)',
+                    'rgba(20, 184, 166, 0.8)',
+                    'rgba(132, 204, 22, 0.8)'
+                ],
+                borderColor: [
+                    'rgb(244, 63, 94)',
+                    'rgb(251, 146, 60)',
+                    'rgb(250, 204, 21)',
+                    'rgb(34, 197, 94)',
+                    'rgb(59, 130, 246)',
+                    'rgb(168, 85, 247)',
+                    'rgb(236, 72, 153)',
+                    'rgb(20, 184, 166)',
+                    'rgb(132, 204, 22)'
+                ],
+                borderWidth: 2,
+                borderRadius: 8
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                    padding: 12,
+                    titleFont: {
+                        size: 14,
+                        weight: 'bold'
+                    },
+                    bodyFont: {
+                        size: 13
+                    },
+                    callbacks: {
+                        label: function(context) {
+                            return `Violations: ${context.parsed.y}`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        stepSize: 1,
+                        font: {
+                            size: 12
+                        }
+                    },
+                    grid: {
+                        color: 'rgba(0, 0, 0, 0.05)'
+                    }
+                },
+                x: {
+                    ticks: {
+                        font: {
+                            size: 11
+                        },
+                        maxRotation: 45,
+                        minRotation: 45
+                    },
+                    grid: {
+                        display: false
+                    }
+                }
+            }
+        }
+    });
+}
+
+// Create category distribution chart
+function createCategoryChart(data) {
+    const ctx = document.getElementById('categoryChart');
+    if (!ctx) {
+        console.error('categoryChart canvas not found');
+        return;
+    }
+
+    console.log('Creating category chart with data:', data.distribution_by_category);
+    
+    const categories = data.distribution_by_category || {};
+    const labels = Object.keys(categories);
+    const values = Object.values(categories);
+    
+    if (labels.length === 0) {
+        console.warn('No category data available');
+        labels.push('No Data');
+        values.push(1);
+    }
+
+    categoryChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: labels,
+            datasets: [{
+                data: values,
+                backgroundColor: [
+                    'rgba(59, 130, 246, 0.8)',
+                    'rgba(16, 185, 129, 0.8)',
+                    'rgba(251, 146, 60, 0.8)',
+                    'rgba(168, 85, 247, 0.8)',
+                    'rgba(236, 72, 153, 0.8)',
+                    'rgba(20, 184, 166, 0.8)',
+                    'rgba(132, 204, 22, 0.8)',
+                    'rgba(234, 179, 8, 0.8)'
+                ],
+                borderColor: '#fff',
+                borderWidth: 3,
+                hoverOffset: 10
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 15,
+                        font: {
+                            size: 12
+                        },
+                        usePointStyle: true,
+                        pointStyle: 'circle'
+                    }
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                    padding: 12,
+                    titleFont: {
+                        size: 14,
+                        weight: 'bold'
+                    },
+                    bodyFont: {
+                        size: 13
+                    },
+                    callbacks: {
+                        label: function(context) {
+                            const label = context.label || '';
+                            const value = context.parsed || 0;
+                            const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                            const percentage = ((value / total) * 100).toFixed(1);
+                            return `${label}: ${value} (${percentage}%)`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+// Update insights cards with real data
+function updateInsightsCards(data) {
+    const insightsGrid = document.querySelector('.insights-grid');
+    if (!insightsGrid) return;
+
+    const insights = data.insights || [];
+    
+    if (insights.length > 0) {
+        insightsGrid.innerHTML = insights.map(insight => `
+            <div class="insight-card">
+                <div class="insight-icon">${getInsightIcon(insight.type)}</div>
+                <div class="insight-content">
+                    <h4>${insight.title}</h4>
+                    <p>${insight.description}</p>
+                    ${insight.value ? `<div class="insight-value">${insight.value}</div>` : ''}
+                </div>
+            </div>
+        `).join('');
+    }
+}
+
+// Get icon for insight type
+function getInsightIcon(type) {
+    const icons = {
+        'coverage': '🌍',
+        'compliance': '✅',
+        'monitoring': '👁️',
+        'updates': '🔄',
+        'warning': '⚠️',
+        'success': '🎉',
+        'info': 'ℹ️'
+    };
+    return icons[type] || '📊';
+}
+
+// Listen for tab changes to initialize charts
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM Content Loaded - Setting up analytics');
+    
+    // Check if analytics tab is already active on page load
+    const analyticsSection = document.getElementById('analytics');
+    if (analyticsSection && analyticsSection.classList.contains('active')) {
+        console.log('Analytics already active, initializing charts');
+        setTimeout(initCharts, 500);
+    }
+});

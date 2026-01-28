@@ -1,4 +1,5 @@
 /* Global Styles - Enterprise Design System */
+/* TEST: If you see colors, CSS is loading correctly */
 :root {
     /* Brand Colors */
     --primary: #1a365d;
@@ -75,6 +76,8 @@ body {
     font-size: var(--font-size-base);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* TEST: Force visible background */
+    background-color: #f7fafc !important;
 }
 code, pre {
     font-family: 'JetBrains Mono', monospace;
@@ -1655,6 +1658,179 @@ input[type="checkbox"] {
     color: var(--danger);
     border: 1px solid rgba(239, 68, 68, 0.3);
 }
+
+/* ==========================================
+   ANALYTICS & CHARTS SECTION
+   ========================================== */
+
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.chart-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.chart-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--info-light));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.chart-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent);
+}
+
+.chart-card:hover::before {
+    opacity: 1;
+}
+
+.chart-card h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 1.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.chart-card h3::before {
+    content: '📊';
+    font-size: 1.5rem;
+}
+
+.chart-card canvas {
+    max-height: 350px;
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* Insights Section */
+.insights-section {
+    margin-top: 3rem;
+}
+
+.insights-section h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.insight-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(247,250,252,0.95) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.insight-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--success-light));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.insight-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent);
+}
+
+.insight-card:hover::before {
+    opacity: 1;
+}
+
+.insight-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+    flex-shrink: 0;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.insight-content {
+    flex: 1;
+}
+
+.insight-content h4 {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 0.5rem 0;
+    line-height: 1.4;
+}
+
+.insight-content p {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin: 0 0 0.75rem 0;
+    line-height: 1.6;
+}
+
+.insight-value {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent), var(--info-light));
+    color: white;
+    padding: 0.375rem 0.875rem;
+    border-radius: var(--radius);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(49, 130, 206, 0.3);
+}
+
+/* Activity Timeline Section */
+.activity-timeline-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--border);
+}
+
+.activity-timeline-section h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
 /* Update Time Display */
 .update-time {
     display: inline-block;
@@ -1699,3 +1875,18 @@ input[type="checkbox"] {
     .refresh-btn {
         width: 100%;
         justify-content: center;
+    }
+    
+    /* Analytics responsive */
+    .analytics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .chart-card {
+        padding: 1.5rem;
+    }
+    
+    .insight-card {
+        padding: 1.5rem 1rem;
+    }
+
