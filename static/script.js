@@ -1,3 +1,19 @@
+// Leaflet.js 지도에 위반 국가 표시
+function renderViolationMap(violationCountries) {
+    if (!window.L) return;
+    var map = L.map('violationMap').setView([20, 0], 2);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+    violationCountries.forEach(function(country) {
+        var marker = L.circleMarker([country.lat, country.lng], {
+            color: country.status === 'critical' ? 'red' : (country.status === 'partial' ? 'orange' : 'green'),
+            radius: 10,
+            fillOpacity: 0.7
+        }).addTo(map);
+        marker.bindPopup(`<b>${country.name}</b><br>Status: ${country.status}`);
+    });
+}
 // Tab switching functionality
 function showTab(tabName) {
  // Hide all tab contents
@@ -718,12 +734,22 @@ function getInsightIcon(type) {
 
 // Listen for tab changes to initialize charts
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM Content Loaded - Setting up analytics');
-    
-    // Check if analytics tab is already active on page load
+    // Analytics 차트 초기화
     const analyticsSection = document.getElementById('analytics');
     if (analyticsSection && analyticsSection.classList.contains('active')) {
-        console.log('Analytics already active, initializing charts');
         setTimeout(initCharts, 500);
+    }
+
+    // 지도 렌더링 (예시 데이터, 실제로는 서버에서 동적으로 받아야 함)
+    if (document.getElementById('violationMap')) {
+        // 예시: 위반 국가 데이터 (실제 데이터로 교체 필요)
+        const violationCountries = [
+            {name: 'Germany', lat: 51, lng: 10, status: 'critical'},
+            {name: 'South Korea', lat: 36, lng: 128, status: 'partial'},
+            {name: 'United States', lat: 39, lng: -98, status: 'compliant'},
+            {name: 'Saudi Arabia', lat: 24, lng: 45, status: 'critical'},
+            {name: 'India', lat: 21, lng: 78, status: 'partial'}
+        ];
+        renderViolationMap(violationCountries);
     }
 });

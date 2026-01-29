@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+ <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Glocal Policy Guardrail</title>
@@ -9,6 +10,7 @@
  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=3.0">
  <link rel="stylesheet" href="{{ url_for('static', filename='advanced-ui.css') }}?v=3.0">
+ <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
  <div class="container">
@@ -155,9 +157,9 @@
  <!-- Monitoring Dashboard Tab -->
  <section id="monitor" class="tab-content">
  <div class="card">
- <h2 class="card-title">
- Global Compliance Monitoring
- </h2>
+ <h2 class="card-title">Global Compliance Monitoring</h2>
+ <!-- 지도 영역 추가 -->
+ <div id="violationMap" style="height: 400px; margin-bottom: 2rem;"></div>
  <div class="monitoring-filters">
  <button class="filter-btn active" onclick="filterMonitoring('all')">All Countries</button>
  <button class="filter-btn" onclick="filterMonitoring('compliant')">Compliant</button>
