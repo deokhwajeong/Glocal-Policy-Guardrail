@@ -360,3 +360,38 @@ document.addEventListener('DOMContentLoaded', () => {
         toast.show('Welcome to Glocal Policy Guardrail', 'info', 4000);
     }, 500);
 });
+
+// ====== Update-link Tooltip Feature ======
+function createTooltip() {
+    let tooltip = document.createElement('div');
+    tooltip.className = 'custom-tooltip';
+    document.body.appendChild(tooltip);
+    return tooltip;
+}
+
+let tooltip = null;
+document.addEventListener('mouseover', function(e) {
+    if (e.target.classList.contains('update-link')) {
+        if (!tooltip) tooltip = createTooltip();
+        tooltip.textContent = e.target.getAttribute('data-summary');
+        tooltip.style.display = 'block';
+        tooltip.style.position = 'absolute';
+        tooltip.style.left = (e.pageX + 15) + 'px';
+        tooltip.style.top = (e.pageY + 15) + 'px';
+        tooltip.style.zIndex = 9999;
+        tooltip.style.maxWidth = '320px';
+    }
+});
+
+document.addEventListener('mousemove', function(e) {
+    if (tooltip && tooltip.style.display === 'block') {
+        tooltip.style.left = (e.pageX + 15) + 'px';
+        tooltip.style.top = (e.pageY + 15) + 'px';
+    }
+});
+
+document.addEventListener('mouseout', function(e) {
+    if (e.target.classList.contains('update-link') && tooltip) {
+        tooltip.style.display = 'none';
+    }
+});
